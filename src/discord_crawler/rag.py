@@ -20,6 +20,34 @@ ATTACHMENT_COLLECTION_NAME = "discord_attachment_chunks"
 DEFAULT_ATTACHMENT_CHUNK_TOKENS = 600
 DEFAULT_ATTACHMENT_CHUNK_OVERLAP_TOKENS = 80
 
+ATTACHMENT_QUERY_KEYWORDS = {
+    "첨부",
+    "첨부파일",
+    "파일",
+    "자료",
+    "문서",
+    "pdf",
+    "html",
+    "이미지",
+    "사진",
+    "스크린샷",
+    "캡처",
+    "캡쳐",
+    "코드",
+    "노트북",
+    "csv",
+    "json",
+    "txt",
+    "md",
+    "png",
+    "jpg",
+    "jpeg",
+    "다운로드",
+    "업로드",
+    "올린 파일",
+    "올린 자료",
+}
+
 TEXT_ATTACHMENT_EXTENSIONS = {
     ".csv",
     ".css",
@@ -109,6 +137,11 @@ def require_openai_api_key() -> str:
     if not api_key:
         raise RagError("OPENAI_API_KEY is required. Put it in .env before building or asking.")
     return api_key
+
+
+def is_attachment_query(question: str) -> bool:
+    normalized = question.casefold()
+    return any(keyword.casefold() in normalized for keyword in ATTACHMENT_QUERY_KEYWORDS)
 
 
 def load_message_records(raw_dir: Path) -> list[MessageRecord]:
@@ -529,18 +562,22 @@ def ask_question(
     top_k: int,
 ) -> str:
     query_embedding = build_embeddings(openai_client, embedding_model, [question])[0]
+    include_attachment_results = is_attachment_query(question)
     message_documents, message_metadatas, message_distances = query_collection(
         chroma_path,
         MESSAGE_COLLECTION_NAME,
         query_embedding,
         top_k,
     )
-    attachment_documents, attachment_metadatas, attachment_distances = query_collection(
-        chroma_path,
-        ATTACHMENT_COLLECTION_NAME,
-        query_embedding,
-        top_k,
-    )
+    if include_attachment_results:
+        attachment_documents, attachment_metadatas, attachment_distances = query_collection(
+            chroma_path,
+            ATTACHMENT_COLLECTION_NAME,
+            query_embedding,
+            top_k,
+        )
+    else:
+        attachment_documents, attachment_metadatas, attachment_distances = [], [], []
 
     if not message_documents and not attachment_documents:
         return "대화 기록에서 확인되지 않습니다.\n\n참고 메시지:\n- 없음\n\n참고 첨부파일:\n- 없음"
@@ -612,8 +649,12 @@ def ask_question(
         )
 
     message_sources = "\n".join(source_lines) if source_lines else "- 없음"
-    attachment_sources = "\n".join(attachment_source_lines) if attachment_source_lines else "- 없음"
-    return f"{answer.strip()}\n\n참고 메시지:\n{message_sources}\n\n참고 첨부파일:\n{attachment_sources}"
+    attachment_section = ""
+    if include_attachment_results:
+        attachment_sources = "\n".join(attachment_source_lines) if attachment_source_lines else "- 없음"
+        attachment_section = f"\n\n참고 첨부파일:\n{attachment_sources}"
+
+    return f"{answer.strip()}\n\n참고 메시지:\n{message_sources}{attachment_section}"
 
 
 def build_index_main(argv: Sequence[str] | None = None) -> None:
