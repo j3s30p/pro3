@@ -97,6 +97,16 @@ uv run build-rag-index
 uv run ask-discord-rag "저번에 제섭이가 뭐라고 했지?"
 ```
 
+`ask-discord-rag`는 답변 LLM을 호출하기 전에 query planner LLM을 한 번 호출합니다.
+planner는 질문에 맞춰 검색 질의, 후보 개수, 첨부파일 검색 여부, 최신 메시지 우선 여부를 JSON으로 정합니다.
+예를 들어 `다음`, `오늘`, `앞으로`처럼 시간 흐름이 중요한 질문은 후보를 넓게 가져온 뒤 최신성 가중치로 재정렬합니다.
+
+planner를 끄고 기존 벡터 검색만 확인하려면:
+
+```bash
+uv run ask-discord-rag --no-planner "기술면접 다음 주제가 뭐야?"
+```
+
 첨부파일을 찾는 질문:
 
 ```bash
@@ -117,7 +127,7 @@ discord_attachment_chunks
 텍스트형 첨부파일은 `kiwipiepy` 한국어 토크나이저 기준으로 나누어 색인하고, 이미지 같은 비텍스트 첨부파일도 파일명/타입/경로/연결 메시지 기준으로 색인합니다.
 
 임베드 텍스트는 메시지 window chunk에 포함됩니다.
-질문에 `첨부`, `파일`, `html`, `pdf`, `이미지`, `자료`, `코드` 같은 힌트가 있을 때만 첨부파일 collection을 함께 검색하고 `참고 첨부파일`을 출력합니다.
+질문에 첨부파일 확인이 필요하다고 planner가 판단하면 첨부파일 collection을 함께 검색하고 `참고 첨부파일`을 출력합니다.
 이미지, PDF 같은 파일의 OCR/파싱은 아직 포함하지 않습니다.
 
 ## Discord Permissions

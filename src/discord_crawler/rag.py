@@ -80,6 +80,33 @@ SYSTEM_PROMPT = """당신은 Discord 대화 기록을 근거로 답하는 RAG Q&
 - "참고 메시지", "참고 첨부파일", "출처" 섹션은 작성하지 않습니다. 출처 목록은 시스템이 자동으로 붙입니다.
 """
 
+QUERY_PLANNER_PROMPT = """당신은 Discord 대화 RAG 시스템의 retrieval planner입니다.
+역할:
+- 사용자 질문을 보고 검색 전략만 결정합니다.
+- 답변을 작성하지 않습니다.
+- 검색 결과에 없는 사실을 만들지 않습니다.
+
+반드시 JSON object 하나만 반환하세요.
+스키마:
+{
+  "search_query": "vector search에 사용할 한국어 검색 질의",
+  "include_attachments": true,
+  "prefer_recent": false,
+  "recency_weight": 0.0,
+  "message_candidate_top_k": 20,
+  "attachment_candidate_top_k": 6,
+  "reason": "짧은 한국어 설명"
+}
+
+필드 규칙:
+- search_query는 원 질문의 핵심 명사, 사람, 채널, 주제, 시간 표현을 보존하면서 검색에 잘 걸리게 확장합니다.
+- include_attachments는 파일, 첨부, 자료, PDF, HTML, 이미지, 코드 등 첨부파일 확인이 필요한 질문일 때 true입니다.
+- prefer_recent는 사용자가 오늘, 다음, 이번 주, 앞으로, 최근, 마지막, 마감, 일정처럼 시간 흐름이 중요한 질문을 할 때 true입니다.
+- recency_weight는 최신성이 중요하지 않으면 0.0, 중요하면 0.3~1.0 사이로 둡니다.
+- message_candidate_top_k는 일반 질문이면 10~20, 시간성/애매한 질문이면 30~60 사이로 넓힙니다.
+- attachment_candidate_top_k는 include_attachments가 false면 0, true면 6~20 사이로 둡니다.
+"""
+
 
 class RagError(RuntimeError):
     pass
@@ -117,6 +144,26 @@ class ChunkDocument:
     metadata: dict[str, Any]
 
 
+@dataclass(frozen=True)
+class SearchResult:
+    document: str
+    metadata: dict[str, Any]
+    distance: float | None
+
+
+@dataclass(frozen=True)
+class RetrievalPlan:
+    search_query: str
+    include_attachments: bool
+    prefer_recent: bool
+    recency_weight: float
+    message_candidate_top_k: int
+    attachment_candidate_top_k: int
+    final_top_k: int
+    reason: str
+    source: str
+
+
 def parse_int_env(name: str, default: int) -> int:
     value = os.getenv(name)
     if value is None or value == "":
@@ -147,6 +194,123 @@ def require_openai_api_key() -> str:
 def is_attachment_query(question: str) -> bool:
     normalized = question.casefold()
     return any(keyword.casefold() in normalized for keyword in ATTACHMENT_QUERY_KEYWORDS)
+
+
+def clamp_int(value: Any, minimum: int, maximum: int, default: int) -> int:
+    try:
+        parsed = int(value)
+    except (TypeError, ValueError):
+        return default
+    return max(minimum, min(maximum, parsed))
+
+
+def clamp_float(value: Any, minimum: float, maximum: float, default: float) -> float:
+    try:
+        parsed = float(value)
+    except (TypeError, ValueError):
+        return default
+    return max(minimum, min(maximum, parsed))
+
+
+def parse_bool(value: Any, default: bool = False) -> bool:
+    if isinstance(value, bool):
+        return value
+    if isinstance(value, str):
+        normalized = value.strip().casefold()
+        if normalized in {"true", "1", "yes", "y"}:
+            return True
+        if normalized in {"false", "0", "no", "n"}:
+            return False
+    return default
+
+
+def fallback_retrieval_plan(question: str, final_top_k: int) -> RetrievalPlan:
+    include_attachments = is_attachment_query(question)
+    return RetrievalPlan(
+        search_query=question,
+        include_attachments=include_attachments,
+        prefer_recent=False,
+        recency_weight=0.0,
+        message_candidate_top_k=final_top_k,
+        attachment_candidate_top_k=final_top_k if include_attachments else 0,
+        final_top_k=final_top_k,
+        reason="planner fallback",
+        source="fallback",
+    )
+
+
+def normalize_retrieval_plan(payload: dict[str, Any], question: str, final_top_k: int) -> RetrievalPlan:
+    search_query = str(payload.get("search_query") or question).strip() or question
+    include_attachments = parse_bool(payload.get("include_attachments"), default=is_attachment_query(question))
+    prefer_recent = parse_bool(payload.get("prefer_recent"), default=False)
+    recency_weight = clamp_float(payload.get("recency_weight"), 0.0, 1.0, 0.0)
+    if prefer_recent and recency_weight < 0.3:
+        recency_weight = 0.5
+
+    message_candidate_top_k = clamp_int(
+        payload.get("message_candidate_top_k"),
+        minimum=final_top_k,
+        maximum=80,
+        default=max(final_top_k, 20),
+    )
+    attachment_candidate_top_k = (
+        clamp_int(
+            payload.get("attachment_candidate_top_k"),
+            minimum=final_top_k,
+            maximum=30,
+            default=final_top_k,
+        )
+        if include_attachments
+        else 0
+    )
+    return RetrievalPlan(
+        search_query=search_query,
+        include_attachments=include_attachments,
+        prefer_recent=prefer_recent,
+        recency_weight=recency_weight,
+        message_candidate_top_k=message_candidate_top_k,
+        attachment_candidate_top_k=attachment_candidate_top_k,
+        final_top_k=final_top_k,
+        reason=str(payload.get("reason") or "").strip(),
+        source="llm",
+    )
+
+
+def build_retrieval_plan(
+    question: str,
+    current_datetime: str,
+    openai_client: OpenAI,
+    planner_model: str,
+    final_top_k: int,
+    use_planner: bool,
+) -> RetrievalPlan:
+    if not use_planner:
+        return fallback_retrieval_plan(question, final_top_k)
+
+    try:
+        response = openai_client.chat.completions.create(
+            model=planner_model,
+            messages=[
+                {"role": "system", "content": QUERY_PLANNER_PROMPT},
+                {
+                    "role": "user",
+                    "content": (
+                        f"[현재 시각]\n{current_datetime}\n\n"
+                        f"[사용자 질문]\n{question}"
+                    ),
+                },
+            ],
+            response_format={"type": "json_object"},
+            temperature=0,
+        )
+        content = response.choices[0].message.content or "{}"
+        payload = json.loads(content)
+    except Exception:
+        return fallback_retrieval_plan(question, final_top_k)
+
+    if not isinstance(payload, dict):
+        return fallback_retrieval_plan(question, final_top_k)
+    return normalize_retrieval_plan(payload, question, final_top_k)
 
 
 def load_message_records(raw_dir: Path) -> list[MessageRecord]:
@@ -511,17 +675,31 @@ def index_documents(
         )
 
 
-def format_display_datetime(value: Any) -> str:
+def parse_datetime_value(value: Any) -> datetime | None:
     text = str(value or "").strip()
     if not text:
-        return ""
+        return None
     try:
         parsed = datetime.fromisoformat(text.replace("Z", "+00:00"))
     except ValueError:
-        return text
+        return None
     if parsed.tzinfo is None:
         parsed = parsed.replace(tzinfo=timezone.utc)
+    return parsed
+
+
+def format_display_datetime(value: Any) -> str:
+    parsed = parse_datetime_value(value)
+    if parsed is None:
+        return str(value or "").strip()
     return parsed.astimezone(KST).strftime("%Y-%m-%d %H:%M KST")
+
+
+def format_current_datetime(now: datetime | None = None) -> str:
+    current = now or datetime.now(KST)
+    if current.tzinfo is None:
+        current = current.replace(tzinfo=KST)
+    return current.astimezone(KST).strftime("%Y-%m-%d %H:%M KST")
 
 
 def escape_markdown_label(label: str) -> str:
@@ -626,6 +804,53 @@ def query_collection(
     return documents, metadatas, distances
 
 
+def make_search_results(
+    documents: list[str],
+    metadatas: list[dict[str, Any]],
+    distances: list[float | None],
+) -> list[SearchResult]:
+    results = []
+    for index, document in enumerate(documents):
+        metadata = metadatas[index] if index < len(metadatas) else {}
+        distance = distances[index] if index < len(distances) else None
+        results.append(SearchResult(document=document, metadata=metadata, distance=distance))
+    return results
+
+
+def vector_similarity(distance: float | None) -> float:
+    if distance is None:
+        return 0.0
+    return 1.0 - float(distance)
+
+
+def recency_score(metadata: dict[str, Any], now: datetime) -> float:
+    created_at = parse_datetime_value(
+        metadata.get("center_created_at") or metadata.get("created_at") or metadata.get("end_created_at")
+    )
+    if created_at is None:
+        return 0.0
+    age_days = max(0.0, (now.astimezone(KST) - created_at.astimezone(KST)).total_seconds() / 86400)
+    return 1.0 / (1.0 + age_days / 14.0)
+
+
+def rerank_message_results(
+    results: list[SearchResult],
+    plan: RetrievalPlan,
+    now: datetime,
+) -> list[SearchResult]:
+    if not plan.prefer_recent or plan.recency_weight <= 0:
+        return results[: plan.final_top_k]
+
+    return sorted(
+        results,
+        key=lambda result: (
+            vector_similarity(result.distance) + plan.recency_weight * recency_score(result.metadata, now),
+            vector_similarity(result.distance),
+        ),
+        reverse=True,
+    )[: plan.final_top_k]
+
+
 def strip_generated_source_sections(answer: str) -> str:
     source_headings = [
         "참고 메시지:",
@@ -667,22 +892,51 @@ def ask_question(
     embedding_model: str,
     chat_model: str,
     top_k: int,
+    planner_model: str | None = None,
+    use_planner: bool = True,
 ) -> str:
-    query_embedding = build_embeddings(openai_client, embedding_model, [question])[0]
-    include_attachment_results = is_attachment_query(question)
-    message_documents, message_metadatas, message_distances = query_collection(
+    current_now = datetime.now(KST)
+    current_datetime = format_current_datetime(current_now)
+    plan = build_retrieval_plan(
+        question=question,
+        current_datetime=current_datetime,
+        openai_client=openai_client,
+        planner_model=planner_model or chat_model,
+        final_top_k=top_k,
+        use_planner=use_planner,
+    )
+
+    query_embedding = build_embeddings(openai_client, embedding_model, [plan.search_query])[0]
+    message_candidate_documents, message_candidate_metadatas, message_candidate_distances = query_collection(
         chroma_path,
         MESSAGE_COLLECTION_NAME,
         query_embedding,
-        top_k,
+        plan.message_candidate_top_k,
     )
-    if include_attachment_results:
-        attachment_documents, attachment_metadatas, attachment_distances = query_collection(
+    message_results = rerank_message_results(
+        make_search_results(message_candidate_documents, message_candidate_metadatas, message_candidate_distances),
+        plan=plan,
+        now=current_now,
+    )
+    message_documents = [result.document for result in message_results]
+    message_metadatas = [result.metadata for result in message_results]
+    message_distances = [result.distance for result in message_results]
+
+    if plan.include_attachments:
+        attachment_candidate_documents, attachment_candidate_metadatas, attachment_candidate_distances = query_collection(
             chroma_path,
             ATTACHMENT_COLLECTION_NAME,
             query_embedding,
-            top_k,
+            plan.attachment_candidate_top_k,
         )
+        attachment_results = make_search_results(
+            attachment_candidate_documents,
+            attachment_candidate_metadatas,
+            attachment_candidate_distances,
+        )[: plan.final_top_k]
+        attachment_documents = [result.document for result in attachment_results]
+        attachment_metadatas = [result.metadata for result in attachment_results]
+        attachment_distances = [result.distance for result in attachment_results]
     else:
         attachment_documents, attachment_metadatas, attachment_distances = [], [], []
 
@@ -726,7 +980,13 @@ def ask_question(
                 "role": "user",
                 "content": (
                     "아래 Discord 검색 결과만 근거로 사용자 질문에 답하세요.\n"
+                    "오늘, 이번 주, 다음, 앞으로 같은 시간 표현은 현재 시각을 기준으로 해석하세요.\n"
                     "답변 본문만 작성하고 참고 메시지, 참고 첨부파일, 출처 섹션은 작성하지 마세요.\n\n"
+                    f"[현재 시각]\n{current_datetime}\n\n"
+                    f"[검색 계획]\n"
+                    f"search_query={plan.search_query}\n"
+                    f"prefer_recent={plan.prefer_recent}\n"
+                    f"planner_reason={plan.reason}\n\n"
                     f"[검색 결과]\n{context}\n\n"
                     f"[사용자 질문]\n{question}"
                 ),
@@ -760,7 +1020,7 @@ def ask_question(
 
     message_sources = "\n".join(source_lines) if source_lines else "- 없음"
     attachment_section = ""
-    if include_attachment_results:
+    if plan.include_attachments:
         attachment_sources = "\n".join(attachment_source_lines) if attachment_source_lines else "- 없음"
         attachment_section = f"\n\n### 참고 첨부파일\n{attachment_sources}"
 
@@ -866,7 +1126,9 @@ def ask_main(argv: Sequence[str] | None = None) -> None:
     parser.add_argument("--chroma-dir", default=os.getenv("CHROMA_PATH", str(DEFAULT_CHROMA_DIR)))
     parser.add_argument("--embedding-model", default=os.getenv("OPENAI_EMBEDDING_MODEL", "text-embedding-3-small"))
     parser.add_argument("--chat-model", default=os.getenv("OPENAI_CHAT_MODEL", "gpt-4.1-mini"))
+    parser.add_argument("--planner-model", default=os.getenv("OPENAI_PLANNER_MODEL") or os.getenv("OPENAI_CHAT_MODEL", "gpt-4.1-mini"))
     parser.add_argument("--top-k", type=int, default=parse_int_env("RAG_TOP_K", 6))
+    parser.add_argument("--no-planner", action="store_true", help="Disable the LLM retrieval planner.")
     args = parser.parse_args(argv)
 
     try:
@@ -881,6 +1143,8 @@ def ask_main(argv: Sequence[str] | None = None) -> None:
         embedding_model=args.embedding_model,
         chat_model=args.chat_model,
         top_k=args.top_k,
+        planner_model=args.planner_model,
+        use_planner=not args.no_planner,
     )
     print(answer)
 
