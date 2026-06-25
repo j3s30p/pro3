@@ -3,14 +3,16 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import re
 from dataclasses import dataclass
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
-from typing import Any, Iterable, Sequence
+from typing import Any, Callable, Iterable, Sequence, TypedDict
 
 import chromadb
 from dotenv import load_dotenv
 from kiwipiepy import Kiwi
+from langgraph.graph import END, START, StateGraph
 from openai import OpenAI
 
 ROOT_DIR = Path(__file__).resolve().parents[2]
@@ -21,6 +23,63 @@ ATTACHMENT_COLLECTION_NAME = "discord_attachment_chunks"
 DEFAULT_ATTACHMENT_CHUNK_TOKENS = 600
 DEFAULT_ATTACHMENT_CHUNK_OVERLAP_TOKENS = 80
 KST = timezone(timedelta(hours=9), "KST")
+AGENT_MAX_STEPS = 3
+AGENT_MESSAGE_CANDIDATE_LIMIT = 80
+AGENT_ATTACHMENT_CANDIDATE_LIMIT = 30
+GENERIC_SEARCH_TERMS = {
+    "뭐야",
+    "뭐지",
+    "뭔가",
+    "뭔지",
+    "어떤",
+    "알려줘",
+    "알려",
+    "정리해줘",
+    "있어",
+    "있나",
+    "했지",
+    "했어",
+}
+TEMPORAL_QUERY_KEYWORDS = {
+    "오늘",
+    "내일",
+    "이번",
+    "이번주",
+    "이번 주",
+    "다음",
+    "앞으로",
+    "최근",
+    "마지막",
+    "마감",
+    "일정",
+    "언제",
+    "주제",
+}
+KOREAN_PARTICLE_SUFFIXES = (
+    "으로",
+    "에서",
+    "부터",
+    "까지",
+    "에게",
+    "하고",
+    "처럼",
+    "보다",
+    "은",
+    "는",
+    "이",
+    "가",
+    "을",
+    "를",
+    "에",
+    "의",
+    "도",
+    "만",
+    "와",
+    "과",
+    "랑",
+    "로",
+)
+DATE_MENTION_PATTERN = re.compile(r"(?:(20\d{2})[./-])?(\d{1,2})[./-](\d{1,2})")
 
 ATTACHMENT_QUERY_KEYWORDS = {
     "첨부",
@@ -107,6 +166,40 @@ QUERY_PLANNER_PROMPT = """당신은 Discord 대화 RAG 시스템의 retrieval pl
 - attachment_candidate_top_k는 include_attachments가 false면 0, true면 6~20 사이로 둡니다.
 """
 
+AGENT_JUDGE_PROMPT = """당신은 Discord RAG agent의 retrieval judge입니다.
+역할:
+- 현재까지 검색된 후보가 사용자 질문에 답하기에 충분한지 판단합니다.
+- 충분하면 답변 근거로 쓸 후보 key만 고릅니다.
+- 부족하면 다음에 실행할 검색 도구를 하나 고릅니다.
+- 답변을 작성하지 않습니다.
+- 후보에 없는 사실을 만들지 않습니다.
+
+반드시 JSON object 하나만 반환하세요.
+스키마:
+{
+  "is_sufficient": true,
+  "message_keys": ["message-key-1", "message-key-2"],
+  "attachment_keys": ["attachment-key-1"],
+  "next_action": {"tool": "none", "query": "", "k": 0},
+  "reason": "짧은 한국어 설명"
+}
+
+도구:
+- vector_search_messages: 의미적으로 비슷한 Discord 메시지 window를 검색합니다.
+- recent_messages: 질문 키워드가 포함된 최근 메시지를 시간 역순으로 가져옵니다.
+- vector_search_attachments: 첨부파일 chunk를 검색합니다.
+- none: 추가 검색이 필요 없을 때만 사용합니다.
+
+판단 규칙:
+- 후보가 질문에 직접 답하면 is_sufficient=true로 두고, message_keys/attachment_keys를 최대 6개씩 선택합니다.
+- 후보가 부족하면 is_sufficient=false로 두고, 다음 검색 도구 하나를 next_action에 넣습니다.
+- "다음", "앞으로", "오늘", "이번 주" 같은 표현은 현재 시각 기준으로 해석합니다.
+- 현재 시각 기준 이미 지난 일정/주제만 있으면 충분하지 않습니다. recent_messages로 더 찾아야 합니다.
+- 파일, 자료, 첨부, HTML, PDF, 이미지, 코드 질문에서 첨부파일 후보가 부족하면 vector_search_attachments를 사용합니다.
+- 이미 실행한 도구를 반복하기보다 query를 바꾸거나 다른 도구를 고릅니다.
+- next_action.k는 메시지 검색 5~80, 첨부파일 검색 1~30 범위로 둡니다.
+"""
+
 
 class RagError(RuntimeError):
     pass
@@ -162,6 +255,22 @@ class RetrievalPlan:
     final_top_k: int
     reason: str
     source: str
+
+
+class AgenticRagState(TypedDict, total=False):
+    question: str
+    current_datetime: str
+    plan: RetrievalPlan
+    step: int
+    max_steps: int
+    actions: list[dict[str, Any]]
+    next_action: dict[str, Any]
+    is_sufficient: bool
+    judge_reason: str
+    message_candidates: list[SearchResult]
+    attachment_candidates: list[SearchResult]
+    message_results: list[SearchResult]
+    attachment_results: list[SearchResult]
 
 
 def parse_int_env(name: str, default: int) -> int:
@@ -817,10 +926,225 @@ def make_search_results(
     return results
 
 
+def message_result_key(result: SearchResult) -> str:
+    metadata = result.metadata
+    center_message_id = metadata.get("center_message_id")
+    if center_message_id:
+        return str(center_message_id)
+    start_message_id = metadata.get("start_message_id")
+    end_message_id = metadata.get("end_message_id")
+    if start_message_id or end_message_id:
+        return f"{start_message_id}:{end_message_id}"
+    return result.document
+
+
+def attachment_result_key(result: SearchResult) -> str:
+    metadata = result.metadata
+    message_id = metadata.get("message_id")
+    attachment_id = metadata.get("attachment_id")
+    chunk_index = metadata.get("chunk_index")
+    if message_id or attachment_id or chunk_index is not None:
+        return f"{message_id}:{attachment_id}:{chunk_index}"
+    return result.document
+
+
 def vector_similarity(distance: float | None) -> float:
     if distance is None:
         return 0.0
     return 1.0 - float(distance)
+
+
+def dedupe_search_results(
+    results: Iterable[SearchResult],
+    key_func: Callable[[SearchResult], str] = message_result_key,
+) -> list[SearchResult]:
+    best_by_key: dict[str, SearchResult] = {}
+    for result in results:
+        key = key_func(result)
+        current = best_by_key.get(key)
+        if current is None or vector_similarity(result.distance) > vector_similarity(current.distance):
+            best_by_key[key] = result
+    return list(best_by_key.values())
+
+
+def normalize_search_term(term: str) -> str:
+    normalized = term.strip().casefold()
+    for suffix in KOREAN_PARTICLE_SUFFIXES:
+        if len(normalized) > len(suffix) + 1 and normalized.endswith(suffix):
+            return normalized[: -len(suffix)]
+    return normalized
+
+
+def extract_search_terms(text: str, max_terms: int = 12) -> list[str]:
+    candidates = re.findall(r"[0-9A-Za-z가-힣_./+-]{2,}", text)
+    terms: list[str] = []
+    seen: set[str] = set()
+    for candidate in candidates:
+        normalized = normalize_search_term(candidate)
+        if normalized in GENERIC_SEARCH_TERMS:
+            continue
+        if normalized in seen:
+            continue
+        seen.add(normalized)
+        terms.append(normalized)
+        if len(terms) >= max_terms:
+            break
+    return terms
+
+
+def search_document_text(document: str) -> str:
+    skipped_prefixes = (
+        "서버:",
+        "- 시간:",
+        "링크:",
+        "local_path=",
+        "첨부파일 local_path:",
+        "첨부파일 url:",
+        "Discord 메시지 링크:",
+    )
+    lines = []
+    for line in document.splitlines():
+        stripped = line.strip()
+        if stripped.startswith(skipped_prefixes):
+            continue
+        lines.append(stripped)
+    return "\n".join(lines)
+
+
+def is_temporal_query(query_text: str) -> bool:
+    normalized = query_text.casefold()
+    return any(keyword in normalized for keyword in TEMPORAL_QUERY_KEYWORDS)
+
+
+def parsed_mentioned_dates(text: str, now: datetime) -> list[datetime]:
+    dates: list[datetime] = []
+    for match in DATE_MENTION_PATTERN.finditer(text):
+        year_text, month_text, day_text = match.groups()
+        year = int(year_text) if year_text else now.astimezone(KST).year
+        month = int(month_text)
+        day = int(day_text)
+        try:
+            parsed = datetime(year, month, day, tzinfo=KST)
+        except ValueError:
+            continue
+        if not year_text and parsed.date() < now.astimezone(KST).date() - timedelta(days=30):
+            try:
+                parsed = parsed.replace(year=parsed.year + 1)
+            except ValueError:
+                continue
+        dates.append(parsed)
+    return dates
+
+
+def future_date_score(text: str, now: datetime) -> float:
+    today = now.astimezone(KST).date()
+    scores = []
+    for mentioned in parsed_mentioned_dates(text, now):
+        days_until = (mentioned.date() - today).days
+        if days_until < 0:
+            continue
+        scores.append(1.0 / (1.0 + days_until / 30.0))
+    return max(scores, default=0.0)
+
+
+def term_match_score(text: str, terms: Sequence[str], weight: float, max_per_term: int = 3) -> float:
+    normalized_text = text.casefold()
+    score = 0.0
+    for term in terms:
+        if not term:
+            continue
+        count = normalized_text.count(term.casefold())
+        if count:
+            score += weight * min(count, max_per_term)
+    return score
+
+
+def relevance_score(result: SearchResult, query_text: str, terms: Sequence[str], now: datetime) -> float:
+    metadata_text = "\n".join(
+        [
+            str(result.metadata.get("category_name") or ""),
+            str(result.metadata.get("channel_name") or ""),
+            str(result.metadata.get("center_author_display_name") or ""),
+            str(result.metadata.get("center_author_name") or ""),
+        ]
+    )
+    body_text = search_document_text(result.document)
+    score = 0.0
+    score += term_match_score(metadata_text, terms, weight=4.0, max_per_term=1)
+    score += term_match_score(body_text, terms, weight=1.5, max_per_term=3)
+    if is_temporal_query(query_text):
+        score += future_date_score(body_text, now) * 8.0
+        score += recency_score(result.metadata, now) * 1.5
+    else:
+        score += recency_score(result.metadata, now) * 0.3
+    return score
+
+
+def rank_recent_results_by_relevance(
+    results: Sequence[SearchResult],
+    query_text: str,
+    limit: int,
+    now: datetime,
+) -> list[SearchResult]:
+    terms = extract_search_terms(query_text)
+    if not terms:
+        ranked = sorted(
+            results,
+            key=lambda result: parse_datetime_value(result.metadata.get("center_created_at"))
+            or datetime.min.replace(tzinfo=timezone.utc),
+            reverse=True,
+        )
+        return ranked[:limit]
+
+    scored = [
+        (relevance_score(result, query_text, terms, now), result)
+        for result in results
+    ]
+    filtered = [(score, result) for score, result in scored if score > 0]
+    filtered.sort(
+        key=lambda item: (
+            item[0],
+            parse_datetime_value(item[1].metadata.get("center_created_at"))
+            or datetime.min.replace(tzinfo=timezone.utc),
+        ),
+        reverse=True,
+    )
+    return [result for _score, result in filtered[:limit]]
+
+
+def result_matches_terms(result: SearchResult, terms: Sequence[str]) -> bool:
+    if not terms:
+        return True
+    searchable = "\n".join(
+        [
+            str(result.metadata.get("category_name") or ""),
+            str(result.metadata.get("channel_name") or ""),
+            search_document_text(result.document),
+        ]
+    ).casefold()
+    return any(term.casefold() in searchable for term in terms)
+
+
+def get_recent_message_results(
+    chroma_path: Path,
+    query_text: str,
+    limit: int,
+    now: datetime | None = None,
+) -> list[SearchResult]:
+    collection = get_collection(chroma_path, MESSAGE_COLLECTION_NAME)
+    if collection.count() == 0:
+        return []
+
+    payload = collection.get(include=["documents", "metadatas"])
+    documents = list(payload.get("documents") or [])
+    metadatas = list(payload.get("metadatas") or [])
+    results = make_search_results(documents, metadatas, [None] * len(documents))
+    return rank_recent_results_by_relevance(
+        results,
+        query_text=query_text,
+        limit=limit,
+        now=now or datetime.now(KST),
+    )
 
 
 def recency_score(metadata: dict[str, Any], now: datetime) -> float:
@@ -885,6 +1209,452 @@ def sanitize_context_document(document: str) -> str:
     return "\n".join(lines)
 
 
+def format_agent_candidates(
+    message_candidates: list[SearchResult],
+    attachment_candidates: list[SearchResult],
+    max_message_candidates: int = 24,
+    max_attachment_candidates: int = 30,
+    max_chars: int = 700,
+) -> tuple[str, dict[str, SearchResult], dict[str, SearchResult]]:
+    lines: list[str] = []
+    message_by_key: dict[str, SearchResult] = {}
+    attachment_by_key: dict[str, SearchResult] = {}
+
+    if message_candidates:
+        lines.append("[메시지 후보]")
+    for rank, result in enumerate(message_candidates, start=1):
+        if len(message_by_key) >= max_message_candidates:
+            break
+        key = message_result_key(result)
+        if key in message_by_key:
+            continue
+        message_by_key[key] = result
+        preview = truncate_text(sanitize_context_document(result.document), max_chars)
+        lines.extend(
+            [
+                f"- key: {key}",
+                f"  rank: {rank}",
+                f"  source: {format_message_context_source(result.metadata)}",
+                f"  distance: {result.distance}",
+                "  preview: |",
+                *[f"    {line}" for line in preview.splitlines()],
+            ]
+        )
+
+    if attachment_candidates:
+        lines.append("[첨부파일 후보]")
+    for rank, result in enumerate(attachment_candidates, start=1):
+        if len(attachment_by_key) >= max_attachment_candidates:
+            break
+        key = attachment_result_key(result)
+        if key in attachment_by_key:
+            continue
+        attachment_by_key[key] = result
+        preview = truncate_text(sanitize_context_document(result.document), max_chars)
+        lines.extend(
+            [
+                f"- key: {key}",
+                f"  rank: {rank}",
+                f"  source: {format_attachment_context_source(result.metadata)}",
+                f"  distance: {result.distance}",
+                "  preview: |",
+                *[f"    {line}" for line in preview.splitlines()],
+            ]
+        )
+
+    return "\n".join(lines), message_by_key, attachment_by_key
+
+
+def normalize_agent_action(action: Any, default_query: str, default_k: int) -> dict[str, Any]:
+    if not isinstance(action, dict):
+        return {"tool": "none", "query": "", "k": 0}
+
+    tool = str(action.get("tool") or "none").strip()
+    allowed_tools = {
+        "none",
+        "vector_search_messages",
+        "recent_messages",
+        "vector_search_attachments",
+    }
+    if tool not in allowed_tools:
+        tool = "none"
+
+    query = str(action.get("query") or default_query).strip()
+    if tool == "none":
+        return {"tool": "none", "query": "", "k": 0}
+    if not query:
+        query = default_query
+
+    max_k = AGENT_ATTACHMENT_CANDIDATE_LIMIT if tool == "vector_search_attachments" else AGENT_MESSAGE_CANDIDATE_LIMIT
+    min_k = 1 if tool == "vector_search_attachments" else 5
+    k = clamp_int(action.get("k"), minimum=min_k, maximum=max_k, default=default_k)
+    return {"tool": tool, "query": query, "k": k}
+
+
+def parse_agent_judge_response(
+    content: str,
+    default_query: str,
+    default_k: int,
+) -> tuple[bool, list[str], list[str], dict[str, Any], str]:
+    try:
+        payload = json.loads(content)
+    except json.JSONDecodeError:
+        return False, [], [], {"tool": "none", "query": "", "k": 0}, ""
+    if not isinstance(payload, dict):
+        return False, [], [], {"tool": "none", "query": "", "k": 0}, ""
+
+    is_sufficient = parse_bool(payload.get("is_sufficient"), default=False)
+    message_keys = payload.get("message_keys")
+    attachment_keys = payload.get("attachment_keys")
+    next_action = normalize_agent_action(payload.get("next_action"), default_query, default_k)
+    if is_sufficient:
+        next_action = {"tool": "none", "query": "", "k": 0}
+    return (
+        is_sufficient,
+        [str(key) for key in message_keys[:6]] if isinstance(message_keys, list) else [],
+        [str(key) for key in attachment_keys[:6]] if isinstance(attachment_keys, list) else [],
+        next_action,
+        str(payload.get("reason") or "").strip(),
+    )
+
+
+def select_results_by_keys(
+    message_keys: Sequence[str],
+    attachment_keys: Sequence[str],
+    message_by_key: dict[str, SearchResult],
+    attachment_by_key: dict[str, SearchResult],
+    plan: RetrievalPlan,
+) -> tuple[list[SearchResult], list[SearchResult]]:
+    selected_messages = [message_by_key[key] for key in message_keys if key in message_by_key]
+    selected_attachments = [attachment_by_key[key] for key in attachment_keys if key in attachment_by_key]
+    return selected_messages[: plan.final_top_k], selected_attachments[: plan.final_top_k]
+
+
+def action_signature(action: dict[str, Any]) -> str:
+    return f"{action.get('tool')}:{str(action.get('query') or '').casefold()}:{action.get('k')}"
+
+
+def action_was_run(actions: Sequence[dict[str, Any]], action: dict[str, Any]) -> bool:
+    signature = action_signature(action)
+    return any(action_signature(existing) == signature for existing in actions)
+
+
+def fallback_agent_action(state: AgenticRagState) -> dict[str, Any]:
+    plan = state["plan"]
+    actions = state.get("actions", [])
+    executed_tools = {str(action.get("tool") or "") for action in actions}
+    expanded_query = f"{state['question']} {plan.search_query}".strip()
+
+    if plan.prefer_recent and "recent_messages" not in executed_tools:
+        return {
+            "tool": "recent_messages",
+            "query": expanded_query,
+            "k": max(plan.message_candidate_top_k, plan.final_top_k * 8, 40),
+        }
+    if plan.include_attachments and "vector_search_attachments" not in executed_tools:
+        return {
+            "tool": "vector_search_attachments",
+            "query": plan.search_query,
+            "k": max(plan.attachment_candidate_top_k, plan.final_top_k),
+        }
+    if "recent_messages" not in executed_tools:
+        return {
+            "tool": "recent_messages",
+            "query": expanded_query,
+            "k": max(plan.message_candidate_top_k, plan.final_top_k * 8, 40),
+        }
+    if "vector_search_attachments" not in executed_tools and is_attachment_query(state["question"]):
+        return {
+            "tool": "vector_search_attachments",
+            "query": plan.search_query,
+            "k": max(plan.attachment_candidate_top_k, plan.final_top_k),
+        }
+    return {"tool": "none", "query": "", "k": 0}
+
+
+def initial_agent_action(plan: RetrievalPlan) -> dict[str, Any]:
+    return {
+        "tool": "vector_search_messages",
+        "query": plan.search_query,
+        "k": plan.message_candidate_top_k,
+    }
+
+
+def get_vector_search_results(
+    chroma_path: Path,
+    openai_client: OpenAI,
+    embedding_model: str,
+    collection_name: str,
+    query: str,
+    top_k: int,
+) -> list[SearchResult]:
+    if top_k <= 0 or not query.strip():
+        return []
+    query_embedding = build_embeddings(openai_client, embedding_model, [query])[0]
+    documents, metadatas, distances = query_collection(
+        chroma_path,
+        collection_name,
+        query_embedding,
+        top_k,
+    )
+    return make_search_results(documents, metadatas, distances)
+
+
+def merge_candidates(
+    existing: list[SearchResult],
+    new: list[SearchResult],
+    limit: int,
+    key_func: Callable[[SearchResult], str],
+) -> list[SearchResult]:
+    return dedupe_search_results(new + existing, key_func=key_func)[:limit]
+
+
+def format_agent_actions(actions: Sequence[dict[str, Any]]) -> str:
+    if not actions:
+        return "없음"
+    return "\n".join(
+        f"{index}. tool={action.get('tool')} query={action.get('query')} k={action.get('k')}"
+        for index, action in enumerate(actions, start=1)
+    )
+
+
+def run_agentic_retrieval(
+    question: str,
+    chroma_path: Path,
+    openai_client: OpenAI,
+    embedding_model: str,
+    planner_model: str,
+    selector_model: str,
+    top_k: int,
+    use_planner: bool,
+) -> tuple[RetrievalPlan, list[SearchResult], list[SearchResult], str]:
+    current_now = datetime.now(KST)
+    current_datetime = format_current_datetime(current_now)
+
+    def plan_node(state: AgenticRagState) -> AgenticRagState:
+        plan = build_retrieval_plan(
+            question=state["question"],
+            current_datetime=state["current_datetime"],
+            openai_client=openai_client,
+            planner_model=planner_model,
+            final_top_k=top_k,
+            use_planner=use_planner,
+        )
+        return {
+            "plan": plan,
+            "next_action": initial_agent_action(plan),
+        }
+
+    def act_node(state: AgenticRagState) -> AgenticRagState:
+        plan = state["plan"]
+        action = normalize_agent_action(
+            state.get("next_action"),
+            default_query=plan.search_query,
+            default_k=plan.message_candidate_top_k,
+        )
+        step = state.get("step", 0) + 1
+        actions = [*state.get("actions", []), action]
+        message_candidates = state.get("message_candidates", [])
+        attachment_candidates = state.get("attachment_candidates", [])
+        message_limit = max(plan.message_candidate_top_k, plan.final_top_k * 10, 40)
+        attachment_limit = max(plan.attachment_candidate_top_k, plan.final_top_k * 5, 10)
+
+        if action["tool"] == "vector_search_messages":
+            new_messages = get_vector_search_results(
+                chroma_path=chroma_path,
+                openai_client=openai_client,
+                embedding_model=embedding_model,
+                collection_name=MESSAGE_COLLECTION_NAME,
+                query=str(action["query"]),
+                top_k=int(action["k"]),
+            )
+            message_candidates = merge_candidates(
+                existing=message_candidates,
+                new=new_messages,
+                limit=message_limit,
+                key_func=message_result_key,
+            )
+        elif action["tool"] == "recent_messages":
+            new_messages = get_recent_message_results(
+                chroma_path=chroma_path,
+                query_text=str(action["query"]),
+                limit=int(action["k"]),
+                now=current_now,
+            )
+            message_candidates = merge_candidates(
+                existing=message_candidates,
+                new=new_messages,
+                limit=message_limit,
+                key_func=message_result_key,
+            )
+        elif action["tool"] == "vector_search_attachments":
+            new_attachments = get_vector_search_results(
+                chroma_path=chroma_path,
+                openai_client=openai_client,
+                embedding_model=embedding_model,
+                collection_name=ATTACHMENT_COLLECTION_NAME,
+                query=str(action["query"]),
+                top_k=int(action["k"]),
+            )
+            attachment_candidates = merge_candidates(
+                existing=attachment_candidates,
+                new=new_attachments,
+                limit=attachment_limit,
+                key_func=attachment_result_key,
+            )
+
+        return {
+            "step": step,
+            "actions": actions,
+            "message_candidates": message_candidates,
+            "attachment_candidates": attachment_candidates,
+        }
+
+    def judge_node(state: AgenticRagState) -> AgenticRagState:
+        plan = state["plan"]
+        message_candidates = state.get("message_candidates", [])
+        attachment_candidates = state.get("attachment_candidates", [])
+        candidate_text, message_by_key, attachment_by_key = format_agent_candidates(
+            message_candidates,
+            attachment_candidates,
+        )
+        default_next_action = fallback_agent_action(state)
+
+        if not candidate_text.strip():
+            if state.get("step", 0) >= state.get("max_steps", AGENT_MAX_STEPS):
+                return {
+                    "is_sufficient": False,
+                    "message_results": [],
+                    "attachment_results": [],
+                    "next_action": {"tool": "none", "query": "", "k": 0},
+                    "judge_reason": "검색 후보가 없습니다.",
+                }
+            return {
+                "is_sufficient": False,
+                "next_action": default_next_action,
+                "judge_reason": "검색 후보가 부족해 추가 검색합니다.",
+            }
+
+        try:
+            response = openai_client.chat.completions.create(
+                model=selector_model,
+                messages=[
+                    {"role": "system", "content": AGENT_JUDGE_PROMPT},
+                    {
+                        "role": "user",
+                        "content": (
+                            f"[현재 시각]\n{state['current_datetime']}\n\n"
+                            f"[사용자 질문]\n{state['question']}\n\n"
+                            f"[검색 계획]\n"
+                            f"search_query={plan.search_query}\n"
+                            f"include_attachments={plan.include_attachments}\n"
+                            f"prefer_recent={plan.prefer_recent}\n"
+                            f"planner_reason={plan.reason}\n\n"
+                            f"[이미 실행한 검색]\n{format_agent_actions(state.get('actions', []))}\n\n"
+                            f"[근거 후보]\n{candidate_text}"
+                        ),
+                    },
+                ],
+                response_format={"type": "json_object"},
+                temperature=0,
+            )
+            is_sufficient, message_keys, attachment_keys, next_action, reason = parse_agent_judge_response(
+                response.choices[0].message.content or "{}",
+                default_query=plan.search_query,
+                default_k=plan.message_candidate_top_k,
+            )
+        except Exception:
+            is_sufficient, message_keys, attachment_keys, next_action, reason = (
+                False,
+                [],
+                [],
+                default_next_action,
+                "judge 호출 실패로 fallback 검색을 사용합니다.",
+            )
+
+        if is_sufficient:
+            selected_messages, selected_attachments = select_results_by_keys(
+                message_keys,
+                attachment_keys,
+                message_by_key,
+                attachment_by_key,
+                plan,
+            )
+            if not selected_messages and not selected_attachments:
+                selected_messages = message_candidates[: plan.final_top_k]
+                selected_attachments = attachment_candidates[: plan.final_top_k]
+            return {
+                "is_sufficient": True,
+                "message_results": selected_messages,
+                "attachment_results": selected_attachments,
+                "next_action": {"tool": "none", "query": "", "k": 0},
+                "judge_reason": reason,
+            }
+
+        if state.get("step", 0) >= state.get("max_steps", AGENT_MAX_STEPS):
+            return {
+                "is_sufficient": False,
+                "message_results": message_candidates[: plan.final_top_k],
+                "attachment_results": attachment_candidates[: plan.final_top_k],
+                "next_action": {"tool": "none", "query": "", "k": 0},
+                "judge_reason": reason or "최대 검색 횟수 안에서 충분한 근거를 찾지 못했습니다.",
+            }
+
+        if next_action["tool"] == "none" or action_was_run(state.get("actions", []), next_action):
+            next_action = default_next_action
+
+        if next_action["tool"] == "none":
+            return {
+                "is_sufficient": False,
+                "message_results": message_candidates[: plan.final_top_k],
+                "attachment_results": attachment_candidates[: plan.final_top_k],
+                "next_action": {"tool": "none", "query": "", "k": 0},
+                "judge_reason": reason or "추가 검색 도구가 없어 정렬된 후보를 사용합니다.",
+            }
+
+        return {
+            "is_sufficient": False,
+            "next_action": next_action,
+            "judge_reason": reason,
+        }
+
+    def route_after_judge(state: AgenticRagState) -> str:
+        if state.get("is_sufficient"):
+            return "end"
+        if state.get("step", 0) >= state.get("max_steps", AGENT_MAX_STEPS):
+            return "end"
+        if state.get("next_action", {}).get("tool") == "none":
+            return "end"
+        return "act"
+
+    graph = StateGraph(AgenticRagState)
+    graph.add_node("plan", plan_node)
+    graph.add_node("act", act_node)
+    graph.add_node("judge", judge_node)
+    graph.add_edge(START, "plan")
+    graph.add_edge("plan", "act")
+    graph.add_edge("act", "judge")
+    graph.add_conditional_edges("judge", route_after_judge, {"act": "act", "end": END})
+
+    final_state = graph.compile().invoke(
+        {
+            "question": question,
+            "current_datetime": current_datetime,
+            "step": 0,
+            "max_steps": AGENT_MAX_STEPS,
+            "actions": [],
+            "message_candidates": [],
+            "attachment_candidates": [],
+        }
+    )
+    return (
+        final_state["plan"],
+        final_state.get("message_results", []),
+        final_state.get("attachment_results", []),
+        current_datetime,
+    )
+
+
 def ask_question(
     question: str,
     chroma_path: Path,
@@ -895,50 +1665,22 @@ def ask_question(
     planner_model: str | None = None,
     use_planner: bool = True,
 ) -> str:
-    current_now = datetime.now(KST)
-    current_datetime = format_current_datetime(current_now)
-    plan = build_retrieval_plan(
+    plan, message_results, attachment_results, current_datetime = run_agentic_retrieval(
         question=question,
-        current_datetime=current_datetime,
+        chroma_path=chroma_path,
         openai_client=openai_client,
+        embedding_model=embedding_model,
         planner_model=planner_model or chat_model,
-        final_top_k=top_k,
+        selector_model=planner_model or chat_model,
+        top_k=top_k,
         use_planner=use_planner,
-    )
-
-    query_embedding = build_embeddings(openai_client, embedding_model, [plan.search_query])[0]
-    message_candidate_documents, message_candidate_metadatas, message_candidate_distances = query_collection(
-        chroma_path,
-        MESSAGE_COLLECTION_NAME,
-        query_embedding,
-        plan.message_candidate_top_k,
-    )
-    message_results = rerank_message_results(
-        make_search_results(message_candidate_documents, message_candidate_metadatas, message_candidate_distances),
-        plan=plan,
-        now=current_now,
     )
     message_documents = [result.document for result in message_results]
     message_metadatas = [result.metadata for result in message_results]
     message_distances = [result.distance for result in message_results]
-
-    if plan.include_attachments:
-        attachment_candidate_documents, attachment_candidate_metadatas, attachment_candidate_distances = query_collection(
-            chroma_path,
-            ATTACHMENT_COLLECTION_NAME,
-            query_embedding,
-            plan.attachment_candidate_top_k,
-        )
-        attachment_results = make_search_results(
-            attachment_candidate_documents,
-            attachment_candidate_metadatas,
-            attachment_candidate_distances,
-        )[: plan.final_top_k]
-        attachment_documents = [result.document for result in attachment_results]
-        attachment_metadatas = [result.metadata for result in attachment_results]
-        attachment_distances = [result.distance for result in attachment_results]
-    else:
-        attachment_documents, attachment_metadatas, attachment_distances = [], [], []
+    attachment_documents = [result.document for result in attachment_results]
+    attachment_metadatas = [result.metadata for result in attachment_results]
+    attachment_distances = [result.distance for result in attachment_results]
 
     if not message_documents and not attachment_documents:
         return "대화 기록에서 확인되지 않습니다.\n\n---\n\n### 참고 메시지\n- 없음\n\n### 참고 첨부파일\n- 없음"
@@ -1020,7 +1762,7 @@ def ask_question(
 
     message_sources = "\n".join(source_lines) if source_lines else "- 없음"
     attachment_section = ""
-    if plan.include_attachments:
+    if plan.include_attachments or attachment_source_lines:
         attachment_sources = "\n".join(attachment_source_lines) if attachment_source_lines else "- 없음"
         attachment_section = f"\n\n### 참고 첨부파일\n{attachment_sources}"
 

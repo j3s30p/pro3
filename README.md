@@ -97,11 +97,21 @@ uv run build-rag-index
 uv run ask-discord-rag "저번에 제섭이가 뭐라고 했지?"
 ```
 
-`ask-discord-rag`는 답변 LLM을 호출하기 전에 query planner LLM을 한 번 호출합니다.
-planner는 질문에 맞춰 검색 질의, 후보 개수, 첨부파일 검색 여부, 최신 메시지 우선 여부를 JSON으로 정합니다.
-예를 들어 `다음`, `오늘`, `앞으로`처럼 시간 흐름이 중요한 질문은 후보를 넓게 가져온 뒤 최신성 가중치로 재정렬합니다.
+`ask-discord-rag`는 답변 LLM을 호출하기 전에 LangGraph 기반 Agentic RAG 검색 루프를 실행합니다.
+먼저 query planner가 검색 질의, 후보 개수, 첨부파일 검색 여부, 최신 메시지 우선 여부를 JSON으로 정합니다.
+그 다음 retrieval judge가 현재 후보가 충분한지 판단하고, 부족하면 제한된 도구 중 하나를 골라 최대 3회까지 다시 검색합니다.
 
-planner를 끄고 기존 벡터 검색만 확인하려면:
+현재 검색 도구:
+
+```text
+vector_search_messages
+recent_messages
+vector_search_attachments
+```
+
+예를 들어 `다음`, `오늘`, `앞으로`처럼 시간 흐름이 중요한 질문에서 오래된 후보만 잡히면 judge가 최근 메시지 검색을 추가로 실행할 수 있습니다.
+
+planner를 끄고 fallback 검색 계획으로 agent loop를 확인하려면:
 
 ```bash
 uv run ask-discord-rag --no-planner "기술면접 다음 주제가 뭐야?"

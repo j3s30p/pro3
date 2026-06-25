@@ -8,14 +8,20 @@ from discord_crawler.rag import (
     MessageRecord,
     RetrievalPlan,
     SearchResult,
+    KST,
     build_attachment_documents,
     build_chunk_documents,
+    dedupe_search_results,
     fallback_retrieval_plan,
+    format_agent_candidates,
     format_attachment_source,
     format_current_datetime,
     format_message_source,
     is_attachment_query,
+    message_result_key,
     normalize_retrieval_plan,
+    parse_agent_judge_response,
+    rank_recent_results_by_relevance,
     read_attachment_text,
     render_message,
     rerank_message_results,
@@ -164,6 +170,130 @@ def test_rerank_message_results_prefers_recent_when_planned() -> None:
     )
 
     assert reranked[0].document == "최근 다음 주제 공지"
+
+
+def test_dedupe_search_results_keeps_best_match_per_message() -> None:
+    weaker = SearchResult(
+        document="같은 메시지 낮은 점수",
+        metadata={"center_message_id": "m1"},
+        distance=0.40,
+    )
+    stronger = SearchResult(
+        document="같은 메시지 높은 점수",
+        metadata={"center_message_id": "m1"},
+        distance=0.20,
+    )
+
+    deduped = dedupe_search_results([weaker, stronger], key_func=message_result_key)
+
+    assert len(deduped) == 1
+    assert deduped[0].document == "같은 메시지 높은 점수"
+
+
+def test_format_agent_candidates_exposes_stable_keys() -> None:
+    message = SearchResult(
+        document="7/8 attention transformer 준비",
+        metadata={
+            "category_name": "기술면접",
+            "channel_name": "공지방",
+            "center_message_id": "1519281381589389373",
+            "center_created_at": "2026-06-24T10:01:48+00:00",
+            "center_author_display_name": "제섭이",
+        },
+        distance=0.12,
+    )
+    attachment = SearchResult(
+        document="첨부파일명: CNN.html",
+        metadata={
+            "message_id": "m1",
+            "attachment_id": "a1",
+            "chunk_index": 0,
+            "filename": "CNN.html",
+        },
+        distance=0.22,
+    )
+
+    text, message_by_key, attachment_by_key = format_agent_candidates([message], [attachment])
+
+    assert "1519281381589389373" in text
+    assert "m1:a1:0" in text
+    assert message_by_key["1519281381589389373"] == message
+    assert attachment_by_key["m1:a1:0"] == attachment
+
+
+def test_parse_agent_judge_response_clamps_action_and_keys() -> None:
+    content = """{
+      "is_sufficient": false,
+      "message_keys": ["m1", "m2", "m3", "m4", "m5", "m6", "m7"],
+      "attachment_keys": ["a1"],
+      "next_action": {"tool": "recent_messages", "query": "기술면접 다음 주제", "k": 500},
+      "reason": "최근 공지가 더 필요함"
+    }"""
+
+    is_sufficient, message_keys, attachment_keys, next_action, reason = parse_agent_judge_response(
+        content,
+        default_query="기술면접",
+        default_k=10,
+    )
+
+    assert is_sufficient is False
+    assert message_keys == ["m1", "m2", "m3", "m4", "m5", "m6"]
+    assert attachment_keys == ["a1"]
+    assert next_action == {"tool": "recent_messages", "query": "기술면접 다음 주제", "k": 80}
+    assert reason == "최근 공지가 더 필요함"
+
+
+def test_parse_agent_judge_response_disables_action_when_sufficient() -> None:
+    content = """{
+      "is_sufficient": true,
+      "message_keys": ["m1"],
+      "attachment_keys": [],
+      "next_action": {"tool": "recent_messages", "query": "무시", "k": 40},
+      "reason": "근거 충분"
+    }"""
+
+    is_sufficient, message_keys, attachment_keys, next_action, _reason = parse_agent_judge_response(
+        content,
+        default_query="기술면접",
+        default_k=10,
+    )
+
+    assert is_sufficient is True
+    assert message_keys == ["m1"]
+    assert attachment_keys == []
+    assert next_action == {"tool": "none", "query": "", "k": 0}
+
+
+def test_rank_recent_results_prioritizes_relevant_future_date_for_temporal_query() -> None:
+    noisy_recent = SearchResult(
+        document="메시지: 기술면접 잡담입니다",
+        metadata={
+            "category_name": "기술면접",
+            "channel_name": "잡답방",
+            "center_message_id": "noise",
+            "center_created_at": "2026-06-25T05:00:00+00:00",
+        },
+        distance=None,
+    )
+    scheduled_topic = SearchResult(
+        document="메시지: @기술면접 | 7/8(수) | attention(self-attention) / transformer",
+        metadata={
+            "category_name": "기술면접",
+            "channel_name": "공지방",
+            "center_message_id": "target",
+            "center_created_at": "2026-06-24T10:01:48+00:00",
+        },
+        distance=None,
+    )
+
+    ranked = rank_recent_results_by_relevance(
+        [noisy_recent, scheduled_topic],
+        query_text="기술면접 다음 주제가 뭐야",
+        limit=2,
+        now=datetime(2026, 6, 25, 14, 0, tzinfo=KST),
+    )
+
+    assert ranked[0].metadata["center_message_id"] == "target"
 
 
 def test_format_attachment_source_uses_clickable_local_file_link(tmp_path: Path) -> None:
