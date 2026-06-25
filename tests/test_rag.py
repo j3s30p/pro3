@@ -7,6 +7,7 @@ from discord_crawler.rag import (
     MessageRecord,
     build_attachment_documents,
     build_chunk_documents,
+    is_attachment_query,
     read_attachment_text,
     render_message,
     split_text,
@@ -81,6 +82,12 @@ def test_read_attachment_text_for_text_file(tmp_path: Path) -> None:
 
 def test_truncate_text_adds_marker() -> None:
     assert truncate_text("abcdef", max_chars=3) == "abc\n...(truncated)"
+
+
+def test_is_attachment_query_detects_file_intent() -> None:
+    assert is_attachment_query("제섭이가 올린 CNN html 파일 찾아줘") is True
+    assert is_attachment_query("첨부파일 중 pdf 있었어?") is True
+    assert is_attachment_query("저번에 제섭이가 뭐라고 했지?") is False
 
 
 def test_split_text_chunks_long_text() -> None:

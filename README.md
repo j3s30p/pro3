@@ -97,6 +97,12 @@ uv run build-rag-index
 uv run ask-discord-rag "저번에 제섭이가 뭐라고 했지?"
 ```
 
+첨부파일을 찾는 질문:
+
+```bash
+uv run ask-discord-rag "첨부파일 중 CNN html 파일 찾아줘"
+```
+
 기본 RAG는 두 Chroma collection을 만듭니다.
 
 ```text
@@ -111,6 +117,7 @@ discord_attachment_chunks
 텍스트형 첨부파일은 `kiwipiepy` 한국어 토크나이저 기준으로 나누어 색인하고, 이미지 같은 비텍스트 첨부파일도 파일명/타입/경로/연결 메시지 기준으로 색인합니다.
 
 임베드 텍스트는 메시지 window chunk에 포함됩니다.
+질문에 `첨부`, `파일`, `html`, `pdf`, `이미지`, `자료`, `코드` 같은 힌트가 있을 때만 첨부파일 collection을 함께 검색하고 `참고 첨부파일`을 출력합니다.
 이미지, PDF 같은 파일의 OCR/파싱은 아직 포함하지 않습니다.
 
 ## Discord Permissions
