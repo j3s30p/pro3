@@ -7,10 +7,14 @@ from discord_crawler.rag import (
     MessageRecord,
     build_attachment_documents,
     build_chunk_documents,
+    format_attachment_source,
+    format_message_source,
     is_attachment_query,
     read_attachment_text,
     render_message,
+    sanitize_context_document,
     split_text,
+    strip_generated_source_sections,
     truncate_text,
 )
 
@@ -88,6 +92,69 @@ def test_is_attachment_query_detects_file_intent() -> None:
     assert is_attachment_query("제섭이가 올린 CNN html 파일 찾아줘") is True
     assert is_attachment_query("첨부파일 중 pdf 있었어?") is True
     assert is_attachment_query("저번에 제섭이가 뭐라고 했지?") is False
+
+
+def test_format_attachment_source_uses_clickable_local_file_link(tmp_path: Path) -> None:
+    path = tmp_path / "note.md"
+    path.write_text("첨부 내용", encoding="utf-8")
+
+    source = format_attachment_source(
+        {
+            "category_name": "광장",
+            "channel_name": "자료",
+            "created_at": "2026-06-25T00:00:00+00:00",
+            "author_display_name": "제섭이",
+            "filename": "note.md",
+            "local_path": str(path),
+            "jump_url": "https://discord.com/channels/1/2/3",
+        }
+    )
+
+    assert f"[note.md](<{path}>)" in source
+    assert "광장 / #자료 / 2026-06-25 09:00 KST / 제섭이" in source
+    assert "[Discord 원문](https://discord.com/channels/1/2/3)" in source
+    assert "local_path=" not in source
+
+
+def test_format_message_source_uses_clickable_discord_link() -> None:
+    source = format_message_source(
+        {
+            "category_name": "기술면접",
+            "channel_name": "잡답방",
+            "center_created_at": "2026-06-24T10:24:26+00:00",
+            "center_author_display_name": "해연",
+            "center_jump_url": "https://discord.com/channels/1/2/3",
+        }
+    )
+
+    assert source == "[기술면접 / #잡답방 / 2026-06-24 19:24 KST / 해연](https://discord.com/channels/1/2/3)"
+
+
+def test_strip_generated_source_sections_removes_duplicate_llm_sources() -> None:
+    answer = """CNN HTML 파일은 두 개입니다.
+
+참고 메시지:
+1. 중복 출처
+"""
+
+    assert strip_generated_source_sections(answer) == "CNN HTML 파일은 두 개입니다."
+
+
+def test_sanitize_context_document_hides_paths_and_urls() -> None:
+    document = """첨부파일명: CNN.html
+첨부파일 local_path: /tmp/CNN.html
+첨부파일 url: https://cdn.example/CNN.html
+Discord 메시지 링크: https://discord.com/channels/1/2/3
+첨부파일 내용:
+CNN 설명
+"""
+
+    sanitized = sanitize_context_document(document)
+
+    assert "첨부파일명: CNN.html" in sanitized
+    assert "첨부파일 내용:" in sanitized
+    assert "local_path" not in sanitized
+    assert "https://" not in sanitized
 
 
 def test_split_text_chunks_long_text() -> None:

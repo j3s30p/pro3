@@ -4,6 +4,7 @@ import argparse
 import json
 import os
 from dataclasses import dataclass
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any, Iterable, Sequence
 
@@ -19,6 +20,7 @@ MESSAGE_COLLECTION_NAME = "discord_message_windows"
 ATTACHMENT_COLLECTION_NAME = "discord_attachment_chunks"
 DEFAULT_ATTACHMENT_CHUNK_TOKENS = 600
 DEFAULT_ATTACHMENT_CHUNK_OVERLAP_TOKENS = 80
+KST = timezone(timedelta(hours=9), "KST")
 
 ATTACHMENT_QUERY_KEYWORDS = {
     "첨부",
@@ -70,9 +72,12 @@ SYSTEM_PROMPT = """당신은 Discord 대화 기록을 근거로 답하는 RAG Q&
 규칙:
 - 반드시 제공된 검색 결과 안의 내용만 근거로 답합니다.
 - 검색 결과에 근거가 부족하면 "대화 기록에서 확인되지 않습니다"라고 말합니다.
-- 누가, 언제, 어느 채널에서 말했는지 가능한 한 구체적으로 정리합니다.
+- 답변은 Markdown으로 간결하고 읽기 좋게 작성합니다.
+- 필요한 경우 핵심 내용은 짧은 bullet list로 정리합니다.
+- 누가, 언제, 어느 채널에서 말했는지 본문에 자연스럽게 요약합니다.
 - 첨부파일 내용은 검색 결과에 추출된 텍스트나 파일명으로 확인되는 범위에서만 언급합니다.
-- 답변 끝의 참고 메시지 목록은 유지합니다.
+- 본문에 raw source, local_path, URL을 길게 반복하지 않습니다.
+- "참고 메시지", "참고 첨부파일", "출처" 섹션은 작성하지 않습니다. 출처 목록은 시스템이 자동으로 붙입니다.
 """
 
 
@@ -506,30 +511,98 @@ def index_documents(
         )
 
 
-def format_message_source(metadata: dict[str, Any]) -> str:
+def format_display_datetime(value: Any) -> str:
+    text = str(value or "").strip()
+    if not text:
+        return ""
+    try:
+        parsed = datetime.fromisoformat(text.replace("Z", "+00:00"))
+    except ValueError:
+        return text
+    if parsed.tzinfo is None:
+        parsed = parsed.replace(tzinfo=timezone.utc)
+    return parsed.astimezone(KST).strftime("%Y-%m-%d %H:%M KST")
+
+
+def escape_markdown_label(label: str) -> str:
+    return label.replace("[", "\\[").replace("]", "\\]")
+
+
+def markdown_url_link(label: str, url: str) -> str:
+    return f"[{escape_markdown_label(label)}]({url})"
+
+
+def source_context_label(
+    metadata: dict[str, Any],
+    created_at_key: str,
+    author_display_key: str,
+    author_name_key: str,
+) -> str:
     category_name = metadata.get("category_name") or "no_category"
     channel_name = metadata.get("channel_name") or ""
-    created_at = str(metadata.get("center_created_at") or "")
-    author = metadata.get("center_author_display_name") or metadata.get("center_author_name") or ""
-    jump_url = metadata.get("center_jump_url") or ""
-    suffix = f" - {jump_url}" if jump_url else ""
-    return f"[{category_name} / #{channel_name} / {created_at} / {author}]{suffix}"
+    created_at = format_display_datetime(metadata.get(created_at_key))
+    author = metadata.get(author_display_key) or metadata.get(author_name_key) or ""
+    return " / ".join(str(part) for part in [category_name, f"#{channel_name}", created_at, author] if part)
+
+
+def format_message_source(metadata: dict[str, Any]) -> str:
+    label = source_context_label(
+        metadata,
+        created_at_key="center_created_at",
+        author_display_key="center_author_display_name",
+        author_name_key="center_author_name",
+    )
+    jump_url = str(metadata.get("center_jump_url") or "")
+    return markdown_url_link(label, jump_url) if jump_url else label
+
+
+def format_message_context_source(metadata: dict[str, Any]) -> str:
+    return source_context_label(
+        metadata,
+        created_at_key="center_created_at",
+        author_display_key="center_author_display_name",
+        author_name_key="center_author_name",
+    )
+
+
+def absolute_local_path(local_path: str) -> str:
+    path = Path(local_path).expanduser()
+    if not path.is_absolute():
+        path = ROOT_DIR / path
+    return str(path.resolve(strict=False))
+
+
+def markdown_file_link(label: str, local_path: str) -> str:
+    absolute_path = absolute_local_path(local_path)
+    return f"[{escape_markdown_label(label)}](<{absolute_path}>)"
 
 
 def format_attachment_source(metadata: dict[str, Any]) -> str:
-    category_name = metadata.get("category_name") or "no_category"
-    channel_name = metadata.get("channel_name") or ""
-    created_at = str(metadata.get("created_at") or "")
-    author = metadata.get("author_display_name") or metadata.get("author_name") or ""
     filename = metadata.get("filename") or "unknown"
     local_path = metadata.get("local_path") or ""
     jump_url = metadata.get("jump_url") or ""
-    parts = [f"{filename}", f"[{category_name} / #{channel_name} / {created_at} / {author}]"]
-    if local_path:
-        parts.append(f"local_path={local_path}")
+    file_label = markdown_file_link(str(filename), str(local_path)) if local_path else str(filename)
+    context_label = source_context_label(
+        metadata,
+        created_at_key="created_at",
+        author_display_key="author_display_name",
+        author_name_key="author_name",
+    )
+    parts = [file_label, context_label]
     if jump_url:
-        parts.append(str(jump_url))
+        parts.append(markdown_url_link("Discord 원문", str(jump_url)))
     return " - ".join(parts)
+
+
+def format_attachment_context_source(metadata: dict[str, Any]) -> str:
+    filename = metadata.get("filename") or "unknown"
+    context_label = source_context_label(
+        metadata,
+        created_at_key="created_at",
+        author_display_key="author_display_name",
+        author_name_key="author_name",
+    )
+    return f"{filename} - {context_label}"
 
 
 def query_collection(
@@ -551,6 +624,40 @@ def query_collection(
     metadatas = result.get("metadatas", [[]])[0]
     distances = result.get("distances", [[]])[0]
     return documents, metadatas, distances
+
+
+def strip_generated_source_sections(answer: str) -> str:
+    source_headings = [
+        "참고 메시지:",
+        "참고한 메시지:",
+        "참고 첨부파일:",
+        "참고한 첨부파일:",
+        "출처:",
+        "Sources:",
+    ]
+    lines = answer.strip().splitlines()
+    kept_lines = []
+    for line in lines:
+        normalized = line.strip().lstrip("#").strip()
+        if any(normalized.startswith(heading) for heading in source_headings):
+            break
+        kept_lines.append(line)
+    return "\n".join(kept_lines).strip()
+
+
+def sanitize_context_document(document: str) -> str:
+    hidden_prefixes = (
+        "local_path=",
+        "첨부파일 local_path:",
+        "첨부파일 url:",
+        "Discord 메시지 링크:",
+    )
+    lines = []
+    for line in document.splitlines():
+        if line.strip().startswith(hidden_prefixes):
+            continue
+        lines.append(line)
+    return "\n".join(lines)
 
 
 def ask_question(
@@ -580,7 +687,7 @@ def ask_question(
         attachment_documents, attachment_metadatas, attachment_distances = [], [], []
 
     if not message_documents and not attachment_documents:
-        return "대화 기록에서 확인되지 않습니다.\n\n참고 메시지:\n- 없음\n\n참고 첨부파일:\n- 없음"
+        return "대화 기록에서 확인되지 않습니다.\n\n---\n\n### 참고 메시지\n- 없음\n\n### 참고 첨부파일\n- 없음"
 
     context_blocks = []
     for index, document in enumerate(message_documents, start=1):
@@ -590,9 +697,9 @@ def ask_question(
             "\n".join(
                 [
                     f"[메시지 검색 결과 {index}]",
-                    f"source={format_message_source(metadata)}",
+                    f"source={format_message_context_source(metadata)}",
                     f"distance={distance}",
-                    document,
+                    sanitize_context_document(document),
                 ]
             )
         )
@@ -603,9 +710,9 @@ def ask_question(
             "\n".join(
                 [
                     f"[첨부파일 검색 결과 {index}]",
-                    f"source={format_attachment_source(metadata)}",
+                    f"source={format_attachment_context_source(metadata)}",
                     f"distance={distance}",
-                    document,
+                    sanitize_context_document(document),
                 ]
             )
         )
@@ -618,7 +725,8 @@ def ask_question(
             {
                 "role": "user",
                 "content": (
-                    "아래 Discord 검색 결과만 근거로 사용자 질문에 답하세요.\n\n"
+                    "아래 Discord 검색 결과만 근거로 사용자 질문에 답하세요.\n"
+                    "답변 본문만 작성하고 참고 메시지, 참고 첨부파일, 출처 섹션은 작성하지 마세요.\n\n"
                     f"[검색 결과]\n{context}\n\n"
                     f"[사용자 질문]\n{question}"
                 ),
@@ -626,7 +734,9 @@ def ask_question(
         ],
         temperature=0.1,
     )
-    answer = response.choices[0].message.content or "대화 기록에서 확인되지 않습니다."
+    answer = strip_generated_source_sections(
+        response.choices[0].message.content or "대화 기록에서 확인되지 않습니다."
+    )
 
     source_lines = []
     seen: set[str] = set()
@@ -652,9 +762,9 @@ def ask_question(
     attachment_section = ""
     if include_attachment_results:
         attachment_sources = "\n".join(attachment_source_lines) if attachment_source_lines else "- 없음"
-        attachment_section = f"\n\n참고 첨부파일:\n{attachment_sources}"
+        attachment_section = f"\n\n### 참고 첨부파일\n{attachment_sources}"
 
-    return f"{answer.strip()}\n\n참고 메시지:\n{message_sources}{attachment_section}"
+    return f"{answer.strip()}\n\n---\n\n### 참고 메시지\n{message_sources}{attachment_section}"
 
 
 def build_index_main(argv: Sequence[str] | None = None) -> None:
