@@ -1,0 +1,5773 @@
+{
+  "result": "COMPLETED",
+  "message": "Converted from Clova Note txt export for local development.",
+  "token": "local-converted-sample",
+  "version": "local-converted",
+  "params": {
+    "source": "clova_note_txt_export",
+    "completion": "sync"
+  },
+  "progress": 100,
+  "keywords": {},
+  "segments": [
+    {
+      "start": 5000,
+      "end": 11999,
+      "text": "됐나요? 네 이렇게 하면서 이제 여기에 메모도 할 수 있고 한데요.\n지금 네 말씀하시죠",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "됐나요? 네 이렇게 하면서 이제 여기에 메모도 할 수 있고 한데요.\n지금 네 말씀하시죠",
+      "metadata": {
+        "segmentIndex": 0,
+        "startTime": "00:05",
+        "endTime": "00:11",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 12000,
+      "end": 29999,
+      "text": "네 그러면은 저희 주제는 회의록 작성 보관 매니지먼트 프로그램 이제 과제 홈플러스",
+      "confidence": null,
+      "diarization": {
+        "label": "2"
+      },
+      "speaker": {
+        "label": "2",
+        "name": "참석자 2",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "네 그러면은 저희 주제는 회의록 작성 보관 매니지먼트 프로그램 이제 과제 홈플러스",
+      "metadata": {
+        "segmentIndex": 1,
+        "startTime": "00:12",
+        "endTime": "00:29",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 30000,
+      "end": 37999,
+      "text": "그다음에 하임 좋은데 하임이 좀 더 그거예요. 좀 더 짧고 이렇게 딱 뇌에 박히는 날이라",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "그다음에 하임 좋은데 하임이 좀 더 그거예요. 좀 더 짧고 이렇게 딱 뇌에 박히는 날이라",
+      "metadata": {
+        "segmentIndex": 2,
+        "startTime": "00:30",
+        "endTime": "00:37",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 38000,
+      "end": 52999,
+      "text": "파이머로 그러 다음에 파이머로 가겠습니다. 그래서 저희가 이제 구현해야 될 거를 다 생각을 해 보죠.\n일단은 뭐 뗄 건 떼는 건 나중에 하고 일단 STT가 1번이겠죠.\n그렇죠 이",
+      "confidence": null,
+      "diarization": {
+        "label": "2"
+      },
+      "speaker": {
+        "label": "2",
+        "name": "참석자 2",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "파이머로 그러 다음에 파이머로 가겠습니다. 그래서 저희가 이제 구현해야 될 거를 다 생각을 해 보죠.\n일단은 뭐 뗄 건 떼는 건 나중에 하고 일단 STT가 1번이겠죠.\n그렇죠 이",
+      "metadata": {
+        "segmentIndex": 3,
+        "startTime": "00:38",
+        "endTime": "00:52",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 53000,
+      "end": 67999,
+      "text": "STT 근데 이거 개발이 오래 걸릴 것 같다고 그러지 않았어요 아니면은 이 클로바노트에 있는 거를 하는 거예요.\n어떤 STT가 인풋이라고 했는데 그거를 1차적으로 먼저 구현을 할 거예요.",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "STT 근데 이거 개발이 오래 걸릴 것 같다고 그러지 않았어요 아니면은 이 클로바노트에 있는 거를 하는 거예요.\n어떤 STT가 인풋이라고 했는데 그거를 1차적으로 먼저 구현을 할 거예요.",
+      "metadata": {
+        "segmentIndex": 4,
+        "startTime": "00:53",
+        "endTime": "01:07",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 68000,
+      "end": 74999,
+      "text": "그러니까 안 할 건데 일단은 전체 프로그램을 한번 해보고 저희가 3차 때 뭘 할지를 한번 생각을 해봐.",
+      "confidence": null,
+      "diarization": {
+        "label": "2"
+      },
+      "speaker": {
+        "label": "2",
+        "name": "참석자 2",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "그러니까 안 할 건데 일단은 전체 프로그램을 한번 해보고 저희가 3차 때 뭘 할지를 한번 생각을 해봐.",
+      "metadata": {
+        "segmentIndex": 5,
+        "startTime": "01:08",
+        "endTime": "01:14",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 75000,
+      "end": 78999,
+      "text": "일단 기능 어떤 기능을 구현해야 되는지 다 던져본다는 말이지",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "일단 기능 어떤 기능을 구현해야 되는지 다 던져본다는 말이지",
+      "metadata": {
+        "segmentIndex": 6,
+        "startTime": "01:15",
+        "endTime": "01:18",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 79000,
+      "end": 89999,
+      "text": "STT로 이제 회의록이 작성이 될 거고 그쵸 여기서 이제 내부적으로는 요약",
+      "confidence": null,
+      "diarization": {
+        "label": "2"
+      },
+      "speaker": {
+        "label": "2",
+        "name": "참석자 2",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "STT로 이제 회의록이 작성이 될 거고 그쵸 여기서 이제 내부적으로는 요약",
+      "metadata": {
+        "segmentIndex": 7,
+        "startTime": "01:19",
+        "endTime": "01:29",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 90000,
+      "end": 115999,
+      "text": "응 그리고 일정까지 등록 일정 등록까지 그리고 더 할 수 있으면 저는 에이전트 팀을 만들어서 예를 들어서 회의 같은 때 어떤 데 조사가 필요하다 이렇게 얘기가 나왔잖아요.\n그럼 이제 그걸 보고 에이전트 팀한테 이거 시장조사 돌려놓을까요 하면 조사가 들어가고 이제 다음 회의 때 그거를 레포트로 받아볼 수 있는",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "응 그리고 일정까지 등록 일정 등록까지 그리고 더 할 수 있으면 저는 에이전트 팀을 만들어서 예를 들어서 회의 같은 때 어떤 데 조사가 필요하다 이렇게 얘기가 나왔잖아요.\n그럼 이제 그걸 보고 에이전트 팀한테 이거 시장조사 돌려놓을까요 하면 조사가 들어가고 이제 다음 회의 때 그거를 레포트로 받아볼 수 있는",
+      "metadata": {
+        "segmentIndex": 8,
+        "startTime": "01:30",
+        "endTime": "01:55",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 116000,
+      "end": 118999,
+      "text": "그런 식으로 자동 조사 후 포",
+      "confidence": null,
+      "diarization": {
+        "label": "2"
+      },
+      "speaker": {
+        "label": "2",
+        "name": "참석자 2",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "그런 식으로 자동 조사 후 포",
+      "metadata": {
+        "segmentIndex": 9,
+        "startTime": "01:56",
+        "endTime": "01:58",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 119000,
+      "end": 120999,
+      "text": "뭐 그런 것도 하면 좋겠어",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "뭐 그런 것도 하면 좋겠어",
+      "metadata": {
+        "segmentIndex": 10,
+        "startTime": "01:59",
+        "endTime": "02:00",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 121000,
+      "end": 128999,
+      "text": "좋은데요. 이것도 확실히 편해지겠네요. 그러니까 회의를 전체적으로 홍보를 하면서 도와주는",
+      "confidence": null,
+      "diarization": {
+        "label": "2"
+      },
+      "speaker": {
+        "label": "2",
+        "name": "참석자 2",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "좋은데요. 이것도 확실히 편해지겠네요. 그러니까 회의를 전체적으로 홍보를 하면서 도와주는",
+      "metadata": {
+        "segmentIndex": 11,
+        "startTime": "02:01",
+        "endTime": "02:08",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 129000,
+      "end": 138999,
+      "text": "그렇죠 그리고 이제 팀원들이 내가 힘을 써서 해야 되는 일들을 조금씩 덜어주는 거죠.\n이런 조사 같은 것도 보면",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "그렇죠 그리고 이제 팀원들이 내가 힘을 써서 해야 되는 일들을 조금씩 덜어주는 거죠.\n이런 조사 같은 것도 보면",
+      "metadata": {
+        "segmentIndex": 12,
+        "startTime": "02:09",
+        "endTime": "02:18",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 139000,
+      "end": 140999,
+      "text": "약간 비서네요.",
+      "confidence": null,
+      "diarization": {
+        "label": "3"
+      },
+      "speaker": {
+        "label": "3",
+        "name": "참석자 3",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "약간 비서네요.",
+      "metadata": {
+        "segmentIndex": 13,
+        "startTime": "02:19",
+        "endTime": "02:20",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 141000,
+      "end": 157999,
+      "text": "맞아요. 그리고 그리고 이제 도큐먼트 형태 도큐먼트 형태에 있는 거를 인식해가지고 DB에 넣는 게 필요하겠죠.",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "맞아요. 그리고 그리고 이제 도큐먼트 형태 도큐먼트 형태에 있는 거를 인식해가지고 DB에 넣는 게 필요하겠죠.",
+      "metadata": {
+        "segmentIndex": 14,
+        "startTime": "02:21",
+        "endTime": "02:37",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 158000,
+      "end": 163999,
+      "text": "저장까지 DB는 그럼 2개를 써야겠네요. 실물 DB랑 와그 검색용 벡터 디비랑",
+      "confidence": null,
+      "diarization": {
+        "label": "2"
+      },
+      "speaker": {
+        "label": "2",
+        "name": "참석자 2",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "저장까지 DB는 그럼 2개를 써야겠네요. 실물 DB랑 와그 검색용 벡터 디비랑",
+      "metadata": {
+        "segmentIndex": 15,
+        "startTime": "02:38",
+        "endTime": "02:43",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 164000,
+      "end": 165999,
+      "text": "실물 DB라고 하는 건 어떤 거 얘기하는",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "실물 DB라고 하는 건 어떤 거 얘기하는",
+      "metadata": {
+        "segmentIndex": 16,
+        "startTime": "02:44",
+        "endTime": "02:45",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 166000,
+      "end": 170999,
+      "text": "간단하게는 에스큐라이트 같은 거 써도 되고 아니면 진짜",
+      "confidence": null,
+      "diarization": {
+        "label": "2"
+      },
+      "speaker": {
+        "label": "2",
+        "name": "참석자 2",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "간단하게는 에스큐라이트 같은 거 써도 되고 아니면 진짜",
+      "metadata": {
+        "segmentIndex": 17,
+        "startTime": "02:46",
+        "endTime": "02:50",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 171000,
+      "end": 173999,
+      "text": "RDBMS 얘기하는 거죠. RDBM",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "RDBMS 얘기하는 거죠. RDBM",
+      "metadata": {
+        "segmentIndex": 18,
+        "startTime": "02:51",
+        "endTime": "02:53",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 174000,
+      "end": 183999,
+      "text": "왜냐하면은 회의록이 결국 저장이 돼 있긴 해야 되니까 그쵸 뭐 아니면은 회의에 썼던 PPT 같은 거를 저장을 함께 할 수도 있을 거예요.",
+      "confidence": null,
+      "diarization": {
+        "label": "2"
+      },
+      "speaker": {
+        "label": "2",
+        "name": "참석자 2",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "왜냐하면은 회의록이 결국 저장이 돼 있긴 해야 되니까 그쵸 뭐 아니면은 회의에 썼던 PPT 같은 거를 저장을 함께 할 수도 있을 거예요.",
+      "metadata": {
+        "segmentIndex": 19,
+        "startTime": "02:54",
+        "endTime": "03:03",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 184000,
+      "end": 187999,
+      "text": "그런 것도 넣으면 좋죠.",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "그런 것도 넣으면 좋죠.",
+      "metadata": {
+        "segmentIndex": 20,
+        "startTime": "03:04",
+        "endTime": "03:07",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 188000,
+      "end": 192999,
+      "text": "DB는 그러면은 백이 필요하겠네요. 그럼 프라이의 뜻이 뭐예요?\n이거를 하게 되면 백이 필요할 것 같아",
+      "confidence": null,
+      "diarization": {
+        "label": "2"
+      },
+      "speaker": {
+        "label": "2",
+        "name": "참석자 2",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "DB는 그러면은 백이 필요하겠네요. 그럼 프라이의 뜻이 뭐예요?\n이거를 하게 되면 백이 필요할 것 같아",
+      "metadata": {
+        "segmentIndex": 21,
+        "startTime": "03:08",
+        "endTime": "03:12",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 193000,
+      "end": 198999,
+      "text": "오프라인 온라인이 오프라인이 오프라인이 만나서 온라인으로 인터넷",
+      "confidence": null,
+      "diarization": {
+        "label": "4"
+      },
+      "speaker": {
+        "label": "4",
+        "name": "참석자 4",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "오프라인 온라인이 오프라인이 오프라인이 만나서 온라인으로 인터넷",
+      "metadata": {
+        "segmentIndex": 22,
+        "startTime": "03:13",
+        "endTime": "03:18",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 199000,
+      "end": 202999,
+      "text": "그리고 나서 이 과정이 끝나고 나면은 아니 근데 만날 수 있어.",
+      "confidence": null,
+      "diarization": {
+        "label": "2"
+      },
+      "speaker": {
+        "label": "2",
+        "name": "참석자 2",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "그리고 나서 이 과정이 끝나고 나면은 아니 근데 만날 수 있어.",
+      "metadata": {
+        "segmentIndex": 23,
+        "startTime": "03:19",
+        "endTime": "03:22",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 203000,
+      "end": 208999,
+      "text": "개인적으로 이제 LLM을 통해서 a에 대한",
+      "confidence": null,
+      "diarization": {
+        "label": "5"
+      },
+      "speaker": {
+        "label": "5",
+        "name": "참석자 5",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "개인적으로 이제 LLM을 통해서 a에 대한",
+      "metadata": {
+        "segmentIndex": 24,
+        "startTime": "03:23",
+        "endTime": "03:28",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 209000,
+      "end": 213999,
+      "text": "나는 오히려 저걸 더 좋아할 줄 알았어. 나는 맞아요.\n오프라인으로 만나면",
+      "confidence": null,
+      "diarization": {
+        "label": "4"
+      },
+      "speaker": {
+        "label": "4",
+        "name": "참석자 4",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "나는 오히려 저걸 더 좋아할 줄 알았어. 나는 맞아요.\n오프라인으로 만나면",
+      "metadata": {
+        "segmentIndex": 25,
+        "startTime": "03:29",
+        "endTime": "03:33",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 214000,
+      "end": 217999,
+      "text": "뿐만 아니라 이제 플러스로 전체적인 프로젝트",
+      "confidence": null,
+      "diarization": {
+        "label": "2"
+      },
+      "speaker": {
+        "label": "2",
+        "name": "참석자 2",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "뿐만 아니라 이제 플러스로 전체적인 프로젝트",
+      "metadata": {
+        "segmentIndex": 26,
+        "startTime": "03:34",
+        "endTime": "03:37",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 218000,
+      "end": 218999,
+      "text": "오프라인으로 바꿀게. 아니",
+      "confidence": null,
+      "diarization": {
+        "label": "6"
+      },
+      "speaker": {
+        "label": "6",
+        "name": "참석자 6",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "오프라인으로 바꿀게. 아니",
+      "metadata": {
+        "segmentIndex": 27,
+        "startTime": "03:38",
+        "endTime": "03:38",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 219000,
+      "end": 222999,
+      "text": "왜냐하면 차 프로젝트 n차 회의 내용",
+      "confidence": null,
+      "diarization": {
+        "label": "2"
+      },
+      "speaker": {
+        "label": "2",
+        "name": "참석자 2",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "왜냐하면 차 프로젝트 n차 회의 내용",
+      "metadata": {
+        "segmentIndex": 28,
+        "startTime": "03:39",
+        "endTime": "03:42",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 223000,
+      "end": 229999,
+      "text": "진남 님도 조금 머니까 그거 준을 잘 잡으면 될 수도 있어.",
+      "confidence": null,
+      "diarization": {
+        "label": "4"
+      },
+      "speaker": {
+        "label": "4",
+        "name": "참석자 4",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "진남 님도 조금 머니까 그거 준을 잘 잡으면 될 수도 있어.",
+      "metadata": {
+        "segmentIndex": 29,
+        "startTime": "03:43",
+        "endTime": "03:49",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 230000,
+      "end": 230999,
+      "text": "그리고 만약에",
+      "confidence": null,
+      "diarization": {
+        "label": "2"
+      },
+      "speaker": {
+        "label": "2",
+        "name": "참석자 2",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "그리고 만약에",
+      "metadata": {
+        "segmentIndex": 30,
+        "startTime": "03:50",
+        "endTime": "03:50",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 231000,
+      "end": 237999,
+      "text": "연봉이 늘어난다. 일단 이슈랑 PR 내에서 보고",
+      "confidence": null,
+      "diarization": {
+        "label": "7"
+      },
+      "speaker": {
+        "label": "7",
+        "name": "참석자 7",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "연봉이 늘어난다. 일단 이슈랑 PR 내에서 보고",
+      "metadata": {
+        "segmentIndex": 31,
+        "startTime": "03:51",
+        "endTime": "03:57",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 238000,
+      "end": 241999,
+      "text": "식탁은 나와야 되고",
+      "confidence": null,
+      "diarization": {
+        "label": "4"
+      },
+      "speaker": {
+        "label": "4",
+        "name": "참석자 4",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "식탁은 나와야 되고",
+      "metadata": {
+        "segmentIndex": 32,
+        "startTime": "03:58",
+        "endTime": "04:01",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 242000,
+      "end": 243999,
+      "text": "어디까지 했는지",
+      "confidence": null,
+      "diarization": {
+        "label": "2"
+      },
+      "speaker": {
+        "label": "2",
+        "name": "참석자 2",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "어디까지 했는지",
+      "metadata": {
+        "segmentIndex": 33,
+        "startTime": "04:02",
+        "endTime": "04:03",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 244000,
+      "end": 244999,
+      "text": "그때 말했잖아.",
+      "confidence": null,
+      "diarization": {
+        "label": "6"
+      },
+      "speaker": {
+        "label": "6",
+        "name": "참석자 6",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "그때 말했잖아.",
+      "metadata": {
+        "segmentIndex": 34,
+        "startTime": "04:04",
+        "endTime": "04:04",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 245000,
+      "end": 249999,
+      "text": "어디까지 해야 한다 개시일 정도 가능하다.",
+      "confidence": null,
+      "diarization": {
+        "label": "2"
+      },
+      "speaker": {
+        "label": "2",
+        "name": "참석자 2",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "어디까지 해야 한다 개시일 정도 가능하다.",
+      "metadata": {
+        "segmentIndex": 35,
+        "startTime": "04:05",
+        "endTime": "04:09",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 250000,
+      "end": 259999,
+      "text": "아마 기대서 가져올 수 있는 정보는 제가 생각했을 때 아까 그냥 리듬이 하고 PR하고 이슈 이렇게 이 정도 되는",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "아마 기대서 가져올 수 있는 정보는 제가 생각했을 때 아까 그냥 리듬이 하고 PR하고 이슈 이렇게 이 정도 되는",
+      "metadata": {
+        "segmentIndex": 36,
+        "startTime": "04:10",
+        "endTime": "04:19",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 260000,
+      "end": 269999,
+      "text": "이슈 PR만 봐도 근데 사실 충분해서 왜냐면 물론 처음부터 이슈 PR로 관리가 됐다는 가정 하에",
+      "confidence": null,
+      "diarization": {
+        "label": "2"
+      },
+      "speaker": {
+        "label": "2",
+        "name": "참석자 2",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "이슈 PR만 봐도 근데 사실 충분해서 왜냐면 물론 처음부터 이슈 PR로 관리가 됐다는 가정 하에",
+      "metadata": {
+        "segmentIndex": 37,
+        "startTime": "04:20",
+        "endTime": "04:29",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 270000,
+      "end": 270999,
+      "text": "그렇죠",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "그렇죠",
+      "metadata": {
+        "segmentIndex": 38,
+        "startTime": "04:30",
+        "endTime": "04:30",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 271000,
+      "end": 273999,
+      "text": "내가 뭐 지난번에 만나",
+      "confidence": null,
+      "diarization": {
+        "label": "4"
+      },
+      "speaker": {
+        "label": "4",
+        "name": "참석자 4",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "내가 뭐 지난번에 만나",
+      "metadata": {
+        "segmentIndex": 39,
+        "startTime": "04:31",
+        "endTime": "04:33",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 274000,
+      "end": 277999,
+      "text": "변경 이력 변경 이력도",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "변경 이력 변경 이력도",
+      "metadata": {
+        "segmentIndex": 40,
+        "startTime": "04:34",
+        "endTime": "04:37",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 278000,
+      "end": 279999,
+      "text": "어차피 이런 계에서",
+      "confidence": null,
+      "diarization": {
+        "label": "4"
+      },
+      "speaker": {
+        "label": "4",
+        "name": "참석자 4",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "어차피 이런 계에서",
+      "metadata": {
+        "segmentIndex": 41,
+        "startTime": "04:38",
+        "endTime": "04:39",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 280000,
+      "end": 281999,
+      "text": "이 정도네요.",
+      "confidence": null,
+      "diarization": {
+        "label": "2"
+      },
+      "speaker": {
+        "label": "2",
+        "name": "참석자 2",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "이 정도네요.",
+      "metadata": {
+        "segmentIndex": 42,
+        "startTime": "04:40",
+        "endTime": "04:41",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 282000,
+      "end": 291999,
+      "text": "텍스트 파일은 이제 저기 얘기를 하긴 했는데 지금 여기에 적혀 있지 않은 거죠.",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "텍스트 파일은 이제 저기 얘기를 하긴 했는데 지금 여기에 적혀 있지 않은 거죠.",
+      "metadata": {
+        "segmentIndex": 43,
+        "startTime": "04:42",
+        "endTime": "04:51",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 292000,
+      "end": 304999,
+      "text": "STT로 받아온 파일을 기본적으로 이제 라그가 파싱하는 것도 포함이에요.\n그렇죠 받아온 인풋을 이제 파싱하고 청킹하고",
+      "confidence": null,
+      "diarization": {
+        "label": "2"
+      },
+      "speaker": {
+        "label": "2",
+        "name": "참석자 2",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "STT로 받아온 파일을 기본적으로 이제 라그가 파싱하는 것도 포함이에요.\n그렇죠 받아온 인풋을 이제 파싱하고 청킹하고",
+      "metadata": {
+        "segmentIndex": 44,
+        "startTime": "04:52",
+        "endTime": "05:04",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 305000,
+      "end": 306999,
+      "text": "라벨링",
+      "confidence": null,
+      "diarization": {
+        "label": "7"
+      },
+      "speaker": {
+        "label": "7",
+        "name": "참석자 7",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "라벨링",
+      "metadata": {
+        "segmentIndex": 45,
+        "startTime": "05:05",
+        "endTime": "05:06",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 307000,
+      "end": 308999,
+      "text": "그러면은",
+      "confidence": null,
+      "diarization": {
+        "label": "2"
+      },
+      "speaker": {
+        "label": "2",
+        "name": "참석자 2",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "그러면은",
+      "metadata": {
+        "segmentIndex": 46,
+        "startTime": "05:07",
+        "endTime": "05:08",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 309000,
+      "end": 309999,
+      "text": "회의록",
+      "confidence": null,
+      "diarization": {
+        "label": "7"
+      },
+      "speaker": {
+        "label": "7",
+        "name": "참석자 7",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "회의록",
+      "metadata": {
+        "segmentIndex": 47,
+        "startTime": "05:09",
+        "endTime": "05:09",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 310000,
+      "end": 322999,
+      "text": "제일 중요한 건 저희가 이제 해야 될 게 저희가 이제 패싱을 해야 되잖아요.\n청킹도 해야 되고 이거 먹을래 그리고 메타 데이터 라벨링까지도 생각을 해봐야겠죠.\n그게 안 주는 건데",
+      "confidence": null,
+      "diarization": {
+        "label": "2"
+      },
+      "speaker": {
+        "label": "2",
+        "name": "참석자 2",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "제일 중요한 건 저희가 이제 해야 될 게 저희가 이제 패싱을 해야 되잖아요.\n청킹도 해야 되고 이거 먹을래 그리고 메타 데이터 라벨링까지도 생각을 해봐야겠죠.\n그게 안 주는 건데",
+      "metadata": {
+        "segmentIndex": 48,
+        "startTime": "05:10",
+        "endTime": "05:22",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 323000,
+      "end": 325999,
+      "text": "회의록에 대한 메타 데이터가 나온다는 거요. 그렇게 해야 돼",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "회의록에 대한 메타 데이터가 나온다는 거요. 그렇게 해야 돼",
+      "metadata": {
+        "segmentIndex": 49,
+        "startTime": "05:23",
+        "endTime": "05:25",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 326000,
+      "end": 338999,
+      "text": "그러면 확실히 라도 성능이 좋아지는 거 메타 데이터 예를 들어 클로바의 메타 데이터라면 발화자 정도가 맞아 맞아",
+      "confidence": null,
+      "diarization": {
+        "label": "2"
+      },
+      "speaker": {
+        "label": "2",
+        "name": "참석자 2",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "그러면 확실히 라도 성능이 좋아지는 거 메타 데이터 예를 들어 클로바의 메타 데이터라면 발화자 정도가 맞아 맞아",
+      "metadata": {
+        "segmentIndex": 50,
+        "startTime": "05:26",
+        "endTime": "05:38",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 339000,
+      "end": 350999,
+      "text": "클로바의 경우는 그렇고 회의록이 근데 일단 정제된 포맷으로 작성돼 가지고 거기에서 어떤 메타 데이터를 가지고 올 수 있을지는 모르겠어요.",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "클로바의 경우는 그렇고 회의록이 근데 일단 정제된 포맷으로 작성돼 가지고 거기에서 어떤 메타 데이터를 가지고 올 수 있을지는 모르겠어요.",
+      "metadata": {
+        "segmentIndex": 51,
+        "startTime": "05:39",
+        "endTime": "05:50",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 351000,
+      "end": 403999,
+      "text": "그래서 저희가 로봇 데이터라도 터로 가상의 페이 한 3회 정도 해서 그걸 가지고 어떻게 파싱을 할 건지 또 들어가야 될 것 같아요.\n회의록에서요. 네 왜냐면은 제가 저번에 1조 1항 할 때도 사실 1조 1항이라고 안 돼 있고 1조 1 동그라미 이렇게 돼 있어 가지고 이제 파싱에서 그걸 잡아줄 수 있었던 거잖아요.\n이런 부분은 그래서 저희가 입력 데이터가 정해진 양식이니까 어떻게 보면은 회의록을 저희 프로그램이 저장을 할 거니까 그쵸.\n그래서 입력 데이터를 저희가 정해줄 수 있다면 하시기 훨씬",
+      "confidence": null,
+      "diarization": {
+        "label": "2"
+      },
+      "speaker": {
+        "label": "2",
+        "name": "참석자 2",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "그래서 저희가 로봇 데이터라도 터로 가상의 페이 한 3회 정도 해서 그걸 가지고 어떻게 파싱을 할 건지 또 들어가야 될 것 같아요.\n회의록에서요. 네 왜냐면은 제가 저번에 1조 1항 할 때도 사실 1조 1항이라고 안 돼 있고 1조 1 동그라미 이렇게 돼 있어 가지고 이제 파싱에서 그걸 잡아줄 수 있었던 거잖아요.\n이런 부분은 그래서 저희가 입력 데이터가 정해진 양식이니까 어떻게 보면은 회의록을 저희 프로그램이 저장을 할 거니까 그쵸.\n그래서 입력 데이터를 저희가 정해줄 수 있다면 하시기 훨씬",
+      "metadata": {
+        "segmentIndex": 52,
+        "startTime": "05:51",
+        "endTime": "06:43",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 404000,
+      "end": 404999,
+      "text": "근데 이렇게 넣어도 되긴 하",
+      "confidence": null,
+      "diarization": {
+        "label": "4"
+      },
+      "speaker": {
+        "label": "4",
+        "name": "참석자 4",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "근데 이렇게 넣어도 되긴 하",
+      "metadata": {
+        "segmentIndex": 53,
+        "startTime": "06:44",
+        "endTime": "06:44",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 405000,
+      "end": 409999,
+      "text": "쉬울 테니까 입력 데이터를 어떤 식으로 받을지 조금 얘기를 해보면 좋을",
+      "confidence": null,
+      "diarization": {
+        "label": "2"
+      },
+      "speaker": {
+        "label": "2",
+        "name": "참석자 2",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "쉬울 테니까 입력 데이터를 어떤 식으로 받을지 조금 얘기를 해보면 좋을",
+      "metadata": {
+        "segmentIndex": 54,
+        "startTime": "06:45",
+        "endTime": "06:49",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 410000,
+      "end": 418999,
+      "text": "저는 회의록 같은 경우는 그렇게 생각은 하고 있었어요.\n일단 회사 같은 데서 사용하는 회의록은 양식이 정해져 있단 말이죠.\n저는 몰라",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "저는 회의록 같은 경우는 그렇게 생각은 하고 있었어요.\n일단 회사 같은 데서 사용하는 회의록은 양식이 정해져 있단 말이죠.\n저는 몰라",
+      "metadata": {
+        "segmentIndex": 55,
+        "startTime": "06:50",
+        "endTime": "06:58",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 419000,
+      "end": 419999,
+      "text": "그거 말씀해 주시면",
+      "confidence": null,
+      "diarization": {
+        "label": "2"
+      },
+      "speaker": {
+        "label": "2",
+        "name": "참석자 2",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "그거 말씀해 주시면",
+      "metadata": {
+        "segmentIndex": 56,
+        "startTime": "06:59",
+        "endTime": "06:59",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 420000,
+      "end": 448999,
+      "text": "그러니까 근데 양식이 정해져 있는데 팀별로 다를 수 있고 이제 그 부서별로 다를 수가 있어요.\n그러면은 어떻게 해야 되냐면 세팅을 할 때 일단 그런 정해진 양식의 회의록을 LLM한테 줘요.\nLLM이 보고 이런 양식이구나 하고 파서를 짜던 파싱 방식을 정하던 해가지고 이제 그걸로 그걸 사용해서 이제 계속 회의록 넣고 바싱하고 넣고 이런 식으로 그래야 될 것 같다는 생각을 했어요.",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "그러니까 근데 양식이 정해져 있는데 팀별로 다를 수 있고 이제 그 부서별로 다를 수가 있어요.\n그러면은 어떻게 해야 되냐면 세팅을 할 때 일단 그런 정해진 양식의 회의록을 LLM한테 줘요.\nLLM이 보고 이런 양식이구나 하고 파서를 짜던 파싱 방식을 정하던 해가지고 이제 그걸로 그걸 사용해서 이제 계속 회의록 넣고 바싱하고 넣고 이런 식으로 그래야 될 것 같다는 생각을 했어요.",
+      "metadata": {
+        "segmentIndex": 57,
+        "startTime": "07:00",
+        "endTime": "07:28",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 449000,
+      "end": 453999,
+      "text": "그러면은 혹시 회의록 양식을 볼 수 있나요? 저 진짜 아예 몰라가지고 회의록을",
+      "confidence": null,
+      "diarization": {
+        "label": "2"
+      },
+      "speaker": {
+        "label": "2",
+        "name": "참석자 2",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "그러면은 혹시 회의록 양식을 볼 수 있나요? 저 진짜 아예 몰라가지고 회의록을",
+      "metadata": {
+        "segmentIndex": 58,
+        "startTime": "07:29",
+        "endTime": "07:33",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 454000,
+      "end": 462999,
+      "text": "회사를 다녀본 적이 없어요. 저도 근데 회사 자료는 가지고 있는 게 없어가지고 그냥 일반적인 회의록 양식을",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "회사를 다녀본 적이 없어요. 저도 근데 회사 자료는 가지고 있는 게 없어가지고 그냥 일반적인 회의록 양식을",
+      "metadata": {
+        "segmentIndex": 59,
+        "startTime": "07:34",
+        "endTime": "07:42",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 463000,
+      "end": 467999,
+      "text": "그러면 인터넷을 한번 다운을 받아볼까요? 회의록 템플릿을",
+      "confidence": null,
+      "diarization": {
+        "label": "2"
+      },
+      "speaker": {
+        "label": "2",
+        "name": "참석자 2",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "그러면 인터넷을 한번 다운을 받아볼까요? 회의록 템플릿을",
+      "metadata": {
+        "segmentIndex": 60,
+        "startTime": "07:43",
+        "endTime": "07:47",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 468000,
+      "end": 476999,
+      "text": "도현이 역시 일할 때 쓰던 회의록 없지 나는 우리는 회의를 안 했어.\n나도 일한 지 너무 오래돼서 없다.",
+      "confidence": null,
+      "diarization": {
+        "label": "4"
+      },
+      "speaker": {
+        "label": "4",
+        "name": "참석자 4",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "도현이 역시 일할 때 쓰던 회의록 없지 나는 우리는 회의를 안 했어.\n나도 일한 지 너무 오래돼서 없다.",
+      "metadata": {
+        "segmentIndex": 61,
+        "startTime": "07:48",
+        "endTime": "07:56",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 477000,
+      "end": 478999,
+      "text": "화요일",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "화요일",
+      "metadata": {
+        "segmentIndex": 62,
+        "startTime": "07:57",
+        "endTime": "07:58",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 479000,
+      "end": 479999,
+      "text": "우리는 이렇게 얘기해",
+      "confidence": null,
+      "diarization": {
+        "label": "4"
+      },
+      "speaker": {
+        "label": "4",
+        "name": "참석자 4",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "우리는 이렇게 얘기해",
+      "metadata": {
+        "segmentIndex": 63,
+        "startTime": "07:59",
+        "endTime": "07:59",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 480000,
+      "end": 485999,
+      "text": "해야 될 자료 중에 그것도 그거 안 넣었네요. 그거 대화 기록",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "해야 될 자료 중에 그것도 그거 안 넣었네요. 그거 대화 기록",
+      "metadata": {
+        "segmentIndex": 64,
+        "startTime": "08:00",
+        "endTime": "08:05",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 486000,
+      "end": 486999,
+      "text": "왜 그렇게 했어요?",
+      "confidence": null,
+      "diarization": {
+        "label": "4"
+      },
+      "speaker": {
+        "label": "4",
+        "name": "참석자 4",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "왜 그렇게 했어요?",
+      "metadata": {
+        "segmentIndex": 65,
+        "startTime": "08:06",
+        "endTime": "08:06",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 487000,
+      "end": 487999,
+      "text": "맞아 대화 기록",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "맞아 대화 기록",
+      "metadata": {
+        "segmentIndex": 66,
+        "startTime": "08:07",
+        "endTime": "08:07",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 488000,
+      "end": 496999,
+      "text": "그쵸 그쵸 저희가 그러면 두 개를 넣는 거잖아요. 전체 대화가 기록된 내용이 있을 거고 그걸 기반으로 만들어진 회의록이 있을 거고",
+      "confidence": null,
+      "diarization": {
+        "label": "2"
+      },
+      "speaker": {
+        "label": "2",
+        "name": "참석자 2",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "그쵸 그쵸 저희가 그러면 두 개를 넣는 거잖아요. 전체 대화가 기록된 내용이 있을 거고 그걸 기반으로 만들어진 회의록이 있을 거고",
+      "metadata": {
+        "segmentIndex": 67,
+        "startTime": "08:08",
+        "endTime": "08:16",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 497000,
+      "end": 500999,
+      "text": "대화 기록이라고 했던 거는 그 메신저 대화 기록이에요.",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "대화 기록이라고 했던 거는 그 메신저 대화 기록이에요.",
+      "metadata": {
+        "segmentIndex": 68,
+        "startTime": "08:17",
+        "endTime": "08:20",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 501000,
+      "end": 512999,
+      "text": "그거 빼죠. 일단은 그래요. 저희 일단 회의록에 집중하기로 했으니까 그거는 추가적으로 붙일 수 있으면 4차 때 붙이면",
+      "confidence": null,
+      "diarization": {
+        "label": "2"
+      },
+      "speaker": {
+        "label": "2",
+        "name": "참석자 2",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "그거 빼죠. 일단은 그래요. 저희 일단 회의록에 집중하기로 했으니까 그거는 추가적으로 붙일 수 있으면 4차 때 붙이면",
+      "metadata": {
+        "segmentIndex": 69,
+        "startTime": "08:21",
+        "endTime": "08:32",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 513000,
+      "end": 519999,
+      "text": "그것도 한번 이제 적어가지고 올려주세요. 일단",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "그것도 한번 이제 적어가지고 올려주세요. 일단",
+      "metadata": {
+        "segmentIndex": 70,
+        "startTime": "08:33",
+        "endTime": "08:39",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 520000,
+      "end": 521999,
+      "text": "그러면은 양식",
+      "confidence": null,
+      "diarization": {
+        "label": "2"
+      },
+      "speaker": {
+        "label": "2",
+        "name": "참석자 2",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "그러면은 양식",
+      "metadata": {
+        "segmentIndex": 71,
+        "startTime": "08:40",
+        "endTime": "08:41",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 522000,
+      "end": 523999,
+      "text": "여기 이런 데가 통하네요.",
+      "confidence": null,
+      "diarization": {
+        "label": "3"
+      },
+      "speaker": {
+        "label": "3",
+        "name": "참석자 3",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "여기 이런 데가 통하네요.",
+      "metadata": {
+        "segmentIndex": 72,
+        "startTime": "08:42",
+        "endTime": "08:43",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 524000,
+      "end": 527999,
+      "text": "거기 회의록이 있어요. 네 한번 한 차원 회의 회의록 한번 살짝 볼까요?",
+      "confidence": null,
+      "diarization": {
+        "label": "2"
+      },
+      "speaker": {
+        "label": "2",
+        "name": "참석자 2",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "거기 회의록이 있어요. 네 한번 한 차원 회의 회의록 한번 살짝 볼까요?",
+      "metadata": {
+        "segmentIndex": 73,
+        "startTime": "08:44",
+        "endTime": "08:47",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 528000,
+      "end": 531999,
+      "text": "이거 하 여기 행정안전부역 엄청 많은데 바로",
+      "confidence": null,
+      "diarization": {
+        "label": "3"
+      },
+      "speaker": {
+        "label": "3",
+        "name": "참석자 3",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "이거 하 여기 행정안전부역 엄청 많은데 바로",
+      "metadata": {
+        "segmentIndex": 74,
+        "startTime": "08:48",
+        "endTime": "08:51",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 532000,
+      "end": 537999,
+      "text": "보기로 한번 살짝 아 근데 좋아요 이런 식으로 되는구나",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "보기로 한번 살짝 아 근데 좋아요 이런 식으로 되는구나",
+      "metadata": {
+        "segmentIndex": 75,
+        "startTime": "08:52",
+        "endTime": "08:57",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 538000,
+      "end": 538999,
+      "text": "엄청 기네요.",
+      "confidence": null,
+      "diarization": {
+        "label": "2"
+      },
+      "speaker": {
+        "label": "2",
+        "name": "참석자 2",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "엄청 기네요.",
+      "metadata": {
+        "segmentIndex": 76,
+        "startTime": "08:58",
+        "endTime": "08:58",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 539000,
+      "end": 540999,
+      "text": "128쪽",
+      "confidence": null,
+      "diarization": {
+        "label": "3"
+      },
+      "speaker": {
+        "label": "3",
+        "name": "참석자 3",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "128쪽",
+      "metadata": {
+        "segmentIndex": 77,
+        "startTime": "08:59",
+        "endTime": "09:00",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 541000,
+      "end": 544999,
+      "text": "이거 이거 써볼 만하지 않아",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "이거 이거 써볼 만하지 않아",
+      "metadata": {
+        "segmentIndex": 78,
+        "startTime": "09:01",
+        "endTime": "09:04",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 545000,
+      "end": 546999,
+      "text": "이거 링크 지금 저기다 남겨",
+      "confidence": null,
+      "diarization": {
+        "label": "3"
+      },
+      "speaker": {
+        "label": "3",
+        "name": "참석자 3",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "이거 링크 지금 저기다 남겨",
+      "metadata": {
+        "segmentIndex": 79,
+        "startTime": "09:05",
+        "endTime": "09:06",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 547000,
+      "end": 553999,
+      "text": "일단 올려주세요. 저런 거 괜찮다. 근데 저거 공공기관은 맨날 한 컴 써가지고",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "일단 올려주세요. 저런 거 괜찮다. 근데 저거 공공기관은 맨날 한 컴 써가지고",
+      "metadata": {
+        "segmentIndex": 80,
+        "startTime": "09:07",
+        "endTime": "09:13",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 554000,
+      "end": 558999,
+      "text": "오히려 공공기관이어서 더 좋을 것 같아요. 저희가 데이터 쓰기 너무 좋은데",
+      "confidence": null,
+      "diarization": {
+        "label": "2"
+      },
+      "speaker": {
+        "label": "2",
+        "name": "참석자 2",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "오히려 공공기관이어서 더 좋을 것 같아요. 저희가 데이터 쓰기 너무 좋은데",
+      "metadata": {
+        "segmentIndex": 81,
+        "startTime": "09:14",
+        "endTime": "09:18",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 559000,
+      "end": 563999,
+      "text": "그게 아니라 한 이랑 한 컴이면 그게 그렇잖아.",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "그게 아니라 한 이랑 한 컴이면 그게 그렇잖아.",
+      "metadata": {
+        "segmentIndex": 82,
+        "startTime": "09:19",
+        "endTime": "09:23",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 564000,
+      "end": 565999,
+      "text": "아니 근데 여기 또 다른 것들이",
+      "confidence": null,
+      "diarization": {
+        "label": "3"
+      },
+      "speaker": {
+        "label": "3",
+        "name": "참석자 3",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "아니 근데 여기 또 다른 것들이",
+      "metadata": {
+        "segmentIndex": 83,
+        "startTime": "09:24",
+        "endTime": "09:25",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 566000,
+      "end": 569999,
+      "text": "가 한 컴을 아마 지원할 건데요. 여기 PDF",
+      "confidence": null,
+      "diarization": {
+        "label": "2"
+      },
+      "speaker": {
+        "label": "2",
+        "name": "참석자 2",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "가 한 컴을 아마 지원할 건데요. 여기 PDF",
+      "metadata": {
+        "segmentIndex": 84,
+        "startTime": "09:26",
+        "endTime": "09:29",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 570000,
+      "end": 572999,
+      "text": "좋아요.",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "좋아요.",
+      "metadata": {
+        "segmentIndex": 85,
+        "startTime": "09:30",
+        "endTime": "09:32",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 573000,
+      "end": 574999,
+      "text": "그러네. PDP 있네",
+      "confidence": null,
+      "diarization": {
+        "label": "2"
+      },
+      "speaker": {
+        "label": "2",
+        "name": "참석자 2",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "그러네. PDP 있네",
+      "metadata": {
+        "segmentIndex": 86,
+        "startTime": "09:33",
+        "endTime": "09:34",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 575000,
+      "end": 588999,
+      "text": "한컴이 근데 더 정해진 그 포맷일 수도 있으니까 그거는 근데 파이썬에 왠지 보면 한컴 지원하는 패키지가 있을지도 모르거든요.",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "한컴이 근데 더 정해진 그 포맷일 수도 있으니까 그거는 근데 파이썬에 왠지 보면 한컴 지원하는 패키지가 있을지도 모르거든요.",
+      "metadata": {
+        "segmentIndex": 87,
+        "startTime": "09:35",
+        "endTime": "09:48",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 589000,
+      "end": 598999,
+      "text": "저거는 한번 살펴보고 저걸 가지고 이제 회의록을 집어넣어서 뭔가 찾게 할 수도 있고 괜찮을 것 같아요.",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "저거는 한번 살펴보고 저걸 가지고 이제 회의록을 집어넣어서 뭔가 찾게 할 수도 있고 괜찮을 것 같아요.",
+      "metadata": {
+        "segmentIndex": 88,
+        "startTime": "09:49",
+        "endTime": "09:58",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 599000,
+      "end": 610999,
+      "text": "아니 금융위원회 위원장 이름이 이억 원이에요. 진짜예요 이거 어때?\n국가안보실장 이름 위성락이에요.",
+      "confidence": null,
+      "diarization": {
+        "label": "2"
+      },
+      "speaker": {
+        "label": "2",
+        "name": "참석자 2",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "아니 금융위원회 위원장 이름이 이억 원이에요. 진짜예요 이거 어때?\n국가안보실장 이름 위성락이에요.",
+      "metadata": {
+        "segmentIndex": 89,
+        "startTime": "09:59",
+        "endTime": "10:10",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 611000,
+      "end": 613999,
+      "text": "아 오",
+      "confidence": null,
+      "diarization": {
+        "label": "3"
+      },
+      "speaker": {
+        "label": "3",
+        "name": "참석자 3",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "아 오",
+      "metadata": {
+        "segmentIndex": 90,
+        "startTime": "10:11",
+        "endTime": "10:13",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 614000,
+      "end": 619999,
+      "text": "이 사람 범죄 도시에 나온 사람 아니에요 내 아이도 하는 사람",
+      "confidence": null,
+      "diarization": {
+        "label": "2"
+      },
+      "speaker": {
+        "label": "2",
+        "name": "참석자 2",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "이 사람 범죄 도시에 나온 사람 아니에요 내 아이도 하는 사람",
+      "metadata": {
+        "segmentIndex": 91,
+        "startTime": "10:14",
+        "endTime": "10:19",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 620000,
+      "end": 624999,
+      "text": "맞아요 맞아요 미",
+      "confidence": null,
+      "diarization": {
+        "label": "3"
+      },
+      "speaker": {
+        "label": "3",
+        "name": "참석자 3",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "맞아요 맞아요 미",
+      "metadata": {
+        "segmentIndex": 92,
+        "startTime": "10:20",
+        "endTime": "10:24",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 625000,
+      "end": 625999,
+      "text": "아니다 아니다 하면서",
+      "confidence": null,
+      "diarization": {
+        "label": "2"
+      },
+      "speaker": {
+        "label": "2",
+        "name": "참석자 2",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "아니다 아니다 하면서",
+      "metadata": {
+        "segmentIndex": 93,
+        "startTime": "10:25",
+        "endTime": "10:25",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 626000,
+      "end": 626999,
+      "text": "위승락이",
+      "confidence": null,
+      "diarization": {
+        "label": "3"
+      },
+      "speaker": {
+        "label": "3",
+        "name": "참석자 3",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "위승락이",
+      "metadata": {
+        "segmentIndex": 94,
+        "startTime": "10:26",
+        "endTime": "10:26",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 627000,
+      "end": 647999,
+      "text": "아니 그 장첸 부하가 위성막이었던 것 같은데",
+      "confidence": null,
+      "diarization": {
+        "label": "2"
+      },
+      "speaker": {
+        "label": "2",
+        "name": "참석자 2",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "아니 그 장첸 부하가 위성막이었던 것 같은데",
+      "metadata": {
+        "segmentIndex": 95,
+        "startTime": "10:27",
+        "endTime": "10:47",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 648000,
+      "end": 649999,
+      "text": "회의록",
+      "confidence": null,
+      "diarization": {
+        "label": "2"
+      },
+      "speaker": {
+        "label": "2",
+        "name": "참석자 2",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "회의록",
+      "metadata": {
+        "segmentIndex": 96,
+        "startTime": "10:48",
+        "endTime": "10:49",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 650000,
+      "end": 656999,
+      "text": "여기 회의록 많아서 좋네요. 총 128페이지는 너무 큰데",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "여기 회의록 많아서 좋네요. 총 128페이지는 너무 큰데",
+      "metadata": {
+        "segmentIndex": 97,
+        "startTime": "10:50",
+        "endTime": "10:56",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 657000,
+      "end": 667999,
+      "text": "이게 국무회의라 그런 것 같아요. 근데 근데 여기 또 보니까 차관 회의록이라고 또 다른 것도 있고 이게 국무회의록이랑 차관 회의 있는 네 그거 가지고 좀 긴 것 같고",
+      "confidence": null,
+      "diarization": {
+        "label": "3"
+      },
+      "speaker": {
+        "label": "3",
+        "name": "참석자 3",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "이게 국무회의라 그런 것 같아요. 근데 근데 여기 또 보니까 차관 회의록이라고 또 다른 것도 있고 이게 국무회의록이랑 차관 회의 있는 네 그거 가지고 좀 긴 것 같고",
+      "metadata": {
+        "segmentIndex": 98,
+        "startTime": "10:57",
+        "endTime": "11:07",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 668000,
+      "end": 680999,
+      "text": "여기는 거의 대형화로 돼 있네요. 대통령 이재명 그리고 지금 귀여워하는 경우가 꽤 있는지 저런 게 성 보장 확정 그러한 대통령 이제 뭐 귀여워하면 주로 무엇을 하는지",
+      "confidence": null,
+      "diarization": {
+        "label": "2"
+      },
+      "speaker": {
+        "label": "2",
+        "name": "참석자 2",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "여기는 거의 대형화로 돼 있네요. 대통령 이재명 그리고 지금 귀여워하는 경우가 꽤 있는지 저런 게 성 보장 확정 그러한 대통령 이제 뭐 귀여워하면 주로 무엇을 하는지",
+      "metadata": {
+        "segmentIndex": 99,
+        "startTime": "11:08",
+        "endTime": "11:20",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 681000,
+      "end": 685999,
+      "text": "저런 거 아마 속기사 써가지고 아마 하는 거 아닐까요?\n저거는",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "저런 거 아마 속기사 써가지고 아마 하는 거 아닐까요?\n저거는",
+      "metadata": {
+        "segmentIndex": 100,
+        "startTime": "11:21",
+        "endTime": "11:25",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 686000,
+      "end": 694999,
+      "text": "한번 또 딴 거 있나 찾아보고",
+      "confidence": null,
+      "diarization": {
+        "label": "3"
+      },
+      "speaker": {
+        "label": "3",
+        "name": "참석자 3",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "한번 또 딴 거 있나 찾아보고",
+      "metadata": {
+        "segmentIndex": 101,
+        "startTime": "11:26",
+        "endTime": "11:34",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 695000,
+      "end": 697999,
+      "text": "근데 이거 좋은 것 같아요. 오히려 이걸 해야 될 것 같아",
+      "confidence": null,
+      "diarization": {
+        "label": "2"
+      },
+      "speaker": {
+        "label": "2",
+        "name": "참석자 2",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "근데 이거 좋은 것 같아요. 오히려 이걸 해야 될 것 같아",
+      "metadata": {
+        "segmentIndex": 102,
+        "startTime": "11:35",
+        "endTime": "11:37",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 698000,
+      "end": 699999,
+      "text": "5일",
+      "confidence": null,
+      "diarization": {
+        "label": "3"
+      },
+      "speaker": {
+        "label": "3",
+        "name": "참석자 3",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "5일",
+      "metadata": {
+        "segmentIndex": 103,
+        "startTime": "11:38",
+        "endTime": "11:39",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 700000,
+      "end": 723999,
+      "text": "그리고 사실 뭔가 더미 데이터 만들려면은 템플릿 주고 이거에 맞춰서 회의록 작성해줘 할 수도 있으니까 경위 데이터 만드는 게 막 엄청 어려울 것 같지는 않고요.\n근데 이제 그걸 많은 그 뭐라 그래야 되죠. 많은 타임라인에 회의록을 작성하는 건 좀 어려울 수도 있긴 한데",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "그리고 사실 뭔가 더미 데이터 만들려면은 템플릿 주고 이거에 맞춰서 회의록 작성해줘 할 수도 있으니까 경위 데이터 만드는 게 막 엄청 어려울 것 같지는 않고요.\n근데 이제 그걸 많은 그 뭐라 그래야 되죠. 많은 타임라인에 회의록을 작성하는 건 좀 어려울 수도 있긴 한데",
+      "metadata": {
+        "segmentIndex": 104,
+        "startTime": "11:40",
+        "endTime": "12:03",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 724000,
+      "end": 728999,
+      "text": "여기 그냥 국가 기관의 회의록이 다 있네요. 아예",
+      "confidence": null,
+      "diarization": {
+        "label": "3"
+      },
+      "speaker": {
+        "label": "3",
+        "name": "참석자 3",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "여기 그냥 국가 기관의 회의록이 다 있네요. 아예",
+      "metadata": {
+        "segmentIndex": 105,
+        "startTime": "12:04",
+        "endTime": "12:08",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 729000,
+      "end": 731999,
+      "text": "저걸로 해도 괜찮겠다.",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "저걸로 해도 괜찮겠다.",
+      "metadata": {
+        "segmentIndex": 106,
+        "startTime": "12:09",
+        "endTime": "12:11",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 732000,
+      "end": 733999,
+      "text": "회의록을 그러면은",
+      "confidence": null,
+      "diarization": {
+        "label": "4"
+      },
+      "speaker": {
+        "label": "4",
+        "name": "참석자 4",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "회의록을 그러면은",
+      "metadata": {
+        "segmentIndex": 107,
+        "startTime": "12:12",
+        "endTime": "12:13",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 734000,
+      "end": 746999,
+      "text": "저희가 이거 쓸 거면 양식도",
+      "confidence": null,
+      "diarization": {
+        "label": "2"
+      },
+      "speaker": {
+        "label": "2",
+        "name": "참석자 2",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "저희가 이거 쓸 거면 양식도",
+      "metadata": {
+        "segmentIndex": 108,
+        "startTime": "12:14",
+        "endTime": "12:26",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 747000,
+      "end": 748999,
+      "text": "외교부는 또 이렇네요.",
+      "confidence": null,
+      "diarization": {
+        "label": "3"
+      },
+      "speaker": {
+        "label": "3",
+        "name": "참석자 3",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "외교부는 또 이렇네요.",
+      "metadata": {
+        "segmentIndex": 109,
+        "startTime": "12:27",
+        "endTime": "12:28",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 749000,
+      "end": 751999,
+      "text": "양식이 좀 달라요. 다른",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "양식이 좀 달라요. 다른",
+      "metadata": {
+        "segmentIndex": 110,
+        "startTime": "12:29",
+        "endTime": "12:31",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 752000,
+      "end": 756999,
+      "text": "다 달라요 한자 그건 당연하겠지",
+      "confidence": null,
+      "diarization": {
+        "label": "3"
+      },
+      "speaker": {
+        "label": "3",
+        "name": "참석자 3",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "다 달라요 한자 그건 당연하겠지",
+      "metadata": {
+        "segmentIndex": 111,
+        "startTime": "12:32",
+        "endTime": "12:36",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 757000,
+      "end": 758999,
+      "text": "뭐 그러네요.",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "뭐 그러네요.",
+      "metadata": {
+        "segmentIndex": 112,
+        "startTime": "12:37",
+        "endTime": "12:38",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 759000,
+      "end": 761999,
+      "text": "새로 양식을 받을 수 있는 곳이 없나",
+      "confidence": null,
+      "diarization": {
+        "label": "2"
+      },
+      "speaker": {
+        "label": "2",
+        "name": "참석자 2",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "새로 양식을 받을 수 있는 곳이 없나",
+      "metadata": {
+        "segmentIndex": 113,
+        "startTime": "12:39",
+        "endTime": "12:41",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 762000,
+      "end": 765999,
+      "text": "그냥 뭐 이렇게 템플릿 같은 거 보면 이런 식으로",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "그냥 뭐 이렇게 템플릿 같은 거 보면 이런 식으로",
+      "metadata": {
+        "segmentIndex": 114,
+        "startTime": "12:42",
+        "endTime": "12:45",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 766000,
+      "end": 791999,
+      "text": "그냥 저희가 실제 쓸 데이터에 맞는 양식이 있어야지 이제 LLM한테 주잖아요.\n이 양식이 있고 회의록을 제공할 때는 이 양식에 맞춰지는 걸 제공해야 돼.\n그렇구나. 근데 사실 저희가 회의록을 제공하는 거는 그거네요.\n어떻게 보면 답지네요. 저희는 회의록을 만들어야 되는 거니까 저희",
+      "confidence": null,
+      "diarization": {
+        "label": "2"
+      },
+      "speaker": {
+        "label": "2",
+        "name": "참석자 2",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "그냥 저희가 실제 쓸 데이터에 맞는 양식이 있어야지 이제 LLM한테 주잖아요.\n이 양식이 있고 회의록을 제공할 때는 이 양식에 맞춰지는 걸 제공해야 돼.\n그렇구나. 근데 사실 저희가 회의록을 제공하는 거는 그거네요.\n어떻게 보면 답지네요. 저희는 회의록을 만들어야 되는 거니까 저희",
+      "metadata": {
+        "segmentIndex": 115,
+        "startTime": "12:46",
+        "endTime": "13:11",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 792000,
+      "end": 797999,
+      "text": "이렇게 이런 식으로요.",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "이렇게 이런 식으로요.",
+      "metadata": {
+        "segmentIndex": 116,
+        "startTime": "13:12",
+        "endTime": "13:17",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 798000,
+      "end": 803999,
+      "text": "저희가 원하는 거는 양식을 제공하면 이렇게 속기사가 돼달라는 거잖아요.",
+      "confidence": null,
+      "diarization": {
+        "label": "2"
+      },
+      "speaker": {
+        "label": "2",
+        "name": "참석자 2",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "저희가 원하는 거는 양식을 제공하면 이렇게 속기사가 돼달라는 거잖아요.",
+      "metadata": {
+        "segmentIndex": 117,
+        "startTime": "13:18",
+        "endTime": "13:23",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 804000,
+      "end": 804999,
+      "text": "그렇죠 그렇죠.",
+      "confidence": null,
+      "diarization": {
+        "label": "8"
+      },
+      "speaker": {
+        "label": "8",
+        "name": "참석자 8",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "그렇죠 그렇죠.",
+      "metadata": {
+        "segmentIndex": 118,
+        "startTime": "13:24",
+        "endTime": "13:24",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 805000,
+      "end": 806999,
+      "text": "우리 얘네네만 그렇죠.",
+      "confidence": null,
+      "diarization": {
+        "label": "2"
+      },
+      "speaker": {
+        "label": "2",
+        "name": "참석자 2",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "우리 얘네네만 그렇죠.",
+      "metadata": {
+        "segmentIndex": 119,
+        "startTime": "13:25",
+        "endTime": "13:26",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 807000,
+      "end": 808999,
+      "text": "STT 면에서는 속기사가 돼달라는 거고",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "STT 면에서는 속기사가 돼달라는 거고",
+      "metadata": {
+        "segmentIndex": 120,
+        "startTime": "13:27",
+        "endTime": "13:28",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 809000,
+      "end": 849999,
+      "text": "제공하면은 데이터를 받아서 그 양식에 맞게 이제 출력을 해줘야 되는 거니까 그렇죠.\n저희가 저 국무회의 를 한다고 하면은 그러면은 차라리 저걸 쓰게 되면은 이 앞부분을 생략이 되는 거예요.\n양식 제공과 STT로 작성과 그 양식에 맞게 보고서 회의록 작성 부분을 이제 전부 건너뛰는 거죠.\n저 회의록으로 하게 되면 제공 라브 저장 라벨에는 성",
+      "confidence": null,
+      "diarization": {
+        "label": "2"
+      },
+      "speaker": {
+        "label": "2",
+        "name": "참석자 2",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "제공하면은 데이터를 받아서 그 양식에 맞게 이제 출력을 해줘야 되는 거니까 그렇죠.\n저희가 저 국무회의 를 한다고 하면은 그러면은 차라리 저걸 쓰게 되면은 이 앞부분을 생략이 되는 거예요.\n양식 제공과 STT로 작성과 그 양식에 맞게 보고서 회의록 작성 부분을 이제 전부 건너뛰는 거죠.\n저 회의록으로 하게 되면 제공 라브 저장 라벨에는 성",
+      "metadata": {
+        "segmentIndex": 121,
+        "startTime": "13:29",
+        "endTime": "14:09",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 850000,
+      "end": 858999,
+      "text": "정식 저장하는 STT 어떤 건지 이해했어요. 이제",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "정식 저장하는 STT 어떤 건지 이해했어요. 이제",
+      "metadata": {
+        "segmentIndex": 122,
+        "startTime": "14:10",
+        "endTime": "14:18",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 859000,
+      "end": 870999,
+      "text": "그러면은 저거를 써도 될 것 같아요. ss를 안 한다고 하면 검사 때 근데 쓴다고 하면은 회의 양식이 있어야 될 것 같아요.",
+      "confidence": null,
+      "diarization": {
+        "label": "2"
+      },
+      "speaker": {
+        "label": "2",
+        "name": "참석자 2",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "그러면은 저거를 써도 될 것 같아요. ss를 안 한다고 하면 검사 때 근데 쓴다고 하면은 회의 양식이 있어야 될 것 같아요.",
+      "metadata": {
+        "segmentIndex": 123,
+        "startTime": "14:19",
+        "endTime": "14:30",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 871000,
+      "end": 877999,
+      "text": "구조화된 건 아닌데 1로코롱 명시해 둔 건 있더라고.",
+      "confidence": null,
+      "diarization": {
+        "label": "3"
+      },
+      "speaker": {
+        "label": "3",
+        "name": "참석자 3",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "구조화된 건 아닌데 1로코롱 명시해 둔 건 있더라고.",
+      "metadata": {
+        "segmentIndex": 124,
+        "startTime": "14:31",
+        "endTime": "14:37",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 878000,
+      "end": 880999,
+      "text": "이거는 국무회의 같은 거 할 때 하는 건 거구나.",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "이거는 국무회의 같은 거 할 때 하는 건 거구나.",
+      "metadata": {
+        "segmentIndex": 125,
+        "startTime": "14:38",
+        "endTime": "14:40",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 881000,
+      "end": 898999,
+      "text": "이거 약간 부천시에서 가져온 거긴 한데 사기업들은 아마 공개가 안 될 거고 그래서 그냥 국가기관 이런 거밖에 없는 것 같거든요.\n아",
+      "confidence": null,
+      "diarization": {
+        "label": "3"
+      },
+      "speaker": {
+        "label": "3",
+        "name": "참석자 3",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "이거 약간 부천시에서 가져온 거긴 한데 사기업들은 아마 공개가 안 될 거고 그래서 그냥 국가기관 이런 거밖에 없는 것 같거든요.\n아",
+      "metadata": {
+        "segmentIndex": 126,
+        "startTime": "14:41",
+        "endTime": "14:58",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 899000,
+      "end": 901999,
+      "text": "학교도 있네요.",
+      "confidence": null,
+      "diarization": {
+        "label": "3"
+      },
+      "speaker": {
+        "label": "3",
+        "name": "참석자 3",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "학교도 있네요.",
+      "metadata": {
+        "segmentIndex": 127,
+        "startTime": "14:59",
+        "endTime": "15:01",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 902000,
+      "end": 904999,
+      "text": "그러네요. 왜요?",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "그러네요. 왜요?",
+      "metadata": {
+        "segmentIndex": 128,
+        "startTime": "15:02",
+        "endTime": "15:04",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 905000,
+      "end": 906999,
+      "text": "양식이네요. 양식",
+      "confidence": null,
+      "diarization": {
+        "label": "2"
+      },
+      "speaker": {
+        "label": "2",
+        "name": "참석자 2",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "양식이네요. 양식",
+      "metadata": {
+        "segmentIndex": 129,
+        "startTime": "15:05",
+        "endTime": "15:06",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 907000,
+      "end": 909999,
+      "text": "이거는 아마",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "이거는 아마",
+      "metadata": {
+        "segmentIndex": 130,
+        "startTime": "15:07",
+        "endTime": "15:09",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 910000,
+      "end": 915999,
+      "text": "학교긴 한데 건국대 있거든요.",
+      "confidence": null,
+      "diarization": {
+        "label": "3"
+      },
+      "speaker": {
+        "label": "3",
+        "name": "참석자 3",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "학교긴 한데 건국대 있거든요.",
+      "metadata": {
+        "segmentIndex": 131,
+        "startTime": "15:10",
+        "endTime": "15:15",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 916000,
+      "end": 922999,
+      "text": "양식이야 뭐 찾아보면 일단 많으니까",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "양식이야 뭐 찾아보면 일단 많으니까",
+      "metadata": {
+        "segmentIndex": 132,
+        "startTime": "15:16",
+        "endTime": "15:22",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 923000,
+      "end": 953999,
+      "text": "국가 기획안 대학 회의록 작성 얘네에는 동일 질문 가능 하고 어디까지 해야 하나 이런 질문 액션 플랜 아무튼 필요한 기능은 이 정도 놓으면 늘어놓은 것 같아.",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "국가 기획안 대학 회의록 작성 얘네에는 동일 질문 가능 하고 어디까지 해야 하나 이런 질문 액션 플랜 아무튼 필요한 기능은 이 정도 놓으면 늘어놓은 것 같아.",
+      "metadata": {
+        "segmentIndex": 133,
+        "startTime": "15:23",
+        "endTime": "15:53",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 954000,
+      "end": 969999,
+      "text": "아니 그런 거 그런 거 말고 아 그냥 근데 지금 얘기해 보니까 좀 해도 된다라고 쓰기들을 한 저는 이걸로 하는 거 아니냐",
+      "confidence": null,
+      "diarization": {
+        "label": "4"
+      },
+      "speaker": {
+        "label": "4",
+        "name": "참석자 4",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "아니 그런 거 그런 거 말고 아 그냥 근데 지금 얘기해 보니까 좀 해도 된다라고 쓰기들을 한 저는 이걸로 하는 거 아니냐",
+      "metadata": {
+        "segmentIndex": 134,
+        "startTime": "15:54",
+        "endTime": "16:09",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 970000,
+      "end": 972999,
+      "text": "짧게 써진 회의도 있네요.",
+      "confidence": null,
+      "diarization": {
+        "label": "2"
+      },
+      "speaker": {
+        "label": "2",
+        "name": "참석자 2",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "짧게 써진 회의도 있네요.",
+      "metadata": {
+        "segmentIndex": 135,
+        "startTime": "16:10",
+        "endTime": "16:12",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 973000,
+      "end": 975999,
+      "text": "어디요? 국가기관이에요?",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "어디요? 국가기관이에요?",
+      "metadata": {
+        "segmentIndex": 136,
+        "startTime": "16:13",
+        "endTime": "16:15",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 976000,
+      "end": 978999,
+      "text": "아니 아니 학교 학교는 좀 찾아보니까 있긴 하네.",
+      "confidence": null,
+      "diarization": {
+        "label": "2"
+      },
+      "speaker": {
+        "label": "2",
+        "name": "참석자 2",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "아니 아니 학교 학교는 좀 찾아보니까 있긴 하네.",
+      "metadata": {
+        "segmentIndex": 137,
+        "startTime": "16:16",
+        "endTime": "16:18",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 979000,
+      "end": 986999,
+      "text": "네. 학교는 한글이 많긴 하네요. 확실히 외국 것도 한번 찾아",
+      "confidence": null,
+      "diarization": {
+        "label": "3"
+      },
+      "speaker": {
+        "label": "3",
+        "name": "참석자 3",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "네. 학교는 한글이 많긴 하네요. 확실히 외국 것도 한번 찾아",
+      "metadata": {
+        "segmentIndex": 138,
+        "startTime": "16:19",
+        "endTime": "16:26",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 987000,
+      "end": 1003999,
+      "text": "오늘은 이제 안 해도 되잖아. 그거 링크 좀 보내 링크 좀 올려줄 수 있어요.\n그러면 일단 일단 이거 올려놔야 돼요.",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "오늘은 이제 안 해도 되잖아. 그거 링크 좀 보내 링크 좀 올려줄 수 있어요.\n그러면 일단 일단 이거 올려놔야 돼요.",
+      "metadata": {
+        "segmentIndex": 139,
+        "startTime": "16:27",
+        "endTime": "16:43",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1004000,
+      "end": 1009999,
+      "text": "제가 g20 한 번 있나 볼게요.",
+      "confidence": null,
+      "diarization": {
+        "label": "3"
+      },
+      "speaker": {
+        "label": "3",
+        "name": "참석자 3",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "제가 g20 한 번 있나 볼게요.",
+      "metadata": {
+        "segmentIndex": 140,
+        "startTime": "16:44",
+        "endTime": "16:49",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1010000,
+      "end": 1024999,
+      "text": "이 사람들은 모르겠지 이 회의록이 이렇게 쓰이고 있다는 사실",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "이 사람들은 모르겠지 이 회의록이 이렇게 쓰이고 있다는 사실",
+      "metadata": {
+        "segmentIndex": 141,
+        "startTime": "16:50",
+        "endTime": "17:04",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1025000,
+      "end": 1030999,
+      "text": "여기는 되게 간단하게",
+      "confidence": null,
+      "diarization": {
+        "label": "2"
+      },
+      "speaker": {
+        "label": "2",
+        "name": "참석자 2",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "여기는 되게 간단하게",
+      "metadata": {
+        "segmentIndex": 142,
+        "startTime": "17:05",
+        "endTime": "17:10",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1031000,
+      "end": 1045999,
+      "text": "한양 너무 느리다 너무 느리다 왜 그렇지",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "한양 너무 느리다 너무 느리다 왜 그렇지",
+      "metadata": {
+        "segmentIndex": 143,
+        "startTime": "17:11",
+        "endTime": "17:25",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1046000,
+      "end": 1051999,
+      "text": "오 찾았거든요. BC 페이지요. 네 좋아",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "오 찾았거든요. BC 페이지요. 네 좋아",
+      "metadata": {
+        "segmentIndex": 144,
+        "startTime": "17:26",
+        "endTime": "17:31",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1052000,
+      "end": 1056999,
+      "text": "저번에 검색량 검색은 제일 잘하시네요. 저요",
+      "confidence": null,
+      "diarization": {
+        "label": "4"
+      },
+      "speaker": {
+        "label": "4",
+        "name": "참석자 4",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "저번에 검색량 검색은 제일 잘하시네요. 저요",
+      "metadata": {
+        "segmentIndex": 145,
+        "startTime": "17:32",
+        "endTime": "17:36",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1057000,
+      "end": 1059999,
+      "text": "민규 님이 자꾸 여기저기",
+      "confidence": null,
+      "diarization": {
+        "label": "3"
+      },
+      "speaker": {
+        "label": "3",
+        "name": "참석자 3",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "민규 님이 자꾸 여기저기",
+      "metadata": {
+        "segmentIndex": 146,
+        "startTime": "17:37",
+        "endTime": "17:39",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1060000,
+      "end": 1063999,
+      "text": "저 오도하고 다",
+      "confidence": null,
+      "diarization": {
+        "label": "8"
+      },
+      "speaker": {
+        "label": "8",
+        "name": "참석자 8",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "저 오도하고 다",
+      "metadata": {
+        "segmentIndex": 147,
+        "startTime": "17:40",
+        "endTime": "17:43",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1064000,
+      "end": 1069999,
+      "text": "잠깐만요. 이거 제가 할게요. 이렇게 하면 돼요.",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "잠깐만요. 이거 제가 할게요. 이렇게 하면 돼요.",
+      "metadata": {
+        "segmentIndex": 148,
+        "startTime": "17:44",
+        "endTime": "17:49",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1070000,
+      "end": 1072999,
+      "text": "강사님 블로그 한번 찾은 걸로",
+      "confidence": null,
+      "diarization": {
+        "label": "3"
+      },
+      "speaker": {
+        "label": "3",
+        "name": "참석자 3",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "강사님 블로그 한번 찾은 걸로",
+      "metadata": {
+        "segmentIndex": 149,
+        "startTime": "17:50",
+        "endTime": "17:52",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1073000,
+      "end": 1076999,
+      "text": "강사님 블로그를 사왔다고요 저도 왜 안 알려줘요?",
+      "confidence": null,
+      "diarization": {
+        "label": "2"
+      },
+      "speaker": {
+        "label": "2",
+        "name": "참석자 2",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "강사님 블로그를 사왔다고요 저도 왜 안 알려줘요?",
+      "metadata": {
+        "segmentIndex": 150,
+        "startTime": "17:53",
+        "endTime": "17:56",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1077000,
+      "end": 1080999,
+      "text": "저희도 몰라요. 올려보세요. 피자",
+      "confidence": null,
+      "diarization": {
+        "label": "4"
+      },
+      "speaker": {
+        "label": "4",
+        "name": "참석자 4",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "저희도 몰라요. 올려보세요. 피자",
+      "metadata": {
+        "segmentIndex": 151,
+        "startTime": "17:57",
+        "endTime": "18:00",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1081000,
+      "end": 1097999,
+      "text": "정 그냥 그냥 그 네이버 블로그 주소에 강사님 그 드라이브 아이디 치면 나오던데 사실 근데 그거 가지고 자꾸 뭐라 그래요?\n근데 리부로 사람 몸이 잘 울려요. 네 맞아요. 친하게 너무",
+      "confidence": null,
+      "diarization": {
+        "label": "3"
+      },
+      "speaker": {
+        "label": "3",
+        "name": "참석자 3",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "정 그냥 그냥 그 네이버 블로그 주소에 강사님 그 드라이브 아이디 치면 나오던데 사실 근데 그거 가지고 자꾸 뭐라 그래요?\n근데 리부로 사람 몸이 잘 울려요. 네 맞아요. 친하게 너무",
+      "metadata": {
+        "segmentIndex": 152,
+        "startTime": "18:01",
+        "endTime": "18:17",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1098000,
+      "end": 1102999,
+      "text": "저 약간 핑거 족인데 링크 그냥 주면 안 돼요. 막",
+      "confidence": null,
+      "diarization": {
+        "label": "4"
+      },
+      "speaker": {
+        "label": "4",
+        "name": "참석자 4",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "저 약간 핑거 족인데 링크 그냥 주면 안 돼요. 막",
+      "metadata": {
+        "segmentIndex": 153,
+        "startTime": "18:18",
+        "endTime": "18:22",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1103000,
+      "end": 1111999,
+      "text": "내가 찾기 싫어",
+      "confidence": null,
+      "diarization": {
+        "label": "8"
+      },
+      "speaker": {
+        "label": "8",
+        "name": "참석자 8",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "내가 찾기 싫어",
+      "metadata": {
+        "segmentIndex": 154,
+        "startTime": "18:23",
+        "endTime": "18:31",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1112000,
+      "end": 1113999,
+      "text": "무슨 얘기를 하고 있었죠?",
+      "confidence": null,
+      "diarization": {
+        "label": "2"
+      },
+      "speaker": {
+        "label": "2",
+        "name": "참석자 2",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "무슨 얘기를 하고 있었죠?",
+      "metadata": {
+        "segmentIndex": 155,
+        "startTime": "18:32",
+        "endTime": "18:33",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1114000,
+      "end": 1127999,
+      "text": "저희 그냥 지금은 뭐지 어떤 기능을 구현해야 되는지 그런 거 일단 늘어놓고 있다가 회의록 필요하니까 회의록 하고 있었어요.\n그래서 기능은 이 정도 나온 것 같고",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "저희 그냥 지금은 뭐지 어떤 기능을 구현해야 되는지 그런 거 일단 늘어놓고 있다가 회의록 필요하니까 회의록 하고 있었어요.\n그래서 기능은 이 정도 나온 것 같고",
+      "metadata": {
+        "segmentIndex": 156,
+        "startTime": "18:34",
+        "endTime": "18:47",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1128000,
+      "end": 1136999,
+      "text": "그러면 LLM이 해야 될 게 양식에 맞게 작성할 줄 아는 용역.",
+      "confidence": null,
+      "diarization": {
+        "label": "2"
+      },
+      "speaker": {
+        "label": "2",
+        "name": "참석자 2",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "그러면 LLM이 해야 될 게 양식에 맞게 작성할 줄 아는 용역.",
+      "metadata": {
+        "segmentIndex": 157,
+        "startTime": "18:48",
+        "endTime": "18:56",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1137000,
+      "end": 1195999,
+      "text": "일단 정형화된 회의록이 있으면은 회의록을 받아가지고 걔가 그거를 이전 예를 들어서 그런 상황인 거죠.\n이 사람들이 예전에 회의를 이렇게 자라라라락 하고 있다가 이번에 이걸 도입하기로 했어요.\n그러면 이제 이전에 회의했던 내용들이 있으니까 그거를 거기에 먹여야 된단 말이죠.\n그럼 회의록을 받아서 그 회의록 양식에 맞게 파싱을 할 수 있는 게 한 번 나와야 돼요.\n그냥 먹였을 때 그리고 그 파싱 하는 거를 파싱을 한 다음에 DB에 넣어야 돼요.\n일단 그게 나와야 되고 그다음에 여기에서 하는 그리고 이제 그 회의록을 이제 회의가 시작할 때 회의록을 입력하시겠습니까 해가지고 그 양식화된 회의록을 넣잖아요.\n그럼 넣고 나면은 이제 그다음에는 액션 플랜이랑 향후 일정들이 나와야 되는 거죠.",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "일단 정형화된 회의록이 있으면은 회의록을 받아가지고 걔가 그거를 이전 예를 들어서 그런 상황인 거죠.\n이 사람들이 예전에 회의를 이렇게 자라라라락 하고 있다가 이번에 이걸 도입하기로 했어요.\n그러면 이제 이전에 회의했던 내용들이 있으니까 그거를 거기에 먹여야 된단 말이죠.\n그럼 회의록을 받아서 그 회의록 양식에 맞게 파싱을 할 수 있는 게 한 번 나와야 돼요.\n그냥 먹였을 때 그리고 그 파싱 하는 거를 파싱을 한 다음에 DB에 넣어야 돼요.\n일단 그게 나와야 되고 그다음에 여기에서 하는 그리고 이제 그 회의록을 이제 회의가 시작할 때 회의록을 입력하시겠습니까 해가지고 그 양식화된 회의록을 넣잖아요.\n그럼 넣고 나면은 이제 그다음에는 액션 플랜이랑 향후 일정들이 나와야 되는 거죠.",
+      "metadata": {
+        "segmentIndex": 158,
+        "startTime": "18:57",
+        "endTime": "19:55",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1196000,
+      "end": 1218999,
+      "text": "요약을 하고 요약을 해서 이거는 그거니까 이거는 대화 형태의 회의록을 받아서 회의록을 작성하는 게 아니니까 정형화된 회의록을 받으면은 그걸 가지고 이제 뭐 하기로 함 뭐 하기로 함 뭐 하기로 함 이런 식으로 돼 있으니까 액션 플랜이 이렇게 나와서 일정 캘린더 같은 데 캘각이 되는 이게 돼야 돼요.",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "요약을 하고 요약을 해서 이거는 그거니까 이거는 대화 형태의 회의록을 받아서 회의록을 작성하는 게 아니니까 정형화된 회의록을 받으면은 그걸 가지고 이제 뭐 하기로 함 뭐 하기로 함 뭐 하기로 함 이런 식으로 돼 있으니까 액션 플랜이 이렇게 나와서 일정 캘린더 같은 데 캘각이 되는 이게 돼야 돼요.",
+      "metadata": {
+        "segmentIndex": 159,
+        "startTime": "19:56",
+        "endTime": "20:18",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1219000,
+      "end": 1240999,
+      "text": "그러면 회의록을 하나 정하고 핫서를 정하고 그 회의록 내용을 보고 청킹을 잡고 그리고 그걸 기반으로 마을 만들어보자 만들어 보죠.\n일단",
+      "confidence": null,
+      "diarization": {
+        "label": "2"
+      },
+      "speaker": {
+        "label": "2",
+        "name": "참석자 2",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "그러면 회의록을 하나 정하고 핫서를 정하고 그 회의록 내용을 보고 청킹을 잡고 그리고 그걸 기반으로 마을 만들어보자 만들어 보죠.\n일단",
+      "metadata": {
+        "segmentIndex": 160,
+        "startTime": "20:19",
+        "endTime": "20:40",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1241000,
+      "end": 1251999,
+      "text": "이거는 영어로 된 거거든요. g20 이번에 한 것 같은데",
+      "confidence": null,
+      "diarization": {
+        "label": "3"
+      },
+      "speaker": {
+        "label": "3",
+        "name": "참석자 3",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "이거는 영어로 된 거거든요. g20 이번에 한 것 같은데",
+      "metadata": {
+        "segmentIndex": 161,
+        "startTime": "20:41",
+        "endTime": "20:51",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1252000,
+      "end": 1259999,
+      "text": "잘못 눌렀다 등록금 심의 받다. 이거는 그냥 받아주는 거구나.",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "잘못 눌렀다 등록금 심의 받다. 이거는 그냥 받아주는 거구나.",
+      "metadata": {
+        "segmentIndex": 162,
+        "startTime": "20:52",
+        "endTime": "20:59",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1260000,
+      "end": 1266999,
+      "text": "네 그냥 바닥",
+      "confidence": null,
+      "diarization": {
+        "label": "3"
+      },
+      "speaker": {
+        "label": "3",
+        "name": "참석자 3",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "네 그냥 바닥",
+      "metadata": {
+        "segmentIndex": 163,
+        "startTime": "21:00",
+        "endTime": "21:06",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1267000,
+      "end": 1271999,
+      "text": "뒤에 보니까 막 이거 뭐라 말해야 되지",
+      "confidence": null,
+      "diarization": {
+        "label": "3"
+      },
+      "speaker": {
+        "label": "3",
+        "name": "참석자 3",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "뒤에 보니까 막 이거 뭐라 말해야 되지",
+      "metadata": {
+        "segmentIndex": 164,
+        "startTime": "21:07",
+        "endTime": "21:11",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1272000,
+      "end": 1276999,
+      "text": "그런 것도 있다. 연준 회의록 같은 것도 있겠다.",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "그런 것도 있다. 연준 회의록 같은 것도 있겠다.",
+      "metadata": {
+        "segmentIndex": 165,
+        "startTime": "21:12",
+        "endTime": "21:16",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1277000,
+      "end": 1281999,
+      "text": "아니요. 저희도 AI라고 액츄얼리 인디언스는",
+      "confidence": null,
+      "diarization": {
+        "label": "2"
+      },
+      "speaker": {
+        "label": "2",
+        "name": "참석자 2",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "아니요. 저희도 AI라고 액츄얼리 인디언스는",
+      "metadata": {
+        "segmentIndex": 166,
+        "startTime": "21:17",
+        "endTime": "21:21",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1282000,
+      "end": 1288999,
+      "text": "맞아 이런 것도 있을 것 같아요. 연방공개시장위원회 회의록 이런 거",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "맞아 이런 것도 있을 것 같아요. 연방공개시장위원회 회의록 이런 거",
+      "metadata": {
+        "segmentIndex": 167,
+        "startTime": "21:22",
+        "endTime": "21:28",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1289000,
+      "end": 1293999,
+      "text": "하나를 정해볼까요? 회의 괜찮은지 저는 국무회의 괜찮아 보여요.",
+      "confidence": null,
+      "diarization": {
+        "label": "2"
+      },
+      "speaker": {
+        "label": "2",
+        "name": "참석자 2",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "하나를 정해볼까요? 회의 괜찮은지 저는 국무회의 괜찮아 보여요.",
+      "metadata": {
+        "segmentIndex": 168,
+        "startTime": "21:29",
+        "endTime": "21:33",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1294000,
+      "end": 1304999,
+      "text": "국무회의록 괜찮고 일단 저희가 한글로 된 거 위주로 할 거면 국무회의록 하고 아까 짧은 거는 한양대으로 해보면 될 것 같아요.",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "국무회의록 괜찮고 일단 저희가 한글로 된 거 위주로 할 거면 국무회의록 하고 아까 짧은 거는 한양대으로 해보면 될 것 같아요.",
+      "metadata": {
+        "segmentIndex": 169,
+        "startTime": "21:34",
+        "endTime": "21:44",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1305000,
+      "end": 1311999,
+      "text": "제가 말하고 싶었던 게 이렇게 또 만들더라고요. 수치화를 한 건지 모",
+      "confidence": null,
+      "diarization": {
+        "label": "3"
+      },
+      "speaker": {
+        "label": "3",
+        "name": "참석자 3",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "제가 말하고 싶었던 게 이렇게 또 만들더라고요. 수치화를 한 건지 모",
+      "metadata": {
+        "segmentIndex": 170,
+        "startTime": "21:45",
+        "endTime": "21:51",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1312000,
+      "end": 1312999,
+      "text": "이거 뭐예요?",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "이거 뭐예요?",
+      "metadata": {
+        "segmentIndex": 171,
+        "startTime": "21:52",
+        "endTime": "21:52",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1313000,
+      "end": 1333999,
+      "text": "지식 메인 뒤쪽에 가면 이런 거 있거든. 그러니까 주제랑 요약이랑 회의록이니까 찬성 반대 뭐 이런 거 했나 봐요.\n이걸 다 수치화로 해놔가지고 그렇게 해놨더라고요.\n물론 내용들이 다 다르겠지만",
+      "confidence": null,
+      "diarization": {
+        "label": "3"
+      },
+      "speaker": {
+        "label": "3",
+        "name": "참석자 3",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "지식 메인 뒤쪽에 가면 이런 거 있거든. 그러니까 주제랑 요약이랑 회의록이니까 찬성 반대 뭐 이런 거 했나 봐요.\n이걸 다 수치화로 해놔가지고 그렇게 해놨더라고요.\n물론 내용들이 다 다르겠지만",
+      "metadata": {
+        "segmentIndex": 172,
+        "startTime": "21:53",
+        "endTime": "22:13",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1334000,
+      "end": 1335999,
+      "text": "뭔지 모르겠어요.",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "뭔지 모르겠어요.",
+      "metadata": {
+        "segmentIndex": 173,
+        "startTime": "22:14",
+        "endTime": "22:15",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1336000,
+      "end": 1338999,
+      "text": "영어를 타겟으로 하기에는",
+      "confidence": null,
+      "diarization": {
+        "label": "2"
+      },
+      "speaker": {
+        "label": "2",
+        "name": "참석자 2",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "영어를 타겟으로 하기에는",
+      "metadata": {
+        "segmentIndex": 174,
+        "startTime": "22:16",
+        "endTime": "22:18",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1339000,
+      "end": 1339999,
+      "text": "네 그냥 이런 양식이 있다.",
+      "confidence": null,
+      "diarization": {
+        "label": "3"
+      },
+      "speaker": {
+        "label": "3",
+        "name": "참석자 3",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "네 그냥 이런 양식이 있다.",
+      "metadata": {
+        "segmentIndex": 175,
+        "startTime": "22:19",
+        "endTime": "22:19",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1340000,
+      "end": 1348999,
+      "text": "일단 국무회의",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "일단 국무회의",
+      "metadata": {
+        "segmentIndex": 176,
+        "startTime": "22:20",
+        "endTime": "22:28",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1349000,
+      "end": 1351999,
+      "text": "한 3개 정도 뽑아서 할",
+      "confidence": null,
+      "diarization": {
+        "label": "2"
+      },
+      "speaker": {
+        "label": "2",
+        "name": "참석자 2",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "한 3개 정도 뽑아서 할",
+      "metadata": {
+        "segmentIndex": 177,
+        "startTime": "22:29",
+        "endTime": "22:31",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1352000,
+      "end": 1358999,
+      "text": "여기 이렇게 표로 또 만들긴 하더라고요.",
+      "confidence": null,
+      "diarization": {
+        "label": "3"
+      },
+      "speaker": {
+        "label": "3",
+        "name": "참석자 3",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "여기 이렇게 표로 또 만들긴 하더라고요.",
+      "metadata": {
+        "segmentIndex": 178,
+        "startTime": "22:32",
+        "endTime": "22:38",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1359000,
+      "end": 1360999,
+      "text": "되게 길긴",
+      "confidence": null,
+      "diarization": {
+        "label": "3"
+      },
+      "speaker": {
+        "label": "3",
+        "name": "참석자 3",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "되게 길긴",
+      "metadata": {
+        "segmentIndex": 179,
+        "startTime": "22:39",
+        "endTime": "22:40",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1361000,
+      "end": 1365999,
+      "text": "그러면 저희 LLM이 저렇게 표를 제작해 줬으면 좋겠어.",
+      "confidence": null,
+      "diarization": {
+        "label": "2"
+      },
+      "speaker": {
+        "label": "2",
+        "name": "참석자 2",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "그러면 저희 LLM이 저렇게 표를 제작해 줬으면 좋겠어.",
+      "metadata": {
+        "segmentIndex": 180,
+        "startTime": "22:41",
+        "endTime": "22:45",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1366000,
+      "end": 1370999,
+      "text": "가능하면 그냥 있으면 있을수록 그러니까 시각적인 자료가",
+      "confidence": null,
+      "diarization": {
+        "label": "3"
+      },
+      "speaker": {
+        "label": "3",
+        "name": "참석자 3",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "가능하면 그냥 있으면 있을수록 그러니까 시각적인 자료가",
+      "metadata": {
+        "segmentIndex": 181,
+        "startTime": "22:46",
+        "endTime": "22:50",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1371000,
+      "end": 1373999,
+      "text": "시각 자료 작성까지 괜찮은데요. 시각 자료라서",
+      "confidence": null,
+      "diarization": {
+        "label": "2"
+      },
+      "speaker": {
+        "label": "2",
+        "name": "참석자 2",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "시각 자료 작성까지 괜찮은데요. 시각 자료라서",
+      "metadata": {
+        "segmentIndex": 182,
+        "startTime": "22:51",
+        "endTime": "22:53",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1374000,
+      "end": 1389999,
+      "text": "저는 저것까지는 생각은 안 했었어요. 그냥 대화 내용 받아서 뭐 적고 그러니까 뭐지 ST로 STT로 회의록을 만든 다음 대화 내용 받았었고 그냥 액션 플랜 잡고 요 정도 요약 옵션 플랜 뭐 이 정도 생각을 하고 있어",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "저는 저것까지는 생각은 안 했었어요. 그냥 대화 내용 받아서 뭐 적고 그러니까 뭐지 ST로 STT로 회의록을 만든 다음 대화 내용 받았었고 그냥 액션 플랜 잡고 요 정도 요약 옵션 플랜 뭐 이 정도 생각을 하고 있어",
+      "metadata": {
+        "segmentIndex": 183,
+        "startTime": "22:54",
+        "endTime": "23:09",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1390000,
+      "end": 1395999,
+      "text": "회의록 작성에 좀 힘을 주냐 아니면 거기서 액션 플랜을 쭉쭉 잘 뽑아내냐에 중점을",
+      "confidence": null,
+      "diarization": {
+        "label": "2"
+      },
+      "speaker": {
+        "label": "2",
+        "name": "참석자 2",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "회의록 작성에 좀 힘을 주냐 아니면 거기서 액션 플랜을 쭉쭉 잘 뽑아내냐에 중점을",
+      "metadata": {
+        "segmentIndex": 184,
+        "startTime": "23:10",
+        "endTime": "23:15",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1396000,
+      "end": 1415999,
+      "text": "뭐 그런 거지 그러면 저거 DB를 한번 라브 DB를 한번 만들어 본다고요?\n이건 이건 그러면 언제까지 할 거예요? 혹시 이거요?\n네 각자 해볼까요? 그게 온라인이죠. 그렇긴 한데 오프라인 온라인 온라인 그러면은 사실",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "뭐 그런 거지 그러면 저거 DB를 한번 라브 DB를 한번 만들어 본다고요?\n이건 이건 그러면 언제까지 할 거예요? 혹시 이거요?\n네 각자 해볼까요? 그게 온라인이죠. 그렇긴 한데 오프라인 온라인 온라인 그러면은 사실",
+      "metadata": {
+        "segmentIndex": 185,
+        "startTime": "23:16",
+        "endTime": "23:35",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1416000,
+      "end": 1466999,
+      "text": "사실 간단한 라근은 지금도 20분 후에 만들긴 해요.\n그거 가능해 그냥 왜냐하면 PDF니까 PDF 파서 쓰고 그냥 저희 배웠던 거 그냥 쓱 긁어서 복사해서 붙여 놓으면 라그니 거든요.\n라그를 거기서 이제 파서를 어떻게 할 거냐 네 청킹은 어떻게 할 거냐 그리고 저희 LM은 이제 문서를 여러 군데서 받을 거고 분포 이처럼 엄청 긴 것도 있을 거고 그 한양대처럼 엄청 짧은 것도 있을 거고 그러면은 청크 사이즈를 저희가 선정해서는 안 될 것 같아요.\n그렇죠 LLM이 보고 길이에 따라서 맞는 청각 사이즈를 해야 될 거고 파서도 달라져야 될 거야.\n아마 회의록 그게 입력 데이터가 불균형하면은 이런 부분이 문제가 엄청",
+      "confidence": null,
+      "diarization": {
+        "label": "2"
+      },
+      "speaker": {
+        "label": "2",
+        "name": "참석자 2",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "사실 간단한 라근은 지금도 20분 후에 만들긴 해요.\n그거 가능해 그냥 왜냐하면 PDF니까 PDF 파서 쓰고 그냥 저희 배웠던 거 그냥 쓱 긁어서 복사해서 붙여 놓으면 라그니 거든요.\n라그를 거기서 이제 파서를 어떻게 할 거냐 네 청킹은 어떻게 할 거냐 그리고 저희 LM은 이제 문서를 여러 군데서 받을 거고 분포 이처럼 엄청 긴 것도 있을 거고 그 한양대처럼 엄청 짧은 것도 있을 거고 그러면은 청크 사이즈를 저희가 선정해서는 안 될 것 같아요.\n그렇죠 LLM이 보고 길이에 따라서 맞는 청각 사이즈를 해야 될 거고 파서도 달라져야 될 거야.\n아마 회의록 그게 입력 데이터가 불균형하면은 이런 부분이 문제가 엄청",
+      "metadata": {
+        "segmentIndex": 186,
+        "startTime": "23:36",
+        "endTime": "24:26",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1467000,
+      "end": 1474999,
+      "text": "그거 좀 어려운데",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "그거 좀 어려운데",
+      "metadata": {
+        "segmentIndex": 187,
+        "startTime": "24:27",
+        "endTime": "24:34",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1475000,
+      "end": 1476999,
+      "text": "보통",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "보통",
+      "metadata": {
+        "segmentIndex": 188,
+        "startTime": "24:35",
+        "endTime": "24:36",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1477000,
+      "end": 1486999,
+      "text": "데이터가 정해져 있으면 진짜 간단하게 되는 거 데이터가 이렇게 여러 방식으로 있으면",
+      "confidence": null,
+      "diarization": {
+        "label": "2"
+      },
+      "speaker": {
+        "label": "2",
+        "name": "참석자 2",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "데이터가 정해져 있으면 진짜 간단하게 되는 거 데이터가 이렇게 여러 방식으로 있으면",
+      "metadata": {
+        "segmentIndex": 189,
+        "startTime": "24:37",
+        "endTime": "24:46",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1487000,
+      "end": 1488999,
+      "text": "여러 방식으로 있으면",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "여러 방식으로 있으면",
+      "metadata": {
+        "segmentIndex": 190,
+        "startTime": "24:47",
+        "endTime": "24:48",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1489000,
+      "end": 1494999,
+      "text": "특히 패싱이랑 청킹 부분이 차이가 엄청 많이 나가지고",
+      "confidence": null,
+      "diarization": {
+        "label": "2"
+      },
+      "speaker": {
+        "label": "2",
+        "name": "참석자 2",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "특히 패싱이랑 청킹 부분이 차이가 엄청 많이 나가지고",
+      "metadata": {
+        "segmentIndex": 191,
+        "startTime": "24:49",
+        "endTime": "24:54",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1495000,
+      "end": 1498999,
+      "text": "사기업에서는 어느 정도 양이 어느 정도",
+      "confidence": null,
+      "diarization": {
+        "label": "3"
+      },
+      "speaker": {
+        "label": "3",
+        "name": "참석자 3",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "사기업에서는 어느 정도 양이 어느 정도",
+      "metadata": {
+        "segmentIndex": 192,
+        "startTime": "24:55",
+        "endTime": "24:58",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1499000,
+      "end": 1509999,
+      "text": "저희는 국무회의 저 정도까지는 아니었고 그리고 회의록이 계속 누적되는 구조였어요.\n표 형태로 누적되는 구조",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "저희는 국무회의 저 정도까지는 아니었고 그리고 회의록이 계속 누적되는 구조였어요.\n표 형태로 누적되는 구조",
+      "metadata": {
+        "segmentIndex": 193,
+        "startTime": "24:59",
+        "endTime": "25:09",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1510000,
+      "end": 1510999,
+      "text": "붙이고 붙이고 붙이",
+      "confidence": null,
+      "diarization": {
+        "label": "3"
+      },
+      "speaker": {
+        "label": "3",
+        "name": "참석자 3",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "붙이고 붙이고 붙이",
+      "metadata": {
+        "segmentIndex": 194,
+        "startTime": "25:10",
+        "endTime": "25:10",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1511000,
+      "end": 1521999,
+      "text": "그리고 표 형태로 누적되는 구조고 이제 해결된 이슈 있으면은 삭제 이런 식으로 될 수",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "그리고 표 형태로 누적되는 구조고 이제 해결된 이슈 있으면은 삭제 이런 식으로 될 수",
+      "metadata": {
+        "segmentIndex": 195,
+        "startTime": "25:11",
+        "endTime": "25:21",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1522000,
+      "end": 1544999,
+      "text": "아니 근데 동욱 님 그게 그럴 수가 없는 게 예를 들어 헌법 같은 거는 전체 문자 수가 엄청 많잖아요.\n근데 형 사이즈가 너무 커도 안 되고 또 너무 작아도 안 되고 그런 게 좀 있어요.\n문서마다 적절한 상품 사이즈가 좀 정해져 있어요.",
+      "confidence": null,
+      "diarization": {
+        "label": "2"
+      },
+      "speaker": {
+        "label": "2",
+        "name": "참석자 2",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "아니 근데 동욱 님 그게 그럴 수가 없는 게 예를 들어 헌법 같은 거는 전체 문자 수가 엄청 많잖아요.\n근데 형 사이즈가 너무 커도 안 되고 또 너무 작아도 안 되고 그런 게 좀 있어요.\n문서마다 적절한 상품 사이즈가 좀 정해져 있어요.",
+      "metadata": {
+        "segmentIndex": 196,
+        "startTime": "25:22",
+        "endTime": "25:44",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1545000,
+      "end": 1571999,
+      "text": "이거는 뭐지 범위를 좀 좁혀야 될 수도 있을 것 같은데요.\n회의록이 얼마나 나오느냐를 봤을 때 일반적으로 생각하면 그래도 5페이지는 안 넘어갈 거라고 생각이 들어요.\n왜냐면 회의가 127쪽. 근데 국무회의는 사실 좀 큰 스케일인 거고 그거를 가지고 이제 사람 그거를 예를 들어서 군무색이라",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "이거는 뭐지 범위를 좀 좁혀야 될 수도 있을 것 같은데요.\n회의록이 얼마나 나오느냐를 봤을 때 일반적으로 생각하면 그래도 5페이지는 안 넘어갈 거라고 생각이 들어요.\n왜냐면 회의가 127쪽. 근데 국무회의는 사실 좀 큰 스케일인 거고 그거를 가지고 이제 사람 그거를 예를 들어서 군무색이라",
+      "metadata": {
+        "segmentIndex": 197,
+        "startTime": "25:45",
+        "endTime": "26:11",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1572000,
+      "end": 1574999,
+      "text": "아니면 차라리 국무회의록 분석기로 가든가요?",
+      "confidence": null,
+      "diarization": {
+        "label": "2"
+      },
+      "speaker": {
+        "label": "2",
+        "name": "참석자 2",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "아니면 차라리 국무회의록 분석기로 가든가요?",
+      "metadata": {
+        "segmentIndex": 198,
+        "startTime": "26:12",
+        "endTime": "26:14",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1575000,
+      "end": 1575999,
+      "text": "국무회의록 분석기",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "국무회의록 분석기",
+      "metadata": {
+        "segmentIndex": 199,
+        "startTime": "26:15",
+        "endTime": "26:15",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1576000,
+      "end": 1584999,
+      "text": "사람이 일반인들도 정치에 쉽게 접근할 수 있도록",
+      "confidence": null,
+      "diarization": {
+        "label": "2"
+      },
+      "speaker": {
+        "label": "2",
+        "name": "참석자 2",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "사람이 일반인들도 정치에 쉽게 접근할 수 있도록",
+      "metadata": {
+        "segmentIndex": 200,
+        "startTime": "26:16",
+        "endTime": "26:24",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1585000,
+      "end": 1588999,
+      "text": "국무회의록 분석 중 국무회의록에 모든 걸 맞춰서",
+      "confidence": null,
+      "diarization": {
+        "label": "6"
+      },
+      "speaker": {
+        "label": "6",
+        "name": "참석자 6",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "국무회의록 분석 중 국무회의록에 모든 걸 맞춰서",
+      "metadata": {
+        "segmentIndex": 201,
+        "startTime": "26:25",
+        "endTime": "26:28",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1589000,
+      "end": 1600999,
+      "text": "아까 마침 주인님이 국회의원 검색하시고 계시더라고요.",
+      "confidence": null,
+      "diarization": {
+        "label": "3"
+      },
+      "speaker": {
+        "label": "3",
+        "name": "참석자 3",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "아까 마침 주인님이 국회의원 검색하시고 계시더라고요.",
+      "metadata": {
+        "segmentIndex": 202,
+        "startTime": "26:29",
+        "endTime": "26:40",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1601000,
+      "end": 1617999,
+      "text": "공기업은 이게 최고긴 하겠네요. 공기업 하실 분들은 이 포트폴리오 국내 기록 말고 또 다른 것도",
+      "confidence": null,
+      "diarization": {
+        "label": "3"
+      },
+      "speaker": {
+        "label": "3",
+        "name": "참석자 3",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "공기업은 이게 최고긴 하겠네요. 공기업 하실 분들은 이 포트폴리오 국내 기록 말고 또 다른 것도",
+      "metadata": {
+        "segmentIndex": 203,
+        "startTime": "26:41",
+        "endTime": "26:57",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1618000,
+      "end": 1636999,
+      "text": "사실 국무회의록이 모든 기관이 다 합쳐서 거기 있는 거잖아요.\n근데 아까 외교부 보니까 막 또 엄청 길지는 않더라고요.",
+      "confidence": null,
+      "diarization": {
+        "label": "3"
+      },
+      "speaker": {
+        "label": "3",
+        "name": "참석자 3",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "사실 국무회의록이 모든 기관이 다 합쳐서 거기 있는 거잖아요.\n근데 아까 외교부 보니까 막 또 엄청 길지는 않더라고요.",
+      "metadata": {
+        "segmentIndex": 204,
+        "startTime": "26:58",
+        "endTime": "27:16",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1637000,
+      "end": 1642999,
+      "text": "그래서 그런 부분을 신경을 확실히 써야 될 것 같긴 해요.\n저희가 어떤 걸 타깃으로 삼느냐",
+      "confidence": null,
+      "diarization": {
+        "label": "2"
+      },
+      "speaker": {
+        "label": "2",
+        "name": "참석자 2",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "그래서 그런 부분을 신경을 확실히 써야 될 것 같긴 해요.\n저희가 어떤 걸 타깃으로 삼느냐",
+      "metadata": {
+        "segmentIndex": 205,
+        "startTime": "27:17",
+        "endTime": "27:22",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1643000,
+      "end": 1646999,
+      "text": "어느 정도의 문서를 타깃으로 삼을 건지 어느 정도",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "어느 정도의 문서를 타깃으로 삼을 건지 어느 정도",
+      "metadata": {
+        "segmentIndex": 206,
+        "startTime": "27:23",
+        "endTime": "27:26",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1647000,
+      "end": 1654999,
+      "text": "그거보다는 이제 하나를 중점으로 할 거냐 아니면 정말 모든 걸 모든 회의록을 다 분석하게 할 거냐",
+      "confidence": null,
+      "diarization": {
+        "label": "2"
+      },
+      "speaker": {
+        "label": "2",
+        "name": "참석자 2",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "그거보다는 이제 하나를 중점으로 할 거냐 아니면 정말 모든 걸 모든 회의록을 다 분석하게 할 거냐",
+      "metadata": {
+        "segmentIndex": 207,
+        "startTime": "27:27",
+        "endTime": "27:34",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1655000,
+      "end": 1657999,
+      "text": "모든 회의록을 다 분석하게 할 거는",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "모든 회의록을 다 분석하게 할 거는",
+      "metadata": {
+        "segmentIndex": 208,
+        "startTime": "27:35",
+        "endTime": "27:37",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1658000,
+      "end": 1660999,
+      "text": "원래 원하셨던 건 그거 아니에요 저기에 대한",
+      "confidence": null,
+      "diarization": {
+        "label": "3"
+      },
+      "speaker": {
+        "label": "3",
+        "name": "참석자 3",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "원래 원하셨던 건 그거 아니에요 저기에 대한",
+      "metadata": {
+        "segmentIndex": 209,
+        "startTime": "27:38",
+        "endTime": "27:40",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1661000,
+      "end": 1666999,
+      "text": "그렇긴 한데 저는 저 국무회의록처럼 저렇게 길 거라고는 생각을 못했어요.\n근데 해봐야",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "그렇긴 한데 저는 저 국무회의록처럼 저렇게 길 거라고는 생각을 못했어요.\n근데 해봐야",
+      "metadata": {
+        "segmentIndex": 210,
+        "startTime": "27:41",
+        "endTime": "27:46",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1667000,
+      "end": 1669999,
+      "text": "워낙 많이 모여 있으니까 그런데 여기는 또 75쪽이에요.",
+      "confidence": null,
+      "diarization": {
+        "label": "3"
+      },
+      "speaker": {
+        "label": "3",
+        "name": "참석자 3",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "워낙 많이 모여 있으니까 그런데 여기는 또 75쪽이에요.",
+      "metadata": {
+        "segmentIndex": 211,
+        "startTime": "27:47",
+        "endTime": "27:49",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1670000,
+      "end": 1693999,
+      "text": "예를 들어서 제가 생각한 정도의 회의록은 뭐냐면요.\n우리 미니 프로젝트 우리 지금 미니 프로젝트 있잖아 있으니까 회의를 해보자.\n그 정도의 회의록을 예상한 거지 국무회의록처럼 스케일 큰 거를 생각하진 않았거든요.\n딱 치니까 그거부터 나오길래 딱 봤더니 그거는 그거는 너무 아웃라인인 것 같아요.\n너무 커요.",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "예를 들어서 제가 생각한 정도의 회의록은 뭐냐면요.\n우리 미니 프로젝트 우리 지금 미니 프로젝트 있잖아 있으니까 회의를 해보자.\n그 정도의 회의록을 예상한 거지 국무회의록처럼 스케일 큰 거를 생각하진 않았거든요.\n딱 치니까 그거부터 나오길래 딱 봤더니 그거는 그거는 너무 아웃라인인 것 같아요.\n너무 커요.",
+      "metadata": {
+        "segmentIndex": 212,
+        "startTime": "27:50",
+        "endTime": "28:13",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1694000,
+      "end": 1703999,
+      "text": "작은 거는 또 많긴 해요. 이런 거 서울특별시 의회 회의록 이런 거 보면 전자회의록이 있고 또 영상 회의록도 또 있네.",
+      "confidence": null,
+      "diarization": {
+        "label": "3"
+      },
+      "speaker": {
+        "label": "3",
+        "name": "참석자 3",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "작은 거는 또 많긴 해요. 이런 거 서울특별시 의회 회의록 이런 거 보면 전자회의록이 있고 또 영상 회의록도 또 있네.",
+      "metadata": {
+        "segmentIndex": 213,
+        "startTime": "28:14",
+        "endTime": "28:23",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1704000,
+      "end": 1726999,
+      "text": "그래서 너무 스케일이 크지 않은 그런 회의를 가지고 좀 했으면 좋겠어요.\n작은 프로젝트 작은 예를 들어서 뭐 어떤 거냐면은 어디였지 막 기관에서 과제를 진행하는데 진행됐던 회의라든가 그런 거 그런 정도면 될 것 같아요.",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "그래서 너무 스케일이 크지 않은 그런 회의를 가지고 좀 했으면 좋겠어요.\n작은 프로젝트 작은 예를 들어서 뭐 어떤 거냐면은 어디였지 막 기관에서 과제를 진행하는데 진행됐던 회의라든가 그런 거 그런 정도면 될 것 같아요.",
+      "metadata": {
+        "segmentIndex": 214,
+        "startTime": "28:24",
+        "endTime": "28:46",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1727000,
+      "end": 1730999,
+      "text": "아니면 회의록 작성을 빼버려도 돼요.",
+      "confidence": null,
+      "diarization": {
+        "label": "2"
+      },
+      "speaker": {
+        "label": "2",
+        "name": "참석자 2",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "아니면 회의록 작성을 빼버려도 돼요.",
+      "metadata": {
+        "segmentIndex": 215,
+        "startTime": "28:47",
+        "endTime": "28:50",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1731000,
+      "end": 1731999,
+      "text": "회의록 작성하면 된다.",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "회의록 작성하면 된다.",
+      "metadata": {
+        "segmentIndex": 216,
+        "startTime": "28:51",
+        "endTime": "28:51",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1732000,
+      "end": 1747999,
+      "text": "그냥 회의를 이렇게 녹음한 걸로만 거기서 액션 플랜 빼고 주요 내용 빼고 그것만 저희 입맛에 맞게 넣어버리면 사실 어떤 회의든 구두로 진행되는 회의는 다 할 수",
+      "confidence": null,
+      "diarization": {
+        "label": "2"
+      },
+      "speaker": {
+        "label": "2",
+        "name": "참석자 2",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "그냥 회의를 이렇게 녹음한 걸로만 거기서 액션 플랜 빼고 주요 내용 빼고 그것만 저희 입맛에 맞게 넣어버리면 사실 어떤 회의든 구두로 진행되는 회의는 다 할 수",
+      "metadata": {
+        "segmentIndex": 217,
+        "startTime": "28:52",
+        "endTime": "29:07",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1748000,
+      "end": 1752999,
+      "text": "GPT한테 가상회의로",
+      "confidence": null,
+      "diarization": {
+        "label": "3"
+      },
+      "speaker": {
+        "label": "3",
+        "name": "참석자 3",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "GPT한테 가상회의로",
+      "metadata": {
+        "segmentIndex": 218,
+        "startTime": "29:08",
+        "endTime": "29:12",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1753000,
+      "end": 1758999,
+      "text": "저 지금 이해를 잘 못했어요. 그 액션 플랜 빼고 그거 뺀다는 게 어",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "저 지금 이해를 잘 못했어요. 그 액션 플랜 빼고 그거 뺀다는 게 어",
+      "metadata": {
+        "segmentIndex": 219,
+        "startTime": "29:13",
+        "endTime": "29:18",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1759000,
+      "end": 1760999,
+      "text": "그것만 추출해 놓고",
+      "confidence": null,
+      "diarization": {
+        "label": "2"
+      },
+      "speaker": {
+        "label": "2",
+        "name": "참석자 2",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "그것만 추출해 놓고",
+      "metadata": {
+        "segmentIndex": 220,
+        "startTime": "29:19",
+        "endTime": "29:20",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1761000,
+      "end": 1762999,
+      "text": "추출한다고 그게 나오게 하고",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "추출한다고 그게 나오게 하고",
+      "metadata": {
+        "segmentIndex": 221,
+        "startTime": "29:21",
+        "endTime": "29:22",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1763000,
+      "end": 1767999,
+      "text": "그러니까 회의록을 작성해야 된다라는 거를 버리면 사실",
+      "confidence": null,
+      "diarization": {
+        "label": "2"
+      },
+      "speaker": {
+        "label": "2",
+        "name": "참석자 2",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "그러니까 회의록을 작성해야 된다라는 거를 버리면 사실",
+      "metadata": {
+        "segmentIndex": 222,
+        "startTime": "29:23",
+        "endTime": "29:27",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1768000,
+      "end": 1786999,
+      "text": "아니면 저희 이게 다 안건별로 돼 있잖아요. 그 국가 기관들은 그러니까 이거를 어차피 짧게 돼 있을 거 아니에요 또 그게 합치고 합쳐져서 그렇게 길어진 거니까 그러니까 이 안건별로 데이터화를 해가지고 회의록 원래 원하셨던 게 짧은",
+      "confidence": null,
+      "diarization": {
+        "label": "3"
+      },
+      "speaker": {
+        "label": "3",
+        "name": "참석자 3",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "아니면 저희 이게 다 안건별로 돼 있잖아요. 그 국가 기관들은 그러니까 이거를 어차피 짧게 돼 있을 거 아니에요 또 그게 합치고 합쳐져서 그렇게 길어진 거니까 그러니까 이 안건별로 데이터화를 해가지고 회의록 원래 원하셨던 게 짧은",
+      "metadata": {
+        "segmentIndex": 223,
+        "startTime": "29:28",
+        "endTime": "29:46",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1787000,
+      "end": 1788999,
+      "text": "그렇죠 그 안건 하나가 프로젝트 하나라고 볼",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "그렇죠 그 안건 하나가 프로젝트 하나라고 볼",
+      "metadata": {
+        "segmentIndex": 224,
+        "startTime": "29:47",
+        "endTime": "29:48",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1789000,
+      "end": 1793999,
+      "text": "아예 하나를 받아서 그 안건별로 다 나눠 가지고 그거를",
+      "confidence": null,
+      "diarization": {
+        "label": "3"
+      },
+      "speaker": {
+        "label": "3",
+        "name": "참석자 3",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "아예 하나를 받아서 그 안건별로 다 나눠 가지고 그거를",
+      "metadata": {
+        "segmentIndex": 225,
+        "startTime": "29:49",
+        "endTime": "29:53",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1794000,
+      "end": 1812999,
+      "text": "근데 그렇게 말고 좋은데 그게 결국 작성하면 하드 코딩이 되거든요.\n그러니까 결국 그거는 국무회의록에 맞춘 하드 코딩이 되는 거고 결국 다른 게 들어와 버리면은 하드 코딩을 해도 상관없다면은 솔직히 상관없어",
+      "confidence": null,
+      "diarization": {
+        "label": "2"
+      },
+      "speaker": {
+        "label": "2",
+        "name": "참석자 2",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "근데 그렇게 말고 좋은데 그게 결국 작성하면 하드 코딩이 되거든요.\n그러니까 결국 그거는 국무회의록에 맞춘 하드 코딩이 되는 거고 결국 다른 게 들어와 버리면은 하드 코딩을 해도 상관없다면은 솔직히 상관없어",
+      "metadata": {
+        "segmentIndex": 226,
+        "startTime": "29:54",
+        "endTime": "30:12",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1813000,
+      "end": 1869999,
+      "text": "아니면은 그러면 그 뭐였지 제가 이제 회의록이 나와야 된다는 건 사실 회의록이 나와야 된다는 요약해서 나온 거는 저희가 양식을 정할 수 있잖아요.\n사실 아웃풋은 그렇게 나오도록 하고 회의록을 이제 살펴보고 파싱을 하는 거는 일반적으로 이 서비스를 도입하기 전에 있었던 거고 그리고 장식이 여러 가지일 수 있으니까 그냥 그것만 그것만 그것만 구조 파악하고 파싱하는 파서를 이렇게 딱 만들어서 회의 이전 회의했던 회의록 먹이는 걸로 하면 어때요?\n지금 아마 재선 님이 생각했었던 거는 이전에 작성했었던 회의록이 있어 회의록 먹여 회의록 먹이고 우리가 회의를 해 그리고 그럼 그 형태의 회의록이 나와 이렇게 생각을 한 거잖아요.\n그러니까 회의록 나오는 건 그냥 우리가 정해 우리가 정해서 우리의 우리 형식으로 나오도록 하는 거예요.",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "아니면은 그러면 그 뭐였지 제가 이제 회의록이 나와야 된다는 건 사실 회의록이 나와야 된다는 요약해서 나온 거는 저희가 양식을 정할 수 있잖아요.\n사실 아웃풋은 그렇게 나오도록 하고 회의록을 이제 살펴보고 파싱을 하는 거는 일반적으로 이 서비스를 도입하기 전에 있었던 거고 그리고 장식이 여러 가지일 수 있으니까 그냥 그것만 그것만 그것만 구조 파악하고 파싱하는 파서를 이렇게 딱 만들어서 회의 이전 회의했던 회의록 먹이는 걸로 하면 어때요?\n지금 아마 재선 님이 생각했었던 거는 이전에 작성했었던 회의록이 있어 회의록 먹여 회의록 먹이고 우리가 회의를 해 그리고 그럼 그 형태의 회의록이 나와 이렇게 생각을 한 거잖아요.\n그러니까 회의록 나오는 건 그냥 우리가 정해 우리가 정해서 우리의 우리 형식으로 나오도록 하는 거예요.",
+      "metadata": {
+        "segmentIndex": 227,
+        "startTime": "30:13",
+        "endTime": "31:09",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1870000,
+      "end": 1870999,
+      "text": "그러면은 반사 게",
+      "confidence": null,
+      "diarization": {
+        "label": "2"
+      },
+      "speaker": {
+        "label": "2",
+        "name": "참석자 2",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "그러면은 반사 게",
+      "metadata": {
+        "segmentIndex": 228,
+        "startTime": "31:10",
+        "endTime": "31:10",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1871000,
+      "end": 1872999,
+      "text": "그렇죠",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "그렇죠",
+      "metadata": {
+        "segmentIndex": 229,
+        "startTime": "31:11",
+        "endTime": "31:12",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1873000,
+      "end": 1876999,
+      "text": "우리 형식에 맞겠어 그럼 좋죠 그러면 괜찮죠",
+      "confidence": null,
+      "diarization": {
+        "label": "2"
+      },
+      "speaker": {
+        "label": "2",
+        "name": "참석자 2",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "우리 형식에 맞겠어 그럼 좋죠 그러면 괜찮죠",
+      "metadata": {
+        "segmentIndex": 230,
+        "startTime": "31:13",
+        "endTime": "31:16",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1877000,
+      "end": 1878999,
+      "text": "그렇죠 그렇게 나와야지",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "그렇죠 그렇게 나와야지",
+      "metadata": {
+        "segmentIndex": 231,
+        "startTime": "31:17",
+        "endTime": "31:18",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1879000,
+      "end": 1905999,
+      "text": "그러면은 회의록을 작성을 하는데 이거는 이제 우리가 정한 형식대로 그러면 데이터도 우리가 그냥 음성 데이터 를 넣어줬을 때는 지금 안 되니까 그냥 우리가 줄 글로 대화 내용 예시로 이제 제공을 하면은 GPT한테 만들어 달라 해서 그거에서 원하는 게 이제 하나가 액션 플랜 두 번째가 요약",
+      "confidence": null,
+      "diarization": {
+        "label": "2"
+      },
+      "speaker": {
+        "label": "2",
+        "name": "참석자 2",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "그러면은 회의록을 작성을 하는데 이거는 이제 우리가 정한 형식대로 그러면 데이터도 우리가 그냥 음성 데이터 를 넣어줬을 때는 지금 안 되니까 그냥 우리가 줄 글로 대화 내용 예시로 이제 제공을 하면은 GPT한테 만들어 달라 해서 그거에서 원하는 게 이제 하나가 액션 플랜 두 번째가 요약",
+      "metadata": {
+        "segmentIndex": 232,
+        "startTime": "31:19",
+        "endTime": "31:45",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1906000,
+      "end": 1909999,
+      "text": "요약하고 일정 뭐 이런 거",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "요약하고 일정 뭐 이런 거",
+      "metadata": {
+        "segmentIndex": 233,
+        "startTime": "31:46",
+        "endTime": "31:49",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1910000,
+      "end": 1918999,
+      "text": "이거를 이제 포함한 일정을 하고 그다음에 4번에 회의록 작성까지 해서 우리 양식",
+      "confidence": null,
+      "diarization": {
+        "label": "2"
+      },
+      "speaker": {
+        "label": "2",
+        "name": "참석자 2",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "이거를 이제 포함한 일정을 하고 그다음에 4번에 회의록 작성까지 해서 우리 양식",
+      "metadata": {
+        "segmentIndex": 234,
+        "startTime": "31:50",
+        "endTime": "31:58",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1919000,
+      "end": 1945999,
+      "text": "그렇죠 그리고 이제 이전 데이터를 파는 이전 데이터를 먹이는 데 필요한 거죠.\n세팅할 때 예를 들어서 세팅할 때 문서를 주고 한 번 LLM이라든가 이렇게 한 번 싹 스캔하고 얘는 이런 형식으로 돼 있구나 이렇게 사칭하면 되겠구나 해서 파서 하나 만들어 주는 거죠.\n그거는 이제 이전 데이터를 이렇게 집어넣기 위해서 나오는 거",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "그렇죠 그리고 이제 이전 데이터를 파는 이전 데이터를 먹이는 데 필요한 거죠.\n세팅할 때 예를 들어서 세팅할 때 문서를 주고 한 번 LLM이라든가 이렇게 한 번 싹 스캔하고 얘는 이런 형식으로 돼 있구나 이렇게 사칭하면 되겠구나 해서 파서 하나 만들어 주는 거죠.\n그거는 이제 이전 데이터를 이렇게 집어넣기 위해서 나오는 거",
+      "metadata": {
+        "segmentIndex": 235,
+        "startTime": "31:59",
+        "endTime": "32:25",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1946000,
+      "end": 1947999,
+      "text": "그거를 제가 해봤어요. 일주일에",
+      "confidence": null,
+      "diarization": {
+        "label": "2"
+      },
+      "speaker": {
+        "label": "2",
+        "name": "참석자 2",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "그거를 제가 해봤어요. 일주일에",
+      "metadata": {
+        "segmentIndex": 236,
+        "startTime": "32:26",
+        "endTime": "32:27",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1948000,
+      "end": 1954999,
+      "text": "어때요? 안 돼요 안 된다고 안 된단 말이죠.",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "어때요? 안 돼요 안 된다고 안 된단 말이죠.",
+      "metadata": {
+        "segmentIndex": 237,
+        "startTime": "32:28",
+        "endTime": "32:34",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1955000,
+      "end": 1962999,
+      "text": "하드 코딩 하면 돼요 모르겠어요. 다른 똑똑한 사람은 했을지도 모르겠는데 저는 그러니까",
+      "confidence": null,
+      "diarization": {
+        "label": "2"
+      },
+      "speaker": {
+        "label": "2",
+        "name": "참석자 2",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "하드 코딩 하면 돼요 모르겠어요. 다른 똑똑한 사람은 했을지도 모르겠는데 저는 그러니까",
+      "metadata": {
+        "segmentIndex": 238,
+        "startTime": "32:35",
+        "endTime": "32:42",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1963000,
+      "end": 1967999,
+      "text": "그거는 근데 그러면 그건 좀 부차적인 걸로 두죠. 왜냐면은",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "그거는 근데 그러면 그건 좀 부차적인 걸로 두죠. 왜냐면은",
+      "metadata": {
+        "segmentIndex": 239,
+        "startTime": "32:43",
+        "endTime": "32:47",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1968000,
+      "end": 1975999,
+      "text": "그냥 그냥 그냥 PDF 봤어 정도로만 제공해도 사실 무방할 것 같아요.",
+      "confidence": null,
+      "diarization": {
+        "label": "2"
+      },
+      "speaker": {
+        "label": "2",
+        "name": "참석자 2",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "그냥 그냥 그냥 PDF 봤어 정도로만 제공해도 사실 무방할 것 같아요.",
+      "metadata": {
+        "segmentIndex": 240,
+        "startTime": "32:48",
+        "endTime": "32:55",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1976000,
+      "end": 1978999,
+      "text": "이 기록 이전 기록 넣을 거면 너희들이 알아서",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "이 기록 이전 기록 넣을 거면 너희들이 알아서",
+      "metadata": {
+        "segmentIndex": 241,
+        "startTime": "32:56",
+        "endTime": "32:58",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1979000,
+      "end": 1980999,
+      "text": "알아서 먹여라",
+      "confidence": null,
+      "diarization": {
+        "label": "2"
+      },
+      "speaker": {
+        "label": "2",
+        "name": "참석자 2",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "알아서 먹여라",
+      "metadata": {
+        "segmentIndex": 242,
+        "startTime": "32:59",
+        "endTime": "33:00",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1981000,
+      "end": 1984999,
+      "text": "그렇게 해야 될 것 같아",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "그렇게 해야 될 것 같아",
+      "metadata": {
+        "segmentIndex": 243,
+        "startTime": "33:01",
+        "endTime": "33:04",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1985000,
+      "end": 1990999,
+      "text": "그 정도 해서 그러면은 양식을 정해 볼까요? 회의록 양식이요",
+      "confidence": null,
+      "diarization": {
+        "label": "2"
+      },
+      "speaker": {
+        "label": "2",
+        "name": "참석자 2",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "그 정도 해서 그러면은 양식을 정해 볼까요? 회의록 양식이요",
+      "metadata": {
+        "segmentIndex": 244,
+        "startTime": "33:05",
+        "endTime": "33:10",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1991000,
+      "end": 1995999,
+      "text": "좋죠?",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "좋죠?",
+      "metadata": {
+        "segmentIndex": 245,
+        "startTime": "33:11",
+        "endTime": "33:15",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 1996000,
+      "end": 2004999,
+      "text": "아니면 여기서 클로바를 한번 끊어볼까요? 이 정도 해서 좋아요.\n이 자식이 어떻게 하나",
+      "confidence": null,
+      "diarization": {
+        "label": "2"
+      },
+      "speaker": {
+        "label": "2",
+        "name": "참석자 2",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "아니면 여기서 클로바를 한번 끊어볼까요? 이 정도 해서 좋아요.\n이 자식이 어떻게 하나",
+      "metadata": {
+        "segmentIndex": 246,
+        "startTime": "33:16",
+        "endTime": "33:24",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    },
+    {
+      "start": 2005000,
+      "end": 2006500,
+      "text": "일단은.",
+      "confidence": null,
+      "diarization": {
+        "label": "1"
+      },
+      "speaker": {
+        "label": "1",
+        "name": "참석자 1",
+        "edited": false
+      },
+      "words": [],
+      "textEdited": "일단은.",
+      "metadata": {
+        "segmentIndex": 247,
+        "startTime": "33:25",
+        "endTime": "33:26",
+        "source": "clova_note_project_direction_2026-06-29.txt",
+        "convertedFromTxt": true
+      }
+    }
+  ],
+  "text": "됐나요? 네 이렇게 하면서 이제 여기에 메모도 할 수 있고 한데요.\n지금 네 말씀하시죠\n네 그러면은 저희 주제는 회의록 작성 보관 매니지먼트 프로그램 이제 과제 홈플러스\n그다음에 하임 좋은데 하임이 좀 더 그거예요. 좀 더 짧고 이렇게 딱 뇌에 박히는 날이라\n파이머로 그러 다음에 파이머로 가겠습니다. 그래서 저희가 이제 구현해야 될 거를 다 생각을 해 보죠.\n일단은 뭐 뗄 건 떼는 건 나중에 하고 일단 STT가 1번이겠죠.\n그렇죠 이\nSTT 근데 이거 개발이 오래 걸릴 것 같다고 그러지 않았어요 아니면은 이 클로바노트에 있는 거를 하는 거예요.\n어떤 STT가 인풋이라고 했는데 그거를 1차적으로 먼저 구현을 할 거예요.\n그러니까 안 할 건데 일단은 전체 프로그램을 한번 해보고 저희가 3차 때 뭘 할지를 한번 생각을 해봐.\n일단 기능 어떤 기능을 구현해야 되는지 다 던져본다는 말이지\nSTT로 이제 회의록이 작성이 될 거고 그쵸 여기서 이제 내부적으로는 요약\n응 그리고 일정까지 등록 일정 등록까지 그리고 더 할 수 있으면 저는 에이전트 팀을 만들어서 예를 들어서 회의 같은 때 어떤 데 조사가 필요하다 이렇게 얘기가 나왔잖아요.\n그럼 이제 그걸 보고 에이전트 팀한테 이거 시장조사 돌려놓을까요 하면 조사가 들어가고 이제 다음 회의 때 그거를 레포트로 받아볼 수 있는\n그런 식으로 자동 조사 후 포\n뭐 그런 것도 하면 좋겠어\n좋은데요. 이것도 확실히 편해지겠네요. 그러니까 회의를 전체적으로 홍보를 하면서 도와주는\n그렇죠 그리고 이제 팀원들이 내가 힘을 써서 해야 되는 일들을 조금씩 덜어주는 거죠.\n이런 조사 같은 것도 보면\n약간 비서네요.\n맞아요. 그리고 그리고 이제 도큐먼트 형태 도큐먼트 형태에 있는 거를 인식해가지고 DB에 넣는 게 필요하겠죠.\n저장까지 DB는 그럼 2개를 써야겠네요. 실물 DB랑 와그 검색용 벡터 디비랑\n실물 DB라고 하는 건 어떤 거 얘기하는\n간단하게는 에스큐라이트 같은 거 써도 되고 아니면 진짜\nRDBMS 얘기하는 거죠. RDBM\n왜냐하면은 회의록이 결국 저장이 돼 있긴 해야 되니까 그쵸 뭐 아니면은 회의에 썼던 PPT 같은 거를 저장을 함께 할 수도 있을 거예요.\n그런 것도 넣으면 좋죠.\nDB는 그러면은 백이 필요하겠네요. 그럼 프라이의 뜻이 뭐예요?\n이거를 하게 되면 백이 필요할 것 같아\n오프라인 온라인이 오프라인이 오프라인이 만나서 온라인으로 인터넷\n그리고 나서 이 과정이 끝나고 나면은 아니 근데 만날 수 있어.\n개인적으로 이제 LLM을 통해서 a에 대한\n나는 오히려 저걸 더 좋아할 줄 알았어. 나는 맞아요.\n오프라인으로 만나면\n뿐만 아니라 이제 플러스로 전체적인 프로젝트\n오프라인으로 바꿀게. 아니\n왜냐하면 차 프로젝트 n차 회의 내용\n진남 님도 조금 머니까 그거 준을 잘 잡으면 될 수도 있어.\n그리고 만약에\n연봉이 늘어난다. 일단 이슈랑 PR 내에서 보고\n식탁은 나와야 되고\n어디까지 했는지\n그때 말했잖아.\n어디까지 해야 한다 개시일 정도 가능하다.\n아마 기대서 가져올 수 있는 정보는 제가 생각했을 때 아까 그냥 리듬이 하고 PR하고 이슈 이렇게 이 정도 되는\n이슈 PR만 봐도 근데 사실 충분해서 왜냐면 물론 처음부터 이슈 PR로 관리가 됐다는 가정 하에\n그렇죠\n내가 뭐 지난번에 만나\n변경 이력 변경 이력도\n어차피 이런 계에서\n이 정도네요.\n텍스트 파일은 이제 저기 얘기를 하긴 했는데 지금 여기에 적혀 있지 않은 거죠.\nSTT로 받아온 파일을 기본적으로 이제 라그가 파싱하는 것도 포함이에요.\n그렇죠 받아온 인풋을 이제 파싱하고 청킹하고\n라벨링\n그러면은\n회의록\n제일 중요한 건 저희가 이제 해야 될 게 저희가 이제 패싱을 해야 되잖아요.\n청킹도 해야 되고 이거 먹을래 그리고 메타 데이터 라벨링까지도 생각을 해봐야겠죠.\n그게 안 주는 건데\n회의록에 대한 메타 데이터가 나온다는 거요. 그렇게 해야 돼\n그러면 확실히 라도 성능이 좋아지는 거 메타 데이터 예를 들어 클로바의 메타 데이터라면 발화자 정도가 맞아 맞아\n클로바의 경우는 그렇고 회의록이 근데 일단 정제된 포맷으로 작성돼 가지고 거기에서 어떤 메타 데이터를 가지고 올 수 있을지는 모르겠어요.\n그래서 저희가 로봇 데이터라도 터로 가상의 페이 한 3회 정도 해서 그걸 가지고 어떻게 파싱을 할 건지 또 들어가야 될 것 같아요.\n회의록에서요. 네 왜냐면은 제가 저번에 1조 1항 할 때도 사실 1조 1항이라고 안 돼 있고 1조 1 동그라미 이렇게 돼 있어 가지고 이제 파싱에서 그걸 잡아줄 수 있었던 거잖아요.\n이런 부분은 그래서 저희가 입력 데이터가 정해진 양식이니까 어떻게 보면은 회의록을 저희 프로그램이 저장을 할 거니까 그쵸.\n그래서 입력 데이터를 저희가 정해줄 수 있다면 하시기 훨씬\n근데 이렇게 넣어도 되긴 하\n쉬울 테니까 입력 데이터를 어떤 식으로 받을지 조금 얘기를 해보면 좋을\n저는 회의록 같은 경우는 그렇게 생각은 하고 있었어요.\n일단 회사 같은 데서 사용하는 회의록은 양식이 정해져 있단 말이죠.\n저는 몰라\n그거 말씀해 주시면\n그러니까 근데 양식이 정해져 있는데 팀별로 다를 수 있고 이제 그 부서별로 다를 수가 있어요.\n그러면은 어떻게 해야 되냐면 세팅을 할 때 일단 그런 정해진 양식의 회의록을 LLM한테 줘요.\nLLM이 보고 이런 양식이구나 하고 파서를 짜던 파싱 방식을 정하던 해가지고 이제 그걸로 그걸 사용해서 이제 계속 회의록 넣고 바싱하고 넣고 이런 식으로 그래야 될 것 같다는 생각을 했어요.\n그러면은 혹시 회의록 양식을 볼 수 있나요? 저 진짜 아예 몰라가지고 회의록을\n회사를 다녀본 적이 없어요. 저도 근데 회사 자료는 가지고 있는 게 없어가지고 그냥 일반적인 회의록 양식을\n그러면 인터넷을 한번 다운을 받아볼까요? 회의록 템플릿을\n도현이 역시 일할 때 쓰던 회의록 없지 나는 우리는 회의를 안 했어.\n나도 일한 지 너무 오래돼서 없다.\n화요일\n우리는 이렇게 얘기해\n해야 될 자료 중에 그것도 그거 안 넣었네요. 그거 대화 기록\n왜 그렇게 했어요?\n맞아 대화 기록\n그쵸 그쵸 저희가 그러면 두 개를 넣는 거잖아요. 전체 대화가 기록된 내용이 있을 거고 그걸 기반으로 만들어진 회의록이 있을 거고\n대화 기록이라고 했던 거는 그 메신저 대화 기록이에요.\n그거 빼죠. 일단은 그래요. 저희 일단 회의록에 집중하기로 했으니까 그거는 추가적으로 붙일 수 있으면 4차 때 붙이면\n그것도 한번 이제 적어가지고 올려주세요. 일단\n그러면은 양식\n여기 이런 데가 통하네요.\n거기 회의록이 있어요. 네 한번 한 차원 회의 회의록 한번 살짝 볼까요?\n이거 하 여기 행정안전부역 엄청 많은데 바로\n보기로 한번 살짝 아 근데 좋아요 이런 식으로 되는구나\n엄청 기네요.\n128쪽\n이거 이거 써볼 만하지 않아\n이거 링크 지금 저기다 남겨\n일단 올려주세요. 저런 거 괜찮다. 근데 저거 공공기관은 맨날 한 컴 써가지고\n오히려 공공기관이어서 더 좋을 것 같아요. 저희가 데이터 쓰기 너무 좋은데\n그게 아니라 한 이랑 한 컴이면 그게 그렇잖아.\n아니 근데 여기 또 다른 것들이\n가 한 컴을 아마 지원할 건데요. 여기 PDF\n좋아요.\n그러네. PDP 있네\n한컴이 근데 더 정해진 그 포맷일 수도 있으니까 그거는 근데 파이썬에 왠지 보면 한컴 지원하는 패키지가 있을지도 모르거든요.\n저거는 한번 살펴보고 저걸 가지고 이제 회의록을 집어넣어서 뭔가 찾게 할 수도 있고 괜찮을 것 같아요.\n아니 금융위원회 위원장 이름이 이억 원이에요. 진짜예요 이거 어때?\n국가안보실장 이름 위성락이에요.\n아 오\n이 사람 범죄 도시에 나온 사람 아니에요 내 아이도 하는 사람\n맞아요 맞아요 미\n아니다 아니다 하면서\n위승락이\n아니 그 장첸 부하가 위성막이었던 것 같은데\n회의록\n여기 회의록 많아서 좋네요. 총 128페이지는 너무 큰데\n이게 국무회의라 그런 것 같아요. 근데 근데 여기 또 보니까 차관 회의록이라고 또 다른 것도 있고 이게 국무회의록이랑 차관 회의 있는 네 그거 가지고 좀 긴 것 같고\n여기는 거의 대형화로 돼 있네요. 대통령 이재명 그리고 지금 귀여워하는 경우가 꽤 있는지 저런 게 성 보장 확정 그러한 대통령 이제 뭐 귀여워하면 주로 무엇을 하는지\n저런 거 아마 속기사 써가지고 아마 하는 거 아닐까요?\n저거는\n한번 또 딴 거 있나 찾아보고\n근데 이거 좋은 것 같아요. 오히려 이걸 해야 될 것 같아\n5일\n그리고 사실 뭔가 더미 데이터 만들려면은 템플릿 주고 이거에 맞춰서 회의록 작성해줘 할 수도 있으니까 경위 데이터 만드는 게 막 엄청 어려울 것 같지는 않고요.\n근데 이제 그걸 많은 그 뭐라 그래야 되죠. 많은 타임라인에 회의록을 작성하는 건 좀 어려울 수도 있긴 한데\n여기 그냥 국가 기관의 회의록이 다 있네요. 아예\n저걸로 해도 괜찮겠다.\n회의록을 그러면은\n저희가 이거 쓸 거면 양식도\n외교부는 또 이렇네요.\n양식이 좀 달라요. 다른\n다 달라요 한자 그건 당연하겠지\n뭐 그러네요.\n새로 양식을 받을 수 있는 곳이 없나\n그냥 뭐 이렇게 템플릿 같은 거 보면 이런 식으로\n그냥 저희가 실제 쓸 데이터에 맞는 양식이 있어야지 이제 LLM한테 주잖아요.\n이 양식이 있고 회의록을 제공할 때는 이 양식에 맞춰지는 걸 제공해야 돼.\n그렇구나. 근데 사실 저희가 회의록을 제공하는 거는 그거네요.\n어떻게 보면 답지네요. 저희는 회의록을 만들어야 되는 거니까 저희\n이렇게 이런 식으로요.\n저희가 원하는 거는 양식을 제공하면 이렇게 속기사가 돼달라는 거잖아요.\n그렇죠 그렇죠.\n우리 얘네네만 그렇죠.\nSTT 면에서는 속기사가 돼달라는 거고\n제공하면은 데이터를 받아서 그 양식에 맞게 이제 출력을 해줘야 되는 거니까 그렇죠.\n저희가 저 국무회의 를 한다고 하면은 그러면은 차라리 저걸 쓰게 되면은 이 앞부분을 생략이 되는 거예요.\n양식 제공과 STT로 작성과 그 양식에 맞게 보고서 회의록 작성 부분을 이제 전부 건너뛰는 거죠.\n저 회의록으로 하게 되면 제공 라브 저장 라벨에는 성\n정식 저장하는 STT 어떤 건지 이해했어요. 이제\n그러면은 저거를 써도 될 것 같아요. ss를 안 한다고 하면 검사 때 근데 쓴다고 하면은 회의 양식이 있어야 될 것 같아요.\n구조화된 건 아닌데 1로코롱 명시해 둔 건 있더라고.\n이거는 국무회의 같은 거 할 때 하는 건 거구나.\n이거 약간 부천시에서 가져온 거긴 한데 사기업들은 아마 공개가 안 될 거고 그래서 그냥 국가기관 이런 거밖에 없는 것 같거든요.\n아\n학교도 있네요.\n그러네요. 왜요?\n양식이네요. 양식\n이거는 아마\n학교긴 한데 건국대 있거든요.\n양식이야 뭐 찾아보면 일단 많으니까\n국가 기획안 대학 회의록 작성 얘네에는 동일 질문 가능 하고 어디까지 해야 하나 이런 질문 액션 플랜 아무튼 필요한 기능은 이 정도 놓으면 늘어놓은 것 같아.\n아니 그런 거 그런 거 말고 아 그냥 근데 지금 얘기해 보니까 좀 해도 된다라고 쓰기들을 한 저는 이걸로 하는 거 아니냐\n짧게 써진 회의도 있네요.\n어디요? 국가기관이에요?\n아니 아니 학교 학교는 좀 찾아보니까 있긴 하네.\n네. 학교는 한글이 많긴 하네요. 확실히 외국 것도 한번 찾아\n오늘은 이제 안 해도 되잖아. 그거 링크 좀 보내 링크 좀 올려줄 수 있어요.\n그러면 일단 일단 이거 올려놔야 돼요.\n제가 g20 한 번 있나 볼게요.\n이 사람들은 모르겠지 이 회의록이 이렇게 쓰이고 있다는 사실\n여기는 되게 간단하게\n한양 너무 느리다 너무 느리다 왜 그렇지\n오 찾았거든요. BC 페이지요. 네 좋아\n저번에 검색량 검색은 제일 잘하시네요. 저요\n민규 님이 자꾸 여기저기\n저 오도하고 다\n잠깐만요. 이거 제가 할게요. 이렇게 하면 돼요.\n강사님 블로그 한번 찾은 걸로\n강사님 블로그를 사왔다고요 저도 왜 안 알려줘요?\n저희도 몰라요. 올려보세요. 피자\n정 그냥 그냥 그 네이버 블로그 주소에 강사님 그 드라이브 아이디 치면 나오던데 사실 근데 그거 가지고 자꾸 뭐라 그래요?\n근데 리부로 사람 몸이 잘 울려요. 네 맞아요. 친하게 너무\n저 약간 핑거 족인데 링크 그냥 주면 안 돼요. 막\n내가 찾기 싫어\n무슨 얘기를 하고 있었죠?\n저희 그냥 지금은 뭐지 어떤 기능을 구현해야 되는지 그런 거 일단 늘어놓고 있다가 회의록 필요하니까 회의록 하고 있었어요.\n그래서 기능은 이 정도 나온 것 같고\n그러면 LLM이 해야 될 게 양식에 맞게 작성할 줄 아는 용역.\n일단 정형화된 회의록이 있으면은 회의록을 받아가지고 걔가 그거를 이전 예를 들어서 그런 상황인 거죠.\n이 사람들이 예전에 회의를 이렇게 자라라라락 하고 있다가 이번에 이걸 도입하기로 했어요.\n그러면 이제 이전에 회의했던 내용들이 있으니까 그거를 거기에 먹여야 된단 말이죠.\n그럼 회의록을 받아서 그 회의록 양식에 맞게 파싱을 할 수 있는 게 한 번 나와야 돼요.\n그냥 먹였을 때 그리고 그 파싱 하는 거를 파싱을 한 다음에 DB에 넣어야 돼요.\n일단 그게 나와야 되고 그다음에 여기에서 하는 그리고 이제 그 회의록을 이제 회의가 시작할 때 회의록을 입력하시겠습니까 해가지고 그 양식화된 회의록을 넣잖아요.\n그럼 넣고 나면은 이제 그다음에는 액션 플랜이랑 향후 일정들이 나와야 되는 거죠.\n요약을 하고 요약을 해서 이거는 그거니까 이거는 대화 형태의 회의록을 받아서 회의록을 작성하는 게 아니니까 정형화된 회의록을 받으면은 그걸 가지고 이제 뭐 하기로 함 뭐 하기로 함 뭐 하기로 함 이런 식으로 돼 있으니까 액션 플랜이 이렇게 나와서 일정 캘린더 같은 데 캘각이 되는 이게 돼야 돼요.\n그러면 회의록을 하나 정하고 핫서를 정하고 그 회의록 내용을 보고 청킹을 잡고 그리고 그걸 기반으로 마을 만들어보자 만들어 보죠.\n일단\n이거는 영어로 된 거거든요. g20 이번에 한 것 같은데\n잘못 눌렀다 등록금 심의 받다. 이거는 그냥 받아주는 거구나.\n네 그냥 바닥\n뒤에 보니까 막 이거 뭐라 말해야 되지\n그런 것도 있다. 연준 회의록 같은 것도 있겠다.\n아니요. 저희도 AI라고 액츄얼리 인디언스는\n맞아 이런 것도 있을 것 같아요. 연방공개시장위원회 회의록 이런 거\n하나를 정해볼까요? 회의 괜찮은지 저는 국무회의 괜찮아 보여요.\n국무회의록 괜찮고 일단 저희가 한글로 된 거 위주로 할 거면 국무회의록 하고 아까 짧은 거는 한양대으로 해보면 될 것 같아요.\n제가 말하고 싶었던 게 이렇게 또 만들더라고요. 수치화를 한 건지 모\n이거 뭐예요?\n지식 메인 뒤쪽에 가면 이런 거 있거든. 그러니까 주제랑 요약이랑 회의록이니까 찬성 반대 뭐 이런 거 했나 봐요.\n이걸 다 수치화로 해놔가지고 그렇게 해놨더라고요.\n물론 내용들이 다 다르겠지만\n뭔지 모르겠어요.\n영어를 타겟으로 하기에는\n네 그냥 이런 양식이 있다.\n일단 국무회의\n한 3개 정도 뽑아서 할\n여기 이렇게 표로 또 만들긴 하더라고요.\n되게 길긴\n그러면 저희 LLM이 저렇게 표를 제작해 줬으면 좋겠어.\n가능하면 그냥 있으면 있을수록 그러니까 시각적인 자료가\n시각 자료 작성까지 괜찮은데요. 시각 자료라서\n저는 저것까지는 생각은 안 했었어요. 그냥 대화 내용 받아서 뭐 적고 그러니까 뭐지 ST로 STT로 회의록을 만든 다음 대화 내용 받았었고 그냥 액션 플랜 잡고 요 정도 요약 옵션 플랜 뭐 이 정도 생각을 하고 있어\n회의록 작성에 좀 힘을 주냐 아니면 거기서 액션 플랜을 쭉쭉 잘 뽑아내냐에 중점을\n뭐 그런 거지 그러면 저거 DB를 한번 라브 DB를 한번 만들어 본다고요?\n이건 이건 그러면 언제까지 할 거예요? 혹시 이거요?\n네 각자 해볼까요? 그게 온라인이죠. 그렇긴 한데 오프라인 온라인 온라인 그러면은 사실\n사실 간단한 라근은 지금도 20분 후에 만들긴 해요.\n그거 가능해 그냥 왜냐하면 PDF니까 PDF 파서 쓰고 그냥 저희 배웠던 거 그냥 쓱 긁어서 복사해서 붙여 놓으면 라그니 거든요.\n라그를 거기서 이제 파서를 어떻게 할 거냐 네 청킹은 어떻게 할 거냐 그리고 저희 LM은 이제 문서를 여러 군데서 받을 거고 분포 이처럼 엄청 긴 것도 있을 거고 그 한양대처럼 엄청 짧은 것도 있을 거고 그러면은 청크 사이즈를 저희가 선정해서는 안 될 것 같아요.\n그렇죠 LLM이 보고 길이에 따라서 맞는 청각 사이즈를 해야 될 거고 파서도 달라져야 될 거야.\n아마 회의록 그게 입력 데이터가 불균형하면은 이런 부분이 문제가 엄청\n그거 좀 어려운데\n보통\n데이터가 정해져 있으면 진짜 간단하게 되는 거 데이터가 이렇게 여러 방식으로 있으면\n여러 방식으로 있으면\n특히 패싱이랑 청킹 부분이 차이가 엄청 많이 나가지고\n사기업에서는 어느 정도 양이 어느 정도\n저희는 국무회의 저 정도까지는 아니었고 그리고 회의록이 계속 누적되는 구조였어요.\n표 형태로 누적되는 구조\n붙이고 붙이고 붙이\n그리고 표 형태로 누적되는 구조고 이제 해결된 이슈 있으면은 삭제 이런 식으로 될 수\n아니 근데 동욱 님 그게 그럴 수가 없는 게 예를 들어 헌법 같은 거는 전체 문자 수가 엄청 많잖아요.\n근데 형 사이즈가 너무 커도 안 되고 또 너무 작아도 안 되고 그런 게 좀 있어요.\n문서마다 적절한 상품 사이즈가 좀 정해져 있어요.\n이거는 뭐지 범위를 좀 좁혀야 될 수도 있을 것 같은데요.\n회의록이 얼마나 나오느냐를 봤을 때 일반적으로 생각하면 그래도 5페이지는 안 넘어갈 거라고 생각이 들어요.\n왜냐면 회의가 127쪽. 근데 국무회의는 사실 좀 큰 스케일인 거고 그거를 가지고 이제 사람 그거를 예를 들어서 군무색이라\n아니면 차라리 국무회의록 분석기로 가든가요?\n국무회의록 분석기\n사람이 일반인들도 정치에 쉽게 접근할 수 있도록\n국무회의록 분석 중 국무회의록에 모든 걸 맞춰서\n아까 마침 주인님이 국회의원 검색하시고 계시더라고요.\n공기업은 이게 최고긴 하겠네요. 공기업 하실 분들은 이 포트폴리오 국내 기록 말고 또 다른 것도\n사실 국무회의록이 모든 기관이 다 합쳐서 거기 있는 거잖아요.\n근데 아까 외교부 보니까 막 또 엄청 길지는 않더라고요.\n그래서 그런 부분을 신경을 확실히 써야 될 것 같긴 해요.\n저희가 어떤 걸 타깃으로 삼느냐\n어느 정도의 문서를 타깃으로 삼을 건지 어느 정도\n그거보다는 이제 하나를 중점으로 할 거냐 아니면 정말 모든 걸 모든 회의록을 다 분석하게 할 거냐\n모든 회의록을 다 분석하게 할 거는\n원래 원하셨던 건 그거 아니에요 저기에 대한\n그렇긴 한데 저는 저 국무회의록처럼 저렇게 길 거라고는 생각을 못했어요.\n근데 해봐야\n워낙 많이 모여 있으니까 그런데 여기는 또 75쪽이에요.\n예를 들어서 제가 생각한 정도의 회의록은 뭐냐면요.\n우리 미니 프로젝트 우리 지금 미니 프로젝트 있잖아 있으니까 회의를 해보자.\n그 정도의 회의록을 예상한 거지 국무회의록처럼 스케일 큰 거를 생각하진 않았거든요.\n딱 치니까 그거부터 나오길래 딱 봤더니 그거는 그거는 너무 아웃라인인 것 같아요.\n너무 커요.\n작은 거는 또 많긴 해요. 이런 거 서울특별시 의회 회의록 이런 거 보면 전자회의록이 있고 또 영상 회의록도 또 있네.\n그래서 너무 스케일이 크지 않은 그런 회의를 가지고 좀 했으면 좋겠어요.\n작은 프로젝트 작은 예를 들어서 뭐 어떤 거냐면은 어디였지 막 기관에서 과제를 진행하는데 진행됐던 회의라든가 그런 거 그런 정도면 될 것 같아요.\n아니면 회의록 작성을 빼버려도 돼요.\n회의록 작성하면 된다.\n그냥 회의를 이렇게 녹음한 걸로만 거기서 액션 플랜 빼고 주요 내용 빼고 그것만 저희 입맛에 맞게 넣어버리면 사실 어떤 회의든 구두로 진행되는 회의는 다 할 수\nGPT한테 가상회의로\n저 지금 이해를 잘 못했어요. 그 액션 플랜 빼고 그거 뺀다는 게 어\n그것만 추출해 놓고\n추출한다고 그게 나오게 하고\n그러니까 회의록을 작성해야 된다라는 거를 버리면 사실\n아니면 저희 이게 다 안건별로 돼 있잖아요. 그 국가 기관들은 그러니까 이거를 어차피 짧게 돼 있을 거 아니에요 또 그게 합치고 합쳐져서 그렇게 길어진 거니까 그러니까 이 안건별로 데이터화를 해가지고 회의록 원래 원하셨던 게 짧은\n그렇죠 그 안건 하나가 프로젝트 하나라고 볼\n아예 하나를 받아서 그 안건별로 다 나눠 가지고 그거를\n근데 그렇게 말고 좋은데 그게 결국 작성하면 하드 코딩이 되거든요.\n그러니까 결국 그거는 국무회의록에 맞춘 하드 코딩이 되는 거고 결국 다른 게 들어와 버리면은 하드 코딩을 해도 상관없다면은 솔직히 상관없어\n아니면은 그러면 그 뭐였지 제가 이제 회의록이 나와야 된다는 건 사실 회의록이 나와야 된다는 요약해서 나온 거는 저희가 양식을 정할 수 있잖아요.\n사실 아웃풋은 그렇게 나오도록 하고 회의록을 이제 살펴보고 파싱을 하는 거는 일반적으로 이 서비스를 도입하기 전에 있었던 거고 그리고 장식이 여러 가지일 수 있으니까 그냥 그것만 그것만 그것만 구조 파악하고 파싱하는 파서를 이렇게 딱 만들어서 회의 이전 회의했던 회의록 먹이는 걸로 하면 어때요?\n지금 아마 재선 님이 생각했었던 거는 이전에 작성했었던 회의록이 있어 회의록 먹여 회의록 먹이고 우리가 회의를 해 그리고 그럼 그 형태의 회의록이 나와 이렇게 생각을 한 거잖아요.\n그러니까 회의록 나오는 건 그냥 우리가 정해 우리가 정해서 우리의 우리 형식으로 나오도록 하는 거예요.\n그러면은 반사 게\n그렇죠\n우리 형식에 맞겠어 그럼 좋죠 그러면 괜찮죠\n그렇죠 그렇게 나와야지\n그러면은 회의록을 작성을 하는데 이거는 이제 우리가 정한 형식대로 그러면 데이터도 우리가 그냥 음성 데이터 를 넣어줬을 때는 지금 안 되니까 그냥 우리가 줄 글로 대화 내용 예시로 이제 제공을 하면은 GPT한테 만들어 달라 해서 그거에서 원하는 게 이제 하나가 액션 플랜 두 번째가 요약\n요약하고 일정 뭐 이런 거\n이거를 이제 포함한 일정을 하고 그다음에 4번에 회의록 작성까지 해서 우리 양식\n그렇죠 그리고 이제 이전 데이터를 파는 이전 데이터를 먹이는 데 필요한 거죠.\n세팅할 때 예를 들어서 세팅할 때 문서를 주고 한 번 LLM이라든가 이렇게 한 번 싹 스캔하고 얘는 이런 형식으로 돼 있구나 이렇게 사칭하면 되겠구나 해서 파서 하나 만들어 주는 거죠.\n그거는 이제 이전 데이터를 이렇게 집어넣기 위해서 나오는 거\n그거를 제가 해봤어요. 일주일에\n어때요? 안 돼요 안 된다고 안 된단 말이죠.\n하드 코딩 하면 돼요 모르겠어요. 다른 똑똑한 사람은 했을지도 모르겠는데 저는 그러니까\n그거는 근데 그러면 그건 좀 부차적인 걸로 두죠. 왜냐면은\n그냥 그냥 그냥 PDF 봤어 정도로만 제공해도 사실 무방할 것 같아요.\n이 기록 이전 기록 넣을 거면 너희들이 알아서\n알아서 먹여라\n그렇게 해야 될 것 같아\n그 정도 해서 그러면은 양식을 정해 볼까요? 회의록 양식이요\n좋죠?\n아니면 여기서 클로바를 한번 끊어볼까요? 이 정도 해서 좋아요.\n이 자식이 어떻게 하나\n일단은.",
+  "confidence": null,
+  "speakers": [
+    {
+      "label": "1",
+      "name": "참석자 1",
+      "edited": false
+    },
+    {
+      "label": "2",
+      "name": "참석자 2",
+      "edited": false
+    },
+    {
+      "label": "3",
+      "name": "참석자 3",
+      "edited": false
+    },
+    {
+      "label": "4",
+      "name": "참석자 4",
+      "edited": false
+    },
+    {
+      "label": "5",
+      "name": "참석자 5",
+      "edited": false
+    },
+    {
+      "label": "6",
+      "name": "참석자 6",
+      "edited": false
+    },
+    {
+      "label": "7",
+      "name": "참석자 7",
+      "edited": false
+    },
+    {
+      "label": "8",
+      "name": "참석자 8",
+      "edited": false
+    }
+  ],
+  "events": [],
+  "eventTypes": [],
+  "metadata": {
+    "meetingId": "project-direction-2026-06-29",
+    "title": "회의록 기반 RAG LLM 어시스턴트 프로젝트 방향 논의",
+    "sourceFile": "clova_note_project_direction_2026-06-29.txt",
+    "convertedFile": "clova_note_project_direction_2026-06-29.converted-clova-response.json",
+    "segmentCount": 248,
+    "speakerCount": 8,
+    "note": "This is not a raw CLOVA Speech API response. It preserves the same response shape for parser development."
+  }
+}

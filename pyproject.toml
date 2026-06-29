@@ -1,0 +1,11 @@
+[project]
+name = "meeting-rag-assistant"
+version = "0.1.0"
+description = "Meeting transcript parser and RAG assistant prototype"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "chromadb>=1.0.0",
+    "langchain>=0.3.30",
+    "langgraph>=0.6.11",
+]
